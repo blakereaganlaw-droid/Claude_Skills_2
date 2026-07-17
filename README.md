@@ -1,9 +1,10 @@
 # Treasury Analyst Skills
 
 A growing personal library of [Claude Code Agent Skills](https://code.claude.com/docs/en/skills)
-that make Claude a sharper partner for cash management, Oracle Fusion Cloud OTBI reporting,
-accounting, banking, finance, business-intelligence analytics, statistics, machine learning,
-continuous improvement (Lean / TPS / Six Sigma / co-design), and coding / autonomous agents.
+that make Claude a sharper partner for cash management, Oracle Fusion Cloud Financials and OTBI
+reporting, accounting, banking, finance, business-intelligence analytics, practical data tooling,
+statistics, machine learning, continuous improvement (Lean / TPS / Six Sigma / co-design), and
+coding / autonomous agents.
 
 Every skill is built to one house standard: it **does the task step by step and teaches the
 reasoning**, so you get the deliverable *and* get better at the work.
@@ -26,10 +27,12 @@ Installed skills are namespaced, e.g. `cash-management-skills:bank-reconciliatio
 | --- | --- |
 | `cash-management-skills` | Cash positioning, bank reconciliation, forecasting, liquidity, controls, netting |
 | `oracle-otbi-skills` | Building OTBI reports in Oracle Fusion Cloud, with deep Cash Management coverage |
+| `oracle-fusion-finance-skills` | Fusion Financials modules: GL/journals, FBDI loading, AP invoice-to-pay, AR/collections, Cash Management module, period close |
 | `banking-skills` | Payment rails, account structures, statement formats, fees, connectivity, KYC/AML |
 | `accounting-skills` | Double-entry, journals, chart of accounts, close, reconciliations, statements |
 | `finance-skills` | Time value of money, working capital, ratios, short-term investing, FX, capital budgeting |
 | `data-analytics-bi-skills` | SQL, EDA, cleaning, statistics, inference, dashboards, spreadsheet modeling |
+| `data-tools-skills` | Excel automation with Python, CSV wrangling, DuckDB, PDF extraction, REST API pulls, file hygiene |
 | `machine-learning-skills` | Problem framing, time-series forecasting, supervised modeling, evaluation, features, anomalies |
 | `continuous-improvement-skills` | VSM, root-cause analysis, DMAIC, standard work, A3, kaizen & co-design |
 | `coding-agent-skills` | Python for analysts, Claude Code config, agent design, prompt engineering, git, skill authoring |
@@ -43,11 +46,25 @@ Skills are built in waves (day-job first). See the build status and design notes
 ## How it's built
 
 - One repo that is both a **plugin marketplace** (`.claude-plugin/marketplace.json`) and the home
-  for nine **plugins** under `plugins/`, mirroring Anthropic's own
+  for eleven **plugins** under `plugins/`, mirroring Anthropic's own
   [`anthropics/skills`](https://github.com/anthropics/skills) layout.
 - The authoring standard lives in the `coding-agent-skills:writing-agent-skills` skill; its
   template is `plugins/coding-agent-skills/skills/writing-agent-skills/assets/SKILL.template.md`.
 - `bash scripts/validate.sh` lints every skill and manifest.
+
+## Recommended companion marketplaces
+
+These skills complement (and deliberately don't duplicate) two official marketplaces:
+
+- [`anthropics/skills`](https://github.com/anthropics/skills) — install `document-skills` for
+  polished .xlsx/.pdf/.docx/.pptx document *creation* (source-available, first-party), and
+  `skill-creator`/`mcp-builder` for tooling. Our `data-tools-skills` covers the scripting side
+  (pandas/openpyxl automation, extraction, local SQL) and points to the official document skills
+  where they're the better fit.
+- [`oracle/skills`](https://github.com/oracle/skills) — Oracle's official marketplace for
+  Database, OCI, APEX, and GraalVM skills (`/plugin install db@oracle-skills`, etc.). Its
+  `fusion` domain is still a stub, which is exactly the gap `oracle-fusion-finance-skills` and
+  `oracle-otbi-skills` fill here.
 
 ## Tailoring to your environment
 

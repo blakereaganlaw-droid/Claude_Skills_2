@@ -21,7 +21,7 @@ Never commit real client, bank, or account data. Sanitize to structural examples
 artifacts in `*.private.md` or `references/*.local.*` (git-ignored).
 
 ## Build status (waves)
-All four waves are complete: **54 skills across 9 plugins**, `validate.sh` clean.
+All five waves are complete: **66 skills across 11 plugins**, `validate.sh` clean.
 - **Wave 0 — Foundation:** ✅ repo scaffold, authoring standard + template, `bank-reconciliation`
   exemplar, validator.
 - **Wave 1 — Day-job core:** ✅ `cash-management-skills` (6), `oracle-otbi-skills` (5),
@@ -30,6 +30,9 @@ All four waves are complete: **54 skills across 9 plugins**, `validate.sh` clean
   accounting remainder, BI core.
 - **Wave 3 — Advanced analytics + improvement + agents:** ✅ statistics,
   `machine-learning-skills` (6), `continuous-improvement-skills` (6), coding/agents remainder.
+- **Wave 4 — Fusion Financials + data tools:** ✅ `oracle-fusion-finance-skills` (6): GL/journals,
+  FBDI, AP, AR, Cash Management module, period close; `data-tools-skills` (6): Excel automation,
+  CSV wrangling, DuckDB, PDF extraction, REST API pulls, file hygiene.
 
 Each plugin is independently installable and useful. Next: tailoring skills to your real
 environment (Oracle OTBI reports, reconciliation process, chart of accounts, bank statement

@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **54 skills across 9 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **66 skills across 11 plugins.**
 
 ## How to trigger a skill
 
@@ -24,10 +24,12 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
+- [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (6) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
 - [`finance-skills`](#finance-skills) (6) — Corporate and treasury finance: time value of money, working capital, ratios, short-term investing, FX risk, and capital budgeting.
 - [`data-analytics-bi-skills`](#data-analytics-bi-skills) (7) — SQL, exploratory analysis, data cleaning, statistics, inference, dashboard design, and spreadsheet modeling for business intelligence.
+- [`data-tools-skills`](#data-tools-skills) (6) — Practical data plumbing: Excel automation with Python, CSV/flat-file wrangling, DuckDB local analytics, PDF data extraction, REST API data pulls, and data-file hygiene.
 - [`machine-learning-skills`](#machine-learning-skills) (6) — Framing ML problems, time-series forecasting, supervised modeling, evaluation, feature engineering, and anomaly detection.
 - [`continuous-improvement-skills`](#continuous-improvement-skills) (6) — Lean, Toyota Production System, Six Sigma, and co-design: value-stream mapping, root-cause analysis, DMAIC, standard work, A3, and kaizen.
 - [`coding-agent-skills`](#coding-agent-skills) (6) — Python for analysts, Claude Code harness config, autonomous agent design, prompt engineering, git/code review, and authoring Agent Skills.
@@ -131,6 +133,60 @@ Install: `/plugin install oracle-otbi-skills@treasury-analyst-skills`
 **What it does:** Chooses the right OTBI subject area and columns for a reporting question, explains fact vs. dimension folders and the one-subject-area-per-analysis limit, and gives cross-pillar workarounds (BI Publisher SQL, side-by-side dashboard analyses on a shared prompt, or FDI/OAC). Covers the four Oracle Cash Management subject areas and when to use each. Use when unsure which subject area or columns to query, or when a report seems to need two subject areas or two Fusion pillars.
 
 **Triggers:** `which subject area`, `pick a subject area`, `what subject area for`, `cross-subject-area`, `join two subject areas`, `Cash Management subject area`, `single subject area limit`, `column not available`, `fact vs dimension folder`
+
+## `oracle-fusion-finance-skills`
+
+Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.
+
+Install: `/plugin install oracle-fusion-finance-skills@treasury-analyst-skills`
+
+### `oracle-fusion-finance-skills:fusion-ap-invoice-to-pay`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-ap-invoice-to-pay` — or just describe the task.
+
+**What it does:** Runs the Oracle Fusion Payables invoice-to-pay cycle — invoice entry and validation, PO matching (2/3/4-way), holds and their releases, approval workflow, accounting, and paying through Payment Process Requests (PPRs) that build payment files. Use when entering or fixing an AP invoice in Fusion, releasing holds, investigating why an invoice isn't paid, or running and troubleshooting a payment batch.
+
+**Triggers:** `fusion AP`, `payables invoice`, `invoice hold`, `release hold`, `invoice validation`, `PO matching`, `three-way match`, `payment process request`, `PPR`, `payment batch`, `invoice not paid`, `pay run fusion`, `payables approval`
+
+### `oracle-fusion-finance-skills:fusion-ar-and-collections`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-ar-and-collections` — or just describe the task.
+
+**What it does:** Runs Oracle Fusion Receivables — creating and importing AR transactions (invoices, credit memos), applying receipts manually and through lockbox/automatch, keeping unapplied and on-account cash honest, and working aging and the Advanced Collections dunning/strategy cycle. Use when booking or fixing an AR transaction in Fusion, applying or troubleshooting receipts, reconciling unapplied cash, or setting up aging and collections follow-up.
+
+**Triggers:** `fusion AR`, `receivables invoice`, `apply receipt`, `unapplied receipt`, `on-account`, `lockbox`, `autoapply`, `credit memo fusion`, `AR aging`, `collections fusion`, `dunning`, `receipt application`, `customer balance`
+
+### `oracle-fusion-finance-skills:fusion-cash-management-module`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-cash-management-module` — or just describe the task.
+
+**What it does:** Operates the Oracle Fusion Cash Management module — bank, branch, and account setup; loading and troubleshooting electronic bank statements (BAI2, camt.053); tuning automatic reconciliation matching rules and rule sets; handling external cash transactions; and reading the module's reconciliation statuses. Use when setting up bank accounts in Fusion, loading bank statements, configuring or debugging auto-reconciliation, or clearing unreconciled statement lines in the Fusion CE module.
+
+**Triggers:** `fusion cash management`, `bank statement load`, `camt.053 fusion`, `BAI2 import`, `auto reconciliation fusion`, `matching rules`, `reconcile in fusion`, `external cash transaction`, `bank account setup fusion`, `unreconciled statement lines`
+
+### `oracle-fusion-finance-skills:fusion-fbdi-data-loading`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-fbdi-data-loading` — or just describe the task.
+
+**What it does:** Loads data into Oracle Fusion Cloud with File-Based Data Import (FBDI) — picks the right import template, fills it without breaking its hidden formatting rules, generates and uploads the zip, runs the interface loader and the module import job, and works the error-correction loop until every row lands. Covers GL journal import (GL_INTERFACE) in depth. Use when bulk-loading journals, invoices, or other records into Fusion, or when an FBDI load errors out.
+
+**Triggers:** `FBDI`, `file-based data import`, `journal import`, `GL_INTERFACE`, `import journals`, `load data into fusion`, `FBDI template`, `interface loader`, `ESS import job`, `correct import errors`, `bulk load fusion`
+
+### `oracle-fusion-finance-skills:fusion-gl-and-journals`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-gl-and-journals` — or just describe the task.
+
+**What it does:** Works General Ledger in Oracle Fusion Cloud — reads the ledger and chart-of-accounts structure (segments, value sets, hierarchies, cross-validation rules), creates manual and spreadsheet (ADFdi) journals, routes them through approval, posts them, and troubleshoots unposted or rejected journals. Use when entering or fixing a journal in Fusion GL, explaining a ledger/COA setup, or diagnosing why a journal won't post.
+
+**Triggers:** `fusion journal`, `GL journal entry`, `create journal in fusion`, `ADFdi journal`, `spreadsheet journal`, `journal approval`, `post journal`, `journal won't post`, `cross-validation rule`, `chart of accounts segments`, `fusion ledger`
+
+### `oracle-fusion-finance-skills:fusion-period-close`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-period-close` — or just describe the task.
+
+**What it does:** Drives period close in Oracle Fusion Cloud — the subledger-to-GL close sequence (AP, AR, FA, projects, then GL), period statuses per module, exception sweeps (unaccounted transactions, stuck interface rows), subledger-to-GL reconciliation, and the Close Monitor/close calendar. Use when closing a period in Fusion, deciding the close order, chasing why a period won't close, or reconciling a subledger to its GL control account at close.
+
+**Triggers:** `period close fusion`, `close the period`, `period status`, `can't close period`, `close AP period`, `sweep unaccounted`, `subledger close`, `close monitor`, `period end fusion`, `exceptions preventing close`
 
 ## `banking-skills`
 
@@ -355,6 +411,60 @@ Install: `/plugin install data-analytics-bi-skills@treasury-analyst-skills`
 **What it does:** Reasons from a sample to a population with confidence intervals and hypothesis tests (t-test, chi-square, ANOVA) — choosing the right test, checking its assumptions, and interpreting p-values, effect size, and Type I/II errors correctly rather than treating "significant" as a verdict. Use when testing a claim, comparing groups, running an A/B test, or quantifying the uncertainty of an estimate from a sample.
 
 **Triggers:** `hypothesis test`, `p-value`, `statistical significance`, `confidence interval`, `t-test`, `chi-square`, `ANOVA`, `effect size`, `sampling`, `sampling distribution`, `type I error`, `type II error`, `statistical power`, `A/B test`, `significance level`, `null hypothesis`
+
+## `data-tools-skills`
+
+Practical data plumbing: Excel automation with Python, CSV/flat-file wrangling, DuckDB local analytics, PDF data extraction, REST API data pulls, and data-file hygiene.
+
+Install: `/plugin install data-tools-skills@treasury-analyst-skills`
+
+### `data-tools-skills:csv-and-flat-file-wrangling`
+
+**Invoke:** `/data-tools-skills:csv-and-flat-file-wrangling` — or just describe the task.
+
+**What it does:** Ingests real-world CSV and flat-file exports safely — detecting encodings and delimiters, surviving bank/ERP export quirks (BOMs, footers, quoted commas, leading-zero IDs, mixed date formats), validating the parsed schema, and merging files without silent row loss. Use when loading a CSV that parses wrong, combining exports from different systems, or hardening a recurring file feed.
+
+**Triggers:** `csv parsing`, `delimiter`, `encoding error`, `utf-8 vs latin-1`, `BOM`, `pipe delimited`, `fixed width file`, `load csv pandas`, `merge csv files`, `bank export csv`, `leading zeros lost`, `csv broken columns`
+
+### `data-tools-skills:data-file-hygiene`
+
+**Invoke:** `/data-tools-skills:data-file-hygiene` — or just describe the task.
+
+**What it does:** Keeps analysis files trustworthy and safe to share — naming and foldering conventions that sort correctly and explain themselves, raw/processed/output separation, lightweight versioning of data and scripts, and sanitizing sensitive data (account numbers, customer names, balances) before anything leaves your machine or enters git. Use when organizing a data project, naming recurring extract files, deciding what may be committed or emailed, or scrubbing a dataset for sharing.
+
+**Triggers:** `file naming convention`, `organize data files`, `folder structure analysis`, `version data files`, `sanitize data`, `anonymize spreadsheet`, `remove sensitive data`, `what can I commit`, `data retention files`, `raw vs processed`
+
+### `data-tools-skills:duckdb-local-analytics`
+
+**Invoke:** `/data-tools-skills:duckdb-local-analytics` — or just describe the task.
+
+**What it does:** Runs real SQL directly over local CSV, Parquet, and Excel files with DuckDB — no database server — for joins across files, aggregations on data too big for Excel, and repeatable analysis scripts, from the CLI or Python, persisting results back to files or a .duckdb database. Use when joining or aggregating local files with SQL, when a dataset chokes Excel/pandas memory, or when replacing a fragile chain of spreadsheet lookups with one query.
+
+**Triggers:** `duckdb`, `query csv with sql`, `join csv files`, `sql on parquet`, `local sql`, `read_csv_auto`, `analyze large csv`, `sql without a database`, `parquet analytics`, `out of memory pandas`
+
+### `data-tools-skills:excel-automation-python`
+
+**Invoke:** `/data-tools-skills:excel-automation-python` — or just describe the task.
+
+**What it does:** Reads, writes, and formats real Excel workbooks with Python — pandas for data in/out, openpyxl for formulas, multiple sheets, number formats, column widths, and styling — so recurring spreadsheet deliverables become a script instead of hand work. Use when automating an Excel report, converting data to a formatted .xlsx, reading a messy workbook into a DataFrame, or deciding between pandas and openpyxl.
+
+**Triggers:** `excel automation`, `openpyxl`, `write xlsx`, `read excel python`, `pandas to_excel`, `format excel with python`, `excel report script`, `xlsxwriter`, `automate spreadsheet`, `excel formulas python`
+
+### `data-tools-skills:pdf-data-extraction`
+
+**Invoke:** `/data-tools-skills:pdf-data-extraction` — or just describe the task.
+
+**What it does:** Extracts tables and text from PDFs into usable data — choosing between pdfplumber and camelot by PDF type, detecting scanned-vs-native pages, handling multi-page tables, bank-statement and invoice layouts, and validating extracted numbers against the document's own totals. Use when pulling transactions from a PDF bank statement, tabling data out of a PDF report or invoice, or when a PDF extraction comes out scrambled.
+
+**Triggers:** `extract pdf table`, `pdf to excel`, `pdfplumber`, `camelot`, `parse bank statement pdf`, `pdf invoice data`, `scanned pdf`, `OCR pdf`, `pdf text extraction`, `table extraction python`
+
+### `data-tools-skills:rest-api-data-pulls`
+
+**Invoke:** `/data-tools-skills:rest-api-data-pulls` — or just describe the task.
+
+**What it does:** Pulls data from REST APIs into files and DataFrames reliably — authentication patterns, query and field selection, pagination until exhaustion, retries with backoff for rate limits and transient failures, and flattening nested JSON — using Oracle Fusion Cloud REST APIs as the worked example. Use when extracting data from a REST API (Fusion or any SaaS), when a pull returns partial data, or when hardening a recurring API extract.
+
+**Triggers:** `rest api pull`, `call api python`, `fusion rest api`, `pagination`, `api rate limit`, `429 retry`, `requests python`, `extract data from api`, `api to csv`, `json to dataframe`, `oauth token api`
 
 ## `machine-learning-skills`
 
