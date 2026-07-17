@@ -34,6 +34,9 @@ Installed skills are namespaced, e.g. `cash-management-skills:bank-reconciliatio
 | `continuous-improvement-skills` | VSM, root-cause analysis, DMAIC, standard work, A3, kaizen & co-design |
 | `coding-agent-skills` | Python for analysts, Claude Code config, agent design, prompt engineering, git, skill authoring |
 
+**Full catalog:** [`docs/SKILLS.md`](docs/SKILLS.md) lists every skill, what it does, and the
+exact phrases that trigger it (regenerate with `python3 scripts/gen-catalog.py`).
+
 Skills are built in waves (day-job first). See the build status and design notes in
 [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
