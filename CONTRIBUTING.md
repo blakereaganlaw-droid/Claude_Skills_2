@@ -21,13 +21,16 @@ Never commit real client, bank, or account data. Sanitize to structural examples
 artifacts in `*.private.md` or `references/*.local.*` (git-ignored).
 
 ## Build status (waves)
-- **Wave 0 — Foundation:** repo scaffold, authoring standard + template, `bank-reconciliation`
-  exemplar, validator. ✅ in progress → first commit.
-- **Wave 1 — Day-job core:** `cash-management-skills` (6), `oracle-otbi-skills` (5),
+All four waves are complete: **54 skills across 9 plugins**, `validate.sh` clean.
+- **Wave 0 — Foundation:** ✅ repo scaffold, authoring standard + template, `bank-reconciliation`
+  exemplar, validator.
+- **Wave 1 — Day-job core:** ✅ `cash-management-skills` (6), `oracle-otbi-skills` (5),
   accounting core, `agent-harness-config`.
-- **Wave 2 — Adjacent domains + analysis base:** `banking-skills` (6), `finance-skills` (6),
+- **Wave 2 — Adjacent domains + analysis base:** ✅ `banking-skills` (6), `finance-skills` (6),
   accounting remainder, BI core.
-- **Wave 3 — Advanced analytics + improvement + agents:** stats, `machine-learning-skills` (6),
-  `continuous-improvement-skills` (6), coding/agents remainder.
+- **Wave 3 — Advanced analytics + improvement + agents:** ✅ statistics,
+  `machine-learning-skills` (6), `continuous-improvement-skills` (6), coding/agents remainder.
 
-Each wave is independently installable and useful.
+Each plugin is independently installable and useful. Next: tailoring skills to your real
+environment (Oracle OTBI reports, reconciliation process, chart of accounts, bank statement
+formats) via each skill's `references/your-environment.md`.

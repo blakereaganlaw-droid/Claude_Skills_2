@@ -18,8 +18,8 @@ description: >-
 - Putting a confidence interval around a sample estimate to quantify its uncertainty.
 - Not for: describing the sample you already hold (center, spread, shape) → see
   `data-analytics-bi-skills:descriptive-statistics`. For scoring a predictive model's performance →
-  see `machine-learning-skills:model-evaluation` (planned). For framing the whole improvement project
-  around the analysis → see `continuous-improvement-skills:dmaic-problem-solving` (planned).
+  see `machine-learning-skills:model-evaluation`. For framing the whole improvement project
+  around the analysis → see `continuous-improvement-skills:dmaic-problem-solving`.
 
 ## Do it
 1. **State the population claim and hypotheses first — before seeing results.** Write the null `H₀`

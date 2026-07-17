@@ -17,7 +17,7 @@ description: >-
 - Deciding what to clean or transform, or checking whether a metric is even measurable in the data.
 - Not for: actually fixing the issues you find (imputing, dedup, reshaping) → see
   `data-analytics-bi-skills:data-cleaning`. For the formal definitions and formulas behind these
-  summary statistics → see `data-analytics-bi-skills:descriptive-statistics` (planned).
+  summary statistics → see `data-analytics-bi-skills:descriptive-statistics`.
 
 ## Do it
 1. **Start from the question.** Write the decision or metric the data must support. EDA is directed
