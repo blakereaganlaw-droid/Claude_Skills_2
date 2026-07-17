@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "coding-agent-skills",
+  "description": "Python for analysts, Claude Code harness config, autonomous agent design, prompt engineering, git/code review, and authoring Agent Skills.",
+  "version": "0.1.0"
+}
