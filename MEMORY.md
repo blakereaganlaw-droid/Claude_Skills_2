@@ -49,8 +49,10 @@ Never store secrets, credentials, account numbers, or client data here.
   (user-stated for BSL_MATCHING_ENGINE, 2026-07-18)
 
 ## Project State & Decisions
-- FACT: Library state after PR #13: 100 skills across 16 plugins plus 7 plugin subagents;
-  `validate.sh` clean. (verified 2026-07-18)
+- FACT: Library state: 110 skills across 17 plugins plus 7 plugin subagents; `validate.sh`
+  clean. Newest plugin: `public-sector-treasury-skills` (8) — the public-sector/higher-ed
+  layer (GASB funds, public funds investing, escheatment, merchant/PCI, NACHA, bond
+  post-issuance, treasurer reporting, CTP prep). (verified 2026-07-18)
 - RULE: Every skill conforms to `coding-agent-skills:writing-agent-skills` — name == folder,
   third-person description ending in `Triggers:`, fixed section order (When to use → Do it →
   Why/learn → Common mistakes → Tailor → References), body < 500 lines, evals in
@@ -122,3 +124,7 @@ Never store secrets, credentials, account numbers, or client data here.
   externally-drafted-spec preference to high confidence (2nd instance); added the
   version-bump rule (plugin 0.2.0→0.3.0); fixed a validate.sh bug (bare block keys like
   `metadata:` were counted into description length). Merged/retired: none.
+- 2026-07-18 — public-sector-treasury-skills wave (8 skills, 17th plugin; library at 110).
+  Gap-driven: skills map onto the user's real artifacts (MID master → merchant/PCI, ACH
+  addenda → NACHA, stale checks → escheatment). Jurisdiction/version facts framed
+  structurally with confirm-current caveats. Updated the library-state fact. Merged: none.

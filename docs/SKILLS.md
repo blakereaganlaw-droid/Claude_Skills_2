@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **102 skills across 16 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **110 skills across 17 plugins.**
 
 ## How to trigger a skill
 
@@ -38,6 +38,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 - [`full-stack-dev-skills`](#full-stack-dev-skills) (10) — Full-stack application development with a lean-code philosophy: architecture, FastAPI backends, databases/ORM, modern dynamic frontends, realtime features, ML in production, testing strategy, and deployment.
 - [`coding-agent-skills`](#coding-agent-skills) (6) — Python for analysts, Claude Code harness config, autonomous agent design, prompt engineering, git/code review, and authoring Agent Skills.
 - [`metacognition-skills`](#metacognition-skills) (4) — Composed meta-cognition suite: hierarchical memory management, reflective learning, adaptive analysis, and knowledge crystallization for cumulative improvement across sessions.
+- [`public-sector-treasury-skills`](#public-sector-treasury-skills) (8) — Public-sector and higher-ed treasury: fund accounting (GASB), public funds investing, unclaimed property escheatment, merchant services and PCI, NACHA ACH rules, debt post-issuance compliance, treasurer reporting, and CTP exam prep.
 
 ## `cash-management-skills`
 
@@ -950,4 +951,74 @@ Install: `/plugin install metacognition-skills@treasury-analyst-skills`
 **What it does:** Runs structured self-reflection and error-analysis cycles — situation, outcome, strengths, weaknesses, root cause, lessons, actionable updates — and integrates user corrections into durable working methods, turning experience into explicit, auditable improvement instead of leaving learning implicit. Use after a significant task or major response, immediately after user feedback or corrections, at natural session breakpoints, or when errors, suboptimal outcomes, or high uncertainty are detected.
 
 **Triggers:** `reflect`, `retrospective`, `lessons learned`, `what went wrong`, `post-mortem`, `error analysis`, `self-review`, `you got this wrong`, `that's not what I meant`, `feedback`, `correction`, `improve your approach`, `do better next time`
+
+## `public-sector-treasury-skills`
+
+Public-sector and higher-ed treasury: fund accounting (GASB), public funds investing, unclaimed property escheatment, merchant services and PCI, NACHA ACH rules, debt post-issuance compliance, treasurer reporting, and CTP exam prep.
+
+Install: `/plugin install public-sector-treasury-skills@treasury-analyst-skills`
+
+### `public-sector-treasury-skills:ctp-exam-prep`
+
+**Invoke:** `/public-sector-treasury-skills:ctp-exam-prep` — or just describe the task.
+
+**What it does:** Coaches structured preparation for the Certified Treasury Professional (CTP) exam: maps the exam's domain areas to skills the analyst already exercises daily, builds a spaced-repetition study plan weighted by blueprint weight and personal weakness, generates CTP-style practice questions to drill weak areas (working capital, cash and liquidity management, capital markets, risk, treasury operations and controls, banking relationships), and teaches exam technique — always confirming blueprint and eligibility against AFP's current publications. Use when studying for the CTP, requesting practice questions, or building a certification study plan.
+
+**Triggers:** `CTP`, `certified treasury professional`, `treasury certification`, `CTP exam`, `practice questions treasury`, `study plan CTP`, `AFP certification`
+
+### `public-sector-treasury-skills:debt-post-issuance-compliance`
+
+**Invoke:** `/public-sector-treasury-skills:debt-post-issuance-compliance` — or just describe the task.
+
+**What it does:** Maintains post-issuance compliance for tax-exempt debt: arbitrage yield restriction and rebate concepts, spend-down expectations for bond proceeds, private business use monitoring of bond-financed facilities, continuing disclosure obligations (EMMA filings), record retention, and the compliance calendar. Use when monitoring bond compliance, assessing private use of a financed facility, preparing or checking continuing disclosure, or explaining arbitrage and rebate.
+
+**Triggers:** `post-issuance compliance`, `arbitrage`, `rebate`, `yield restriction`, `private business use`, `continuing disclosure`, `EMMA`, `tax-exempt bonds`, `bond compliance`, `spend-down`, `bond proceeds`
+
+### `public-sector-treasury-skills:fund-accounting-gasb`
+
+**Invoke:** `/public-sector-treasury-skills:fund-accounting-gasb` — or just describe the task.
+
+**What it does:** Applies governmental and fund accounting under GASB for public higher-ed: fund types and net-position categories (unrestricted, restricted expendable/nonexpendable), GASB vs FASB framing, restricted-fund discipline, interfund loans and transfers, and how fund restrictions drive cash and investment decisions. Use when classifying funds or net position, explaining the GASB treatment of a transaction, handling restricted monies, or reading a public university's financial statements.
+
+**Triggers:** `fund accounting`, `GASB`, `net position`, `restricted funds`, `unrestricted`, `expendable`, `fund balance`, `governmental accounting`, `public university financials`, `interfund`
+
+### `public-sector-treasury-skills:merchant-services-and-pci`
+
+**Invoke:** `/public-sector-treasury-skills:merchant-services-and-pci` — or just describe the task.
+
+**What it does:** Runs merchant card acceptance for an institution: the acquiring stack (merchant IDs/MIDs, acquirer, processor, gateways), settlement and funding flows into depository accounts, interchange and fee structures and how to read a merchant statement, chargeback and dispute handling, and PCI-DSS fundamentals (scope minimization, SAQ types, never storing PANs). Use when managing MIDs, reconciling card settlements to bank deposits, reviewing merchant fees, handling a chargeback, or answering PCI compliance questions.
+
+**Triggers:** `merchant services`, `MID`, `merchant ID`, `card settlement`, `interchange`, `merchant statement`, `chargeback`, `dispute`, `PCI`, `PCI-DSS`, `SAQ`, `card acceptance`, `gateway`, `acquirer`, `merchant fees`
+
+### `public-sector-treasury-skills:nacha-ach-rules`
+
+**Invoke:** `/public-sector-treasury-skills:nacha-ach-rules` — or just describe the task.
+
+**What it does:** Applies NACHA ACH operating-rule fundamentals from both the originator's and the receiver's seat: choosing and interpreting SEC codes (PPD, CCD, CTX, WEB, TEL), reading return codes and their timeframes, handling notifications of change (NOCs), running compliant reversals and prenotes, Same Day ACH eligibility and windows, and ODFI/RDFI responsibilities. Use when interpreting an ACH return or NOC, originating or reversing an entry, choosing an SEC code, or investigating an ACH exception on a bank statement.
+
+**Triggers:** `NACHA`, `ACH rules`, `return code`, `R01`, `NOC`, `notification of change`, `SEC code`, `PPD`, `CCD`, `WEB`, `ACH reversal`, `prenote`, `ODFI`, `RDFI`, `ACH return timeframe`, `unauthorized ACH`
+
+### `public-sector-treasury-skills:public-funds-investing`
+
+**Invoke:** `/public-sector-treasury-skills:public-funds-investing` — or just describe the task.
+
+**What it does:** Invests public and institutional funds under statutory constraint: the safety-liquidity-yield hierarchy as law rather than preference, permitted-investment statutes, collateralization of public deposits (pledged securities and state collateral pools), local government investment pools (LGIPs), delivery-versus-payment custody, and board-approved investment policies for public entities. Use when investing public funds, checking an investment or deposit for statutory compliance, collateralizing deposits over insurance limits, or evaluating an LGIP.
+
+**Triggers:** `public funds`, `permitted investments`, `collateralization`, `pledged collateral`, `collateral pool`, `LGIP`, `local government investment pool`, `public deposit`, `state statute investment`, `public investment policy`
+
+### `public-sector-treasury-skills:treasurer-reporting`
+
+**Invoke:** `/public-sector-treasury-skills:treasurer-reporting` — or just describe the task.
+
+**What it does:** Turns cash, investment, and debt data into decision-grade treasury reports for leadership and boards: the standard package (cash position and trend, investment holdings versus policy, debt profile, forecast versus actual, exceptions), narrative that explains the so-what, and cadence and depth calibrated to the audience. Use when writing a treasury report, treasurer's report, board memo, or leadership update on cash and investments.
+
+**Triggers:** `treasury report`, `board report`, `treasurer's report`, `cash report to leadership`, `investment report`, `monthly treasury package`, `executive summary cash`
+
+### `public-sector-treasury-skills:unclaimed-property-escheatment`
+
+**Invoke:** `/public-sector-treasury-skills:unclaimed-property-escheatment` — or just describe the task.
+
+**What it does:** Manages unclaimed property from stale outstanding checks and dormant balances through the escheatment lifecycle: identifying dormancy, statutory due-diligence letters, reissue-versus-report decisions, state holder reporting and remittance cycles, record-keeping, and reducing future escheatment at the source through payee data quality and e-payments. Use when handling stale or uncashed checks, preparing an unclaimed-property holder report, responding to a state inquiry or audit, or designing the escheatment process.
+
+**Triggers:** `unclaimed property`, `escheatment`, `stale checks`, `dormant`, `due diligence letter`, `state report unclaimed`, `outstanding check aging`, `remit to state`, `holder report`
 
