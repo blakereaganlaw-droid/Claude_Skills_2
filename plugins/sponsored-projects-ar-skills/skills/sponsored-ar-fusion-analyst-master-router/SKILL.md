@@ -34,6 +34,9 @@ description: >-
      the pipeline skill above is the operational view).
    - *"How are we performing / trending / what's coming?"* →
      `sponsored-projects-ar-skills:sponsored-ar-kpi-trends-forecast`.
+   - *"Who's overdue / who do we chase / aging detail?"* →
+     `sponsored-projects-ar-skills:sponsored-ar-aging-collections` (detailed aging and the
+     prioritized collections worklist; the KPI skill above is the portfolio trend view).
    - *"Summarize / build a report / what should we do?"* →
      `sponsored-projects-ar-skills:reporting-visualization-recommendations` (also the standard
      final step of any multi-part analysis).

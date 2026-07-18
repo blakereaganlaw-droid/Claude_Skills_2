@@ -12,6 +12,7 @@
 | Unbilled vs billed; WIP; billing status; draft invoices; stuck/exception invoices | `unbilled-billed-ar-wip-recon` | "how much is unbilled", "invoices in error", "billing backlog" |
 | Revenue vs invoiced; over/under-billing; unbilled balance substantiation; GL tie-out | `revenue-billing-reconciliation` | "recognized vs billed", "over billed", "substantiate unbilled" |
 | Performance, KPIs, benchmarks, trends, forecasts | `sponsored-ar-kpi-trends-forecast` | "DSO by sponsor", "aging trend", "collections forecast" |
+| Detailed aging, overdue detail, collections prioritization | `sponsored-ar-aging-collections` | "who do we chase", "aging by sponsor", "collection priority list" |
 | Summaries, dashboards, report designs, recommendations, next steps | `reporting-visualization-recommendations` | "build me a report", "executive summary", "what should we do" |
 | Risk sweep, exceptions, anomalies (any sponsor type) | `compliance-risk-anomaly` | "risk review", "anything unusual", "exception scan" |
 | Federal rules: Uniform Guidance, thresholds, allowability, Single Audit | `uniform-guidance-federal-core` | "2 CFR 200", "is this allowable", "de minimis rate" |

@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **84 skills across 13 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **85 skills across 13 plugins.**
 
 ## How to trigger a skill
 
@@ -24,7 +24,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
-- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (12) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
+- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (13) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
 - [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (6) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
@@ -205,6 +205,14 @@ Install: `/plugin install sponsored-projects-ar-skills@treasury-analyst-skills`
 **What it does:** Reconciles PPM revenue recognition against AR billing for sponsored awards from the accounting side — the documented Generate Revenue → events → invoice flow, the variance identity (recognized revenue − billed = unbilled or over-billed), funding-limit checks against contract amounts, and the unbilled-AR account roll (DR Unbilled Receivable / CR Revenue at recognition; DR Receivable / CR Unbilled Receivable at invoicing) through to GL tie-out. Use for questions about revenue vs invoiced amounts, over/under-billing, unbilled balance substantiation, or tying sponsored revenue and receivables to the GL.
 
 **Triggers:** `revenue vs billing`, `over billed`, `under billed`, `revenue reconciliation`, `unbilled receivable account`, `GL tie-out sponsored`, `recognized vs invoiced`, `revenue events`, `billing in excess`, `substantiate unbilled balance`, `project revenue reconciliation`
+
+### `sponsored-projects-ar-skills:sponsored-ar-aging-collections`
+
+**Invoke:** `/sponsored-projects-ar-skills:sponsored-ar-aging-collections` — or just describe the task.
+
+**What it does:** Performs detailed aging, DSO, and collections analysis for sponsored/grant receivables at the sponsor, contract, and project level — public-standard metrics (current/overdue/future AR, aging amounts and counts on a declared invoice-date or schedule-date basis, % overdue, average days outstanding/overdue), breakdowns by award type, business unit, ledger, and receivable GL account, sponsor concentration and late-payment risk, and cross-referencing receipts and credit-memo applications — producing a prioritized collection list with cash-flow implications. Use for overdue invoices, aging buckets, collections prioritization, or cash-flow risk questions on sponsored data.
+
+**Triggers:** `sponsored aging`, `overdue sponsor invoices`, `grant collections`, `aging buckets by sponsor`, `collection priority list`, `late paying sponsors`, `sponsor concentration`, `days overdue`, `past due grants AR`, `collections analysis`
 
 ### `sponsored-projects-ar-skills:sponsored-ar-fusion-analyst-master-router`
 
