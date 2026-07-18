@@ -20,6 +20,12 @@
       "category": "reporting"
     },
     {
+      "name": "sponsored-projects-ar-skills",
+      "source": "./plugins/sponsored-projects-ar-skills",
+      "description": "Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).",
+      "category": "finance"
+    },
+    {
       "name": "oracle-fusion-finance-skills",
       "source": "./plugins/oracle-fusion-finance-skills",
       "description": "Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.",
@@ -41,6 +47,12 @@
       "name": "finance-skills",
       "source": "./plugins/finance-skills",
       "description": "Corporate and treasury finance: time value of money, working capital, ratios, short-term investing, FX risk, and capital budgeting.",
+      "category": "finance"
+    },
+    {
+      "name": "treasury-accounting-skills",
+      "source": "./plugins/treasury-accounting-skills",
+      "description": "Advanced treasury and accounting operations: debt facilities and covenant compliance, hedging and derivatives, investment policy compliance, accruals and prepaids, intercompany accounting, and audit readiness.",
       "category": "finance"
     },
     {

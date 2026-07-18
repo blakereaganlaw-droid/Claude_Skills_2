@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **66 skills across 11 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **83 skills across 13 plugins.**
 
 ## How to trigger a skill
 
@@ -24,10 +24,12 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
+- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (11) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
 - [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (6) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
 - [`finance-skills`](#finance-skills) (6) — Corporate and treasury finance: time value of money, working capital, ratios, short-term investing, FX risk, and capital budgeting.
+- [`treasury-accounting-skills`](#treasury-accounting-skills) (6) — Advanced treasury and accounting operations: debt facilities and covenant compliance, hedging and derivatives, investment policy compliance, accruals and prepaids, intercompany accounting, and audit readiness.
 - [`data-analytics-bi-skills`](#data-analytics-bi-skills) (7) — SQL, exploratory analysis, data cleaning, statistics, inference, dashboard design, and spreadsheet modeling for business intelligence.
 - [`data-tools-skills`](#data-tools-skills) (6) — Practical data plumbing: Excel automation with Python, CSV/flat-file wrangling, DuckDB local analytics, PDF data extraction, REST API data pulls, and data-file hygiene.
 - [`machine-learning-skills`](#machine-learning-skills) (6) — Framing ML problems, time-series forecasting, supervised modeling, evaluation, feature engineering, and anomaly detection.
@@ -133,6 +135,100 @@ Install: `/plugin install oracle-otbi-skills@treasury-analyst-skills`
 **What it does:** Chooses the right OTBI subject area and columns for a reporting question, explains fact vs. dimension folders and the one-subject-area-per-analysis limit, and gives cross-pillar workarounds (BI Publisher SQL, side-by-side dashboard analyses on a shared prompt, or FDI/OAC). Covers the four Oracle Cash Management subject areas and when to use each. Use when unsure which subject area or columns to query, or when a report seems to need two subject areas or two Fusion pillars.
 
 **Triggers:** `which subject area`, `pick a subject area`, `what subject area for`, `cross-subject-area`, `join two subject areas`, `Cash Management subject area`, `single subject area limit`, `column not available`, `fact vs dimension folder`
+
+## `sponsored-projects-ar-skills`
+
+Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
+
+Install: `/plugin install sponsored-projects-ar-skills@treasury-analyst-skills`
+
+### `sponsored-projects-ar-skills:compliance-risk-anomaly`
+
+**Invoke:** `/sponsored-projects-ar-skills:compliance-risk-anomaly` — or just describe the task.
+
+**What it does:** Identifies compliance risks, exceptions, and anomalies in sponsored/grant receivables data across all sponsor types — scanning the public exception patterns (billing exceptions, holds, unapplied receipts, at-risk receipts in aging data), the sponsored-specific risks (allowability-suspect charges, funding-limit breaches, overdue-beyond-sponsor-terms), and statistical anomalies (outlier aging, DSO spikes, unusual adjustment and credit-memo volumes), then cross-checking PPM costs against AR billing for alignment. Use for audit-, risk-, or exception-focused questions on sponsored AR.
+
+**Triggers:** `sponsored AR exceptions`, `grant AR anomalies`, `billing exceptions scan`, `risk register receivables`, `unusual credit memos`, `DSO spike`, `funding limit breach`, `overdue beyond terms`, `AR risk review`, `exception report grants`, `at-risk receipts`
+
+### `sponsored-projects-ar-skills:federal-billing-cash-management`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-billing-cash-management` — or just describe the task.
+
+**What it does:** Explains federal payment methods — Letter of Credit / Payment Management System drawdowns, advances, and reimbursement under §200.305 — and how each affects unbilled AR, billed AR, cash application, and aging in Oracle Fusion PPM + Receivables analysis: distinguishing draws from invoices, monitoring the expenditure-to-draw lag, overdraw debts (§200.346), SF-270-style documentation, and why federal write-offs can't hit the award. Use when analyzing unbilled/billed transitions, cash receipts from federal sponsors, federal AR aging, or drawdown-vs-invoicing questions.
+
+**Triggers:** `LOC drawdown`, `letter of credit billing`, `PMS draw`, `payment management system`, `federal reimbursement`, `SF-270`, `expenditure to draw lag`, `federal advance payment`, `federal AR aging`, `drawdown vs invoice`, `overdraw`, `federal cash management`
+
+### `sponsored-projects-ar-skills:federal-cost-allowability`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-cost-allowability` — or just describe the task.
+
+**What it does:** Applies the Uniform Guidance cost principles to evaluate whether costs or billed amounts on federal awards are allowable, allocable, and reasonable — running the §200.403 factor tests, the §200.404 prudent-person standard, and §200.405 relative-benefit allocation, applying the special rules (administrative salaries under §200.413, equipment, travel, participant support) and the always-unallowable list (§200.426 bad debts and related collection costs), and flagging suspect items with CFR citations and recommended actions. Use when reviewing invoices, adjustments, write-offs, or cost data on federal awards, or for any "can this be charged/billed?" question.
+
+**Triggers:** `allowable cost`, `allowability`, `can we charge this to the grant`, `§200.403`, `unallowable`, `allocable`, `cost principles`, `questioned cost review`, `admin salary direct charge`, `prior approval cost`, `prudent person test`, `bill this to the award`
+
+### `sponsored-projects-ar-skills:federal-effort-reporting-basics`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-effort-reporting-basics` — or just describe the task.
+
+**What it does:** Explains the Uniform Guidance standards for charging personnel costs to federal awards (§200.430) — reasonable compensation, consistent institutional policy, records that accurately reflect total work activity and support salary distribution, budget estimates adjusted to actuals — and why unsupported effort turns into questioned costs that claw back previously billed AR. Use for questions about salary charges, effort reporting, payroll allocation, effort certification, or when federal project data shows high personnel-cost density.
+
+**Triggers:** `effort reporting`, `effort certification`, `salary allocation federal`, `§200.430`, `personnel costs grant`, `payroll charged to award`, `time and effort`, `salary cap`, `questioned personnel costs`, `effort commitment`, `charging salaries to grants`
+
+### `sponsored-projects-ar-skills:federal-sponsored-ar-compliance-risk`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-sponsored-ar-compliance-risk` — or just describe the task.
+
+**What it does:** Assesses compliance and audit risk in Receivables data for federal sponsored projects — identifying federal awards, scanning for high-risk patterns (aged federal AR, frequent adjustments/credit memos, write-offs, unbilled build-up, allowability-suspect costs), applying the §200.426 bad-debt and §200.410 questioned-cost rules to adjustments and write-off proposals, mapping Single Audit/SEFA implications, and grading documentation readiness — delivered as a prioritized risk assessment that is explicitly not an audit opinion. Use for aging analysis, exception review, write-off recommendations, or any risk-focused question on federal awards.
+
+**Triggers:** `federal AR risk`, `questioned costs`, `write off federal receivable`, `single audit exposure`, `SEFA`, `federal compliance risk`, `audit risk sponsored projects`, `federal adjustments review`, `closeout residual balance`, `subrecipient risk`, `cost sharing shortfall`
+
+### `sponsored-projects-ar-skills:fusion-ar-ppm-domain-knowledge`
+
+**Invoke:** `/sponsored-projects-ar-skills:fusion-ar-ppm-domain-knowledge` — or just describe the task.
+
+**What it does:** Provides the authoritative public-domain map of how sponsored projects data flows between Oracle Fusion PPM/Grants and Receivables — award and bill-plan types, the relevant OTBI subject areas on both sides, the PPM-to-AutoInvoice-to-AR integration and status flow, and a data-profiling routine for any uploaded sponsored-AR extract, with the standard gotchas flagged. Use as the first analytical step after the sponsored-AR router, or whenever the question is about data sources, subject areas, terminology, or column mapping.
+
+**Triggers:** `PPM subject area`, `project billing subject area`, `where does unbilled AR come from`, `AutoInvoice PPM`, `sponsored AR data model`, `map these columns`, `grants data source`, `project invoice flow`, `bill plan type`, `confirm invoice acceptance`
+
+### `sponsored-projects-ar-skills:reporting-visualization-recommendations`
+
+**Invoke:** `/sponsored-projects-ar-skills:reporting-visualization-recommendations` — or just describe the task.
+
+**What it does:** Turns sponsored-AR analysis into finished deliverables — the standard structured report (executive summary, data validation, detailed tables, visual descriptions, insights by financial/operational/compliance/strategic angle), suggested OTBI-style report patterns (AR aging by project, project invoices prior to acceptance), and actionable recommendations covering collection priorities, billing acceleration, and data quality, with multi-currency, intercompany, and partial-payment edge cases handled. Use as the final step of any sponsored-AR analysis, or when the user asks for summaries, dashboards, report designs, or next steps on sponsored/grants receivables.
+
+**Triggers:** `sponsored AR report`, `grants AR summary`, `AR dashboard for projects`, `executive summary receivables`, `OTBI report for sponsored projects`, `aging by sponsor report`, `what should we do about unbilled`, `present sponsored AR`, `next steps grants AR`
+
+### `sponsored-projects-ar-skills:sponsored-ar-fusion-analyst-master-router`
+
+**Invoke:** `/sponsored-projects-ar-skills:sponsored-ar-fusion-analyst-master-router` — or just describe the task.
+
+**What it does:** Routes and coordinates every analysis of sponsored projects, awards, and grants receivables data in Oracle Fusion Cloud (Receivables + PPM/Grants integration) — classifying the question, confirming the award/bill-plan type, requiring data or a clear description before any calculation, dispatching to the right sub-skill, and enforcing the standard output structure. Use FIRST for any sponsored-AR question, before any analysis.
+
+**Triggers:** `sponsored projects`, `grants`, `awards`, `project invoices`, `PPM receivables`, `unbilled AR`, `project contract billing`, `sponsor AR`, `grant receivables`, `award billing`, `sponsored research billing`, `grants AR analysis`
+
+### `sponsored-projects-ar-skills:sponsored-ar-kpi-trends-forecast`
+
+**Invoke:** `/sponsored-projects-ar-skills:sponsored-ar-kpi-trends-forecast` — or just describe the task.
+
+**What it does:** Computes the core KPI set for sponsored-project receivables — AR outstanding, DSO, aging distribution and turnover, receipts vs transactions, plus sponsor/project-specific measures like burn rate vs funding, invoice-to-revenue ratio, and collections effectiveness — then runs trend analysis by sponsor, project type, and award category, and builds simple disclosed- assumption forecasts, reading results from liquidity, sponsor-relationship, and budget angles. Use for performance overviews, benchmarking, trend, or forward-looking sponsored-AR questions.
+
+**Triggers:** `sponsored AR KPIs`, `DSO by sponsor`, `AR aging trend`, `collections effectiveness`, `burn rate vs funding`, `grant AR metrics`, `receivables benchmark`, `forecast collections`, `invoice to revenue ratio`, `sponsor AR performance`, `YoY AR comparison`
+
+### `sponsored-projects-ar-skills:unbilled-billed-ar-wip-recon`
+
+**Invoke:** `/sponsored-projects-ar-skills:unbilled-billed-ar-wip-recon` — or just describe the task.
+
+**What it does:** Reconciles unbilled (WIP) versus billed AR for sponsored projects and tracks the billing lifecycle — measuring pipeline by billing status (Ready to Bill, In Progress, Billed, Error), reconciling PPM revenue events against Receivables invoices, isolating holds and exceptions, and handling cost-reimbursable, letter-of-credit, and multi-project-contract edge cases. Use when the question involves work-in-progress, unbilled receivables, draft invoices, billing backlog, invoices in error, or PPM-to-AR reconciliation variances.
+
+**Triggers:** `unbilled AR`, `WIP reconciliation`, `billing status`, `draft invoices`, `billing backlog`, `invoices in error`, `ready to bill`, `PPM to AR reconciliation`, `unbilled to billed`, `billing exceptions`, `LOC billing`, `stuck invoices`
+
+### `sponsored-projects-ar-skills:uniform-guidance-federal-core`
+
+**Invoke:** `/sponsored-projects-ar-skills:uniform-guidance-federal-core` — or just describe the task.
+
+**What it does:** Provides core educational knowledge of 2 CFR Part 200 (Uniform Guidance) for federal awards — the subpart structure, post-2024 thresholds (15% de minimis F&A on MTDC, $1,000,000 Single Audit, $10,000 equipment), financial management standards (§200.302), payment standards (§200.305), cost principles and always-unallowable costs (Subpart E), and refund obligations — as context for sponsored projects billing and receivables analysis. Use for any question involving federal awards, Uniform Guidance, 2 CFR 200, cost principles, Single Audit, or when analyzing AR data for federal sponsors.
+
+**Triggers:** `uniform guidance`, `2 CFR 200`, `federal award compliance`, `cost principles`, `single audit`, `de minimis rate`, `MTDC`, `unallowable costs`, `allowability`, `federal grant rules`, `questioned costs`, `F&A rate`
 
 ## `oracle-fusion-finance-skills`
 
@@ -349,6 +445,60 @@ Install: `/plugin install finance-skills@treasury-analyst-skills`
 **What it does:** Analyzes days sales outstanding (DSO), days payable outstanding (DPO), days inventory outstanding (DIO), and the cash conversion cycle (CCC = DSO + DIO − DPO) to release cash tied up in operations, and weighs the levers and trade-offs for shortening it. Use when analyzing or improving working capital, the operating cycle, or the cash conversion cycle, or when quantifying cash freed by faster collections, leaner inventory, or longer payment terms.
 
 **Triggers:** `working capital`, `cash conversion cycle`, `CCC`, `DSO`, `DPO`, `DIO`, `days sales outstanding`, `days payable outstanding`, `days inventory outstanding`, `receivables`, `payables`, `inventory days`, `operating cycle`
+
+## `treasury-accounting-skills`
+
+Advanced treasury and accounting operations: debt facilities and covenant compliance, hedging and derivatives, investment policy compliance, accruals and prepaids, intercompany accounting, and audit readiness.
+
+Install: `/plugin install treasury-accounting-skills@treasury-analyst-skills`
+
+### `treasury-accounting-skills:accruals-and-prepaids`
+
+**Invoke:** `/treasury-accounting-skills:accruals-and-prepaids` — or just describe the task.
+
+**What it does:** Builds and maintains accrual and prepaid processes that survive audit — identifying what needs accruing at cutoff, estimating defensibly when invoices haven't arrived, running amortization schedules for prepaids, reversing correctly, true-ing up estimates against actuals, and testing cutoff so expenses land in the right period. Use when booking month-end accruals, setting up or amortizing a prepaid, investigating an expense that hit the wrong period, reviewing accrual completeness, or measuring estimate accuracy.
+
+**Triggers:** `accrual`, `accrue`, `prepaid`, `accrued expense`, `cutoff`, `amortization schedule`, `reversing entry`, `true-up`, `accrual completeness`, `expense in wrong period`, `unbilled`, `month-end accruals`
+
+### `treasury-accounting-skills:audit-readiness-and-pbc`
+
+**Invoke:** `/treasury-accounting-skills:audit-readiness-and-pbc` — or just describe the task.
+
+**What it does:** Gets finance and treasury through an external audit efficiently — running the PBC (prepared-by-client) list as a managed project, producing workpapers and reconciliations that stand alone, preparing for the cash/debt/investment areas auditors always hit (confirmations, cutoff, coverage of controls), handling walkthroughs and sample requests, and responding to findings without thrash. Use when an audit or interim fieldwork is coming, a PBC list just arrived, an auditor asks for support or a walkthrough, or a finding needs a response.
+
+**Triggers:** `audit`, `PBC list`, `prepared by client`, `auditor request`, `bank confirmation`, `walkthrough`, `audit evidence`, `workpaper`, `audit finding`, `management letter`, `interim fieldwork`, `audit readiness`, `support for the auditors`
+
+### `treasury-accounting-skills:debt-facilities-and-covenants`
+
+**Invoke:** `/treasury-accounting-skills:debt-facilities-and-covenants` — or just describe the task.
+
+**What it does:** Manages corporate debt facilities day to day — revolver draws and paydowns, term loan amortization, interest calculations (SOFR + spread, day-count conventions), availability and borrowing-base tracking, and the covenant compliance cycle: computing leverage/coverage ratios exactly as the credit agreement defines them and producing the compliance certificate. Use when drawing or repaying a facility, verifying an interest charge, computing covenants, preparing a compliance certificate, or assessing headroom.
+
+**Triggers:** `revolver draw`, `credit facility`, `term loan`, `covenant`, `leverage ratio`, `interest coverage`, `compliance certificate`, `borrowing base`, `facility availability`, `SOFR interest`, `debt covenant headroom`, `paydown`
+
+### `treasury-accounting-skills:hedging-and-derivatives`
+
+**Invoke:** `/treasury-accounting-skills:hedging-and-derivatives` — or just describe the task.
+
+**What it does:** Runs a corporate hedging program — choosing and pricing the workhorse instruments (FX forwards and swaps, interest-rate swaps, caps/collars), sizing hedges against measured exposures, executing through the trade lifecycle (quote, execute, confirm, settle), monitoring mark-to-market and counterparty exposure, and understanding hedge accounting (cash flow vs fair value designation, effectiveness, documentation) well enough to keep hedges from whipsawing earnings. Use when hedging an FX or interest-rate exposure, evaluating a forward or swap quote, rolling or unwinding a hedge, or setting up hedge accounting documentation.
+
+**Triggers:** `hedge`, `FX forward`, `forward points`, `interest rate swap`, `cap`, `collar`, `hedge accounting`, `cash flow hedge`, `mark to market`, `unwind hedge`, `hedge effectiveness`, `ISDA`, `notional`, `hedge ratio`
+
+### `treasury-accounting-skills:intercompany-accounting`
+
+**Invoke:** `/treasury-accounting-skills:intercompany-accounting` — or just describe the task.
+
+**What it does:** Keeps intercompany accounting clean across entities — structuring IC transactions (billing, loans, allocations) with agreements behind them, booking both sides symmetrically, reconciling IC balances so they mirror each other, settling per policy, handling FX on cross-currency balances, and making consolidation eliminations net to zero. Use when booking or reconciling intercompany transactions, chasing an out-of-balance IC account, setting up an IC billing or loan arrangement, or preparing eliminations for consolidation.
+
+**Triggers:** `intercompany`, `IC reconciliation`, `intercompany out of balance`, `elimination entries`, `IC billing`, `intercompany loan`, `transfer pricing entry`, `IC mismatch`, `consolidation eliminations`, `due to due from`, `intercompany settlement`
+
+### `treasury-accounting-skills:investment-policy-compliance`
+
+**Invoke:** `/treasury-accounting-skills:investment-policy-compliance` — or just describe the task.
+
+**What it does:** Writes and enforces a corporate investment policy for excess cash — permitted instruments and ratings, concentration and counterparty limits, maturity/liquidity tiers matched to the cash forecast, and the monthly compliance check that proves the portfolio sits inside policy, plus the exception/waiver process when it doesn't. Use when drafting or updating an investment policy statement, checking holdings against policy, setting counterparty or concentration limits, or handling a rating downgrade or policy breach.
+
+**Triggers:** `investment policy`, `IPS`, `permitted investments`, `counterparty limit`, `concentration limit`, `rating downgrade`, `policy compliance check`, `excess cash investment`, `money market fund policy`, `portfolio compliance`, `investment guidelines`
 
 ## `data-analytics-bi-skills`
 
