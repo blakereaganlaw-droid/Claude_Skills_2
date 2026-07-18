@@ -80,6 +80,12 @@
       "category": "operations"
     },
     {
+      "name": "board-of-advisors-skills",
+      "source": "./plugins/board-of-advisors-skills",
+      "description": "Multi-agent Board of Advisors code review: five read-only specialist subagents plus a board-chair synthesizer, orchestrated by the board-review skill into a ranked, goal-preserving optimization report.",
+      "category": "development"
+    },
+    {
       "name": "coding-agent-skills",
       "source": "./plugins/coding-agent-skills",
       "description": "Python for analysts, Claude Code harness config, autonomous agent design, prompt engineering, git/code review, and authoring Agent Skills.",
