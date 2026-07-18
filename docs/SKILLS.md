@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **95 skills across 15 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **96 skills across 15 plugins.**
 
 ## How to trigger a skill
 
@@ -25,7 +25,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
 - [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (13) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
-- [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (6) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.
+- [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (7) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, period close, plus the fusion-treasury-architect subagent and its consult skill for configuration-specific guidance.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
 - [`finance-skills`](#finance-skills) (6) — Corporate and treasury finance: time value of money, working capital, ratios, short-term investing, FX risk, and capital budgeting.
@@ -250,7 +250,7 @@ Install: `/plugin install sponsored-projects-ar-skills@treasury-analyst-skills`
 
 ## `oracle-fusion-finance-skills`
 
-Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.
+Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, period close, plus the fusion-treasury-architect subagent and its consult skill for configuration-specific guidance.
 
 Install: `/plugin install oracle-fusion-finance-skills@treasury-analyst-skills`
 
@@ -269,6 +269,14 @@ Install: `/plugin install oracle-fusion-finance-skills@treasury-analyst-skills`
 **What it does:** Runs Oracle Fusion Receivables — creating and importing AR transactions (invoices, credit memos), applying receipts manually and through lockbox/automatch, keeping unapplied and on-account cash honest, and working aging and the Advanced Collections dunning/strategy cycle. Use when booking or fixing an AR transaction in Fusion, applying or troubleshooting receipts, reconciling unapplied cash, or setting up aging and collections follow-up.
 
 **Triggers:** `fusion AR`, `receivables invoice`, `apply receipt`, `unapplied receipt`, `on-account`, `lockbox`, `autoapply`, `credit memo fusion`, `AR aging`, `collections fusion`, `dunning`, `receipt application`, `customer balance`
+
+### `oracle-fusion-finance-skills:fusion-architect-consult`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-architect-consult` — or just describe the task.
+
+**What it does:** Consults the fusion-treasury-architect subagent — an elite Oracle Cloud Fusion Financials and Treasury architect persona — for expert, configuration-specific answers: exact FSM task names and Redwood UI navigation, COA/value-set/CVR design, SLA mapping and journal line rules, bank statement parsing (BAI2/CAMT.053/MT940 with segment-level detail), reconciliation rule sets and tolerances, AutoInvoice/lockbox/PPR configuration, and structured error troubleshooting (root cause → diagnostics → resolution). Use for deep Fusion configuration design, integration architecture, or error diagnosis beyond the teaching skills.
+
+**Triggers:** `fusion configuration`, `FSM task`, `redwood navigation`, `configure SLA`, `CVR design`, `BAI2 parsing rule`, `reconciliation rule setup`, `AutoInvoice grouping rule`, `PPR setup`, `fusion error troubleshooting`, `lockbox configuration`, `fusion architect`
 
 ### `oracle-fusion-finance-skills:fusion-cash-management-module`
 

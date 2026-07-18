@@ -27,7 +27,7 @@ Installed skills are namespaced, e.g. `cash-management-skills:bank-reconciliatio
 | --- | --- |
 | `cash-management-skills` | Cash positioning, bank reconciliation, forecasting, liquidity, controls, netting |
 | `oracle-otbi-skills` | Building OTBI reports in Oracle Fusion Cloud, with deep Cash Management coverage |
-| `oracle-fusion-finance-skills` | Fusion Financials modules: GL/journals, FBDI loading, AP invoice-to-pay, AR/collections, Cash Management module, period close |
+| `oracle-fusion-finance-skills` | Fusion Financials modules: GL/journals, FBDI loading, AP invoice-to-pay, AR/collections, Cash Management module, period close + `fusion-treasury-architect` subagent for configuration-specific consults |
 | `sponsored-projects-ar-skills` | Sponsored/grants AR across Fusion Receivables + PPM: router, domain map, unbilled/WIP recon, KPIs & forecasts, reporting, federal compliance (Uniform Guidance, LOC draws, effort) |
 | `banking-skills` | Payment rails, account structures, statement formats, fees, connectivity, KYC/AML |
 | `accounting-skills` | Double-entry, journals, chart of accounts, close, reconciliations, statements |
@@ -52,10 +52,11 @@ Skills are built in waves (day-job first). See the build status and design notes
 - One repo that is both a **plugin marketplace** (`.claude-plugin/marketplace.json`) and the home
   for fifteen **plugins** under `plugins/`, mirroring Anthropic's own
   [`anthropics/skills`](https://github.com/anthropics/skills) layout.
-- One plugin (`board-of-advisors-skills`) also ships **subagents** in its `agents/` folder —
-  after install they appear in `/agents` namespaced as `board-of-advisors-skills:<name>`
-  (e.g. `board-of-advisors-skills:board-chair`) and are orchestrated by the
-  `board-review` skill.
+- Two plugins also ship **subagents** in their `agents/` folders — after install they appear
+  in `/agents` namespaced as `<plugin>:<name>`: the `board-of-advisors-skills` review swarm
+  (orchestrated by the `board-review` skill) and
+  `oracle-fusion-finance-skills:fusion-treasury-architect` (consulted by
+  `fusion-architect-consult`).
 - The authoring standard lives in the `coding-agent-skills:writing-agent-skills` skill; its
   template is `plugins/coding-agent-skills/skills/writing-agent-skills/assets/SKILL.template.md`.
 - `bash scripts/validate.sh` lints every skill and manifest.
