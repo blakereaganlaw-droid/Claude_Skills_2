@@ -21,7 +21,7 @@ Never commit real client, bank, or account data. Sanitize to structural examples
 artifacts in `*.private.md` or `references/*.local.*` (git-ignored).
 
 ## Build status (waves)
-All seven waves are complete: **84 skills across 13 plugins**, `validate.sh` clean.
+All seven waves are complete: **85 skills across 13 plugins**, `validate.sh` clean.
 - **Wave 0 — Foundation:** ✅ repo scaffold, authoring standard + template, `bank-reconciliation`
   exemplar, validator.
 - **Wave 1 — Day-job core:** ✅ `cash-management-skills` (6), `oracle-otbi-skills` (5),
@@ -36,12 +36,13 @@ All seven waves are complete: **84 skills across 13 plugins**, `validate.sh` cle
 - **Wave 5 — Advanced treasury & accounting ops:** ✅ `treasury-accounting-skills` (6): debt
   facilities & covenants, hedging & derivatives, investment policy compliance, accruals &
   prepaids, intercompany accounting, audit readiness & PBC.
-- **Wave 6 — Sponsored projects AR:** ✅ `sponsored-projects-ar-skills` (12): master router,
+- **Wave 6 — Sponsored projects AR:** ✅ `sponsored-projects-ar-skills` (13): master router,
   PPM-to-AR domain knowledge, unbilled/billed WIP reconciliation, revenue-to-billing
-  reconciliation & GL tie-out, KPIs & trend forecasts, reporting & recommendations, compliance
-  risk & anomaly scanning, plus federal compliance — Uniform Guidance core, federal
-  billing/cash management (LOC/PMS draws), effort reporting basics, cost allowability
-  screening, and compliance/audit risk assessment.
+  reconciliation & GL tie-out, KPIs & trend forecasts, detailed aging & collections
+  prioritization, reporting & recommendations, compliance risk & anomaly scanning, plus
+  federal compliance — Uniform Guidance core, federal billing/cash management (LOC/PMS
+  draws), effort reporting basics, cost allowability screening, and compliance/audit risk
+  assessment.
 
 Each plugin is independently installable and useful. Next: tailoring skills to your real
 environment (Oracle OTBI reports, reconciliation process, chart of accounts, bank statement

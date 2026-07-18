@@ -20,8 +20,10 @@ description: >-
 - Benchmarking sponsors/projects against each other or over time, and simple forecasting of
   collections or DSO.
 - Not for: the unbilled pipeline mechanics behind the numbers → see
-  `sponsored-projects-ar-skills:unbilled-billed-ar-wip-recon`. For serious forecasting models →
-  see `machine-learning-skills:time-series-forecasting`. Enter via the router
+  `sponsored-projects-ar-skills:unbilled-billed-ar-wip-recon`. Detailed aging and the
+  prioritized collections worklist → see
+  `sponsored-projects-ar-skills:sponsored-ar-aging-collections`. For serious forecasting
+  models → see `machine-learning-skills:time-series-forecasting`. Enter via the router
   (`sponsored-projects-ar-skills:sponsored-ar-fusion-analyst-master-router`).
 
 ## Do it
