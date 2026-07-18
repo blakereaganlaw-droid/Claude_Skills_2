@@ -102,6 +102,12 @@
       "source": "./plugins/metacognition-skills",
       "description": "Composed meta-cognition suite: hierarchical memory management, reflective learning, adaptive analysis, and knowledge crystallization for cumulative improvement across sessions.",
       "category": "development"
+    },
+    {
+      "name": "public-sector-treasury-skills",
+      "source": "./plugins/public-sector-treasury-skills",
+      "description": "Public-sector and higher-ed treasury: fund accounting (GASB), public funds investing, unclaimed property escheatment, merchant services and PCI, NACHA ACH rules, debt post-issuance compliance, treasurer reporting, and CTP exam prep.",
+      "category": "finance"
     }
   ]
 }

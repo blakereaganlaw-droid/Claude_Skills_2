@@ -39,8 +39,9 @@ Never store secrets, credentials, account numbers, or client data here.
 - PREFERENCE: The user sometimes supplies externally-drafted skill specs (e.g. a Grok-authored
   persona skill) — adapt them to the house standard (name+description frontmatter with extras
   under `metadata`, fixed section order, depth pushed to references/, evals file) and preserve
-  the source's intent; never commit the draft verbatim. (evidence: elite-python-engineer,
-  2026-07-18; confidence: medium — one instance)
+  the source's intent; never commit the draft verbatim. (evidence: elite-python-engineer +
+  oracle-fusion-financials-architect, both 2026-07-18; confidence: high — persona skills
+  keep the persona, stated in a third-person "Acts as ..." description)
 - PREFERENCE: Data-sensitivity posture for engine variants: bank-originated files (BAI2/MT940/
   camt/SWIFT) prohibited as a hard guard, and no potentially sensitive data retained — purge
   staged inputs post-run, scrub 9+-digit runs in logs/manifests (keep YYYYMMDD stamps), git
@@ -48,14 +49,18 @@ Never store secrets, credentials, account numbers, or client data here.
   (user-stated for BSL_MATCHING_ENGINE, 2026-07-18)
 
 ## Project State & Decisions
-- FACT: Library state after PR #13: 100 skills across 16 plugins plus 7 plugin subagents;
-  `validate.sh` clean. (verified 2026-07-18)
+- FACT: Library state: 110 skills across 17 plugins plus 7 plugin subagents; `validate.sh`
+  clean. Newest plugin: `public-sector-treasury-skills` (8) — the public-sector/higher-ed
+  layer (GASB funds, public funds investing, escheatment, merchant/PCI, NACHA, bond
+  post-issuance, treasurer reporting, CTP prep). (verified 2026-07-18)
 - RULE: Every skill conforms to `coding-agent-skills:writing-agent-skills` — name == folder,
   third-person description ending in `Triggers:`, fixed section order (When to use → Do it →
   Why/learn → Common mistakes → Tailor → References), body < 500 lines, evals in
   `evals/<plugin>/<skill>.md`. (house standard, Wave 0 decision)
 - RULE: After changing skills, regenerate the catalog (`python3 scripts/gen-catalog.py`) and run
   `bash scripts/validate.sh` + `claude plugin validate` before committing. (established practice)
+- RULE: Bump the plugin's `version` in its plugin.json whenever its content changes — installed
+  copies only receive updates on a version bump. (adopted 2026-07-18; recorded in CONTRIBUTING)
 - FACT: PRs in this repo are squash-merged — branch commits are not ancestors of main after
   merge; equivalence must be checked by content diff, not ancestry. (evidence: PR #1/#2 merges;
   confidence: high)
@@ -115,3 +120,11 @@ Never store secrets, credentials, account numbers, or client data here.
   1 rule (no pandas on reference-bearing exports). Deliverable: OG_Recon recreated bank-data-
   free with BankDataProhibited guard + data_guard purge/scrub/hygiene; 80/80 tests; source
   repo verified untouched. Merged/retired: none. Flagged: no contradictions.
+- 2026-07-18 — oracle-fusion-financials-architect (Thales persona, 102nd skill). Raised
+  externally-drafted-spec preference to high confidence (2nd instance); added the
+  version-bump rule (plugin 0.2.0→0.3.0); fixed a validate.sh bug (bare block keys like
+  `metadata:` were counted into description length). Merged/retired: none.
+- 2026-07-18 — public-sector-treasury-skills wave (8 skills, 17th plugin; library at 110).
+  Gap-driven: skills map onto the user's real artifacts (MID master → merchant/PCI, ACH
+  addenda → NACHA, stale checks → escheatment). Jurisdiction/version facts framed
+  structurally with confirm-current caveats. Updated the library-state fact. Merged: none.

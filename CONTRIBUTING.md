@@ -15,6 +15,8 @@ Start any new skill by copying
   `Tailor to your environment` → `References` → (optional) `Scripts`. Keep the body under 500 lines.
 - Evals go in `evals/<plugin>/<skill>.md` (positive trigger, near-miss, quality rubric) — never in SKILL.md.
 - Validate with `bash scripts/validate.sh` and `claude plugin validate plugins/<plugin>`.
+- **Bump the plugin's `version` in its `plugin.json` whenever its content changes** — installed
+  copies only receive updates on a version bump (`claude plugin update` trusts the version).
 
 ## Privacy
 Never commit real client, bank, or account data. Sanitize to structural examples; keep raw
