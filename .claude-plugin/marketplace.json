@@ -20,6 +20,12 @@
       "category": "reporting"
     },
     {
+      "name": "oracle-fusion-finance-skills",
+      "source": "./plugins/oracle-fusion-finance-skills",
+      "description": "Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.",
+      "category": "finance"
+    },
+    {
       "name": "banking-skills",
       "source": "./plugins/banking-skills",
       "description": "Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.",
@@ -41,6 +47,12 @@
       "name": "data-analytics-bi-skills",
       "source": "./plugins/data-analytics-bi-skills",
       "description": "SQL, exploratory analysis, data cleaning, statistics, inference, dashboard design, and spreadsheet modeling for business intelligence.",
+      "category": "data"
+    },
+    {
+      "name": "data-tools-skills",
+      "source": "./plugins/data-tools-skills",
+      "description": "Practical data plumbing: Excel automation with Python, CSV/flat-file wrangling, DuckDB local analytics, PDF data extraction, REST API data pulls, and data-file hygiene.",
       "category": "data"
     },
     {
