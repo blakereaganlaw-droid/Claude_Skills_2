@@ -31,6 +31,7 @@ Installed skills are namespaced, e.g. `cash-management-skills:bank-reconciliatio
 | `banking-skills` | Payment rails, account structures, statement formats, fees, connectivity, KYC/AML |
 | `accounting-skills` | Double-entry, journals, chart of accounts, close, reconciliations, statements |
 | `finance-skills` | Time value of money, working capital, ratios, short-term investing, FX, capital budgeting |
+| `treasury-accounting-skills` | Debt facilities & covenants, hedging & derivatives, investment policy compliance, accruals & prepaids, intercompany accounting, audit readiness |
 | `data-analytics-bi-skills` | SQL, EDA, cleaning, statistics, inference, dashboards, spreadsheet modeling |
 | `data-tools-skills` | Excel automation with Python, CSV wrangling, DuckDB, PDF extraction, REST API pulls, file hygiene |
 | `machine-learning-skills` | Problem framing, time-series forecasting, supervised modeling, evaluation, features, anomalies |
@@ -46,7 +47,7 @@ Skills are built in waves (day-job first). See the build status and design notes
 ## How it's built
 
 - One repo that is both a **plugin marketplace** (`.claude-plugin/marketplace.json`) and the home
-  for eleven **plugins** under `plugins/`, mirroring Anthropic's own
+  for twelve **plugins** under `plugins/`, mirroring Anthropic's own
   [`anthropics/skills`](https://github.com/anthropics/skills) layout.
 - The authoring standard lives in the `coding-agent-skills:writing-agent-skills` skill; its
   template is `plugins/coding-agent-skills/skills/writing-agent-skills/assets/SKILL.template.md`.

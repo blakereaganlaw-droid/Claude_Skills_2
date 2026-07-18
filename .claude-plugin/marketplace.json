@@ -44,6 +44,12 @@
       "category": "finance"
     },
     {
+      "name": "treasury-accounting-skills",
+      "source": "./plugins/treasury-accounting-skills",
+      "description": "Advanced treasury and accounting operations: debt facilities and covenant compliance, hedging and derivatives, investment policy compliance, accruals and prepaids, intercompany accounting, and audit readiness.",
+      "category": "finance"
+    },
+    {
       "name": "data-analytics-bi-skills",
       "source": "./plugins/data-analytics-bi-skills",
       "description": "SQL, exploratory analysis, data cleaning, statistics, inference, dashboard design, and spreadsheet modeling for business intelligence.",
