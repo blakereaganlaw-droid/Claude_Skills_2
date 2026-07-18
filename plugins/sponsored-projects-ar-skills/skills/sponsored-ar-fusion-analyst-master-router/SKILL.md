@@ -34,6 +34,9 @@ description: >-
    - *"Summarize / build a report / what should we do?"* →
      `sponsored-projects-ar-skills:reporting-visualization-recommendations` (also the standard
      final step of any multi-part analysis).
+   - *"What's risky / broken / unusual?" (any sponsor type)* →
+     `sponsored-projects-ar-skills:compliance-risk-anomaly` (exceptions, anomalies, funding
+     limits, cross-pillar checks; routes federal items onward to the federal risk skill).
    - *Federal-sponsor questions get the compliance layer too:* Uniform Guidance frame,
      thresholds, allowability →
      `sponsored-projects-ar-skills:uniform-guidance-federal-core`; draws/advances/reimbursement

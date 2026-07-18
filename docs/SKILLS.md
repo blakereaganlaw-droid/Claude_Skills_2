@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **82 skills across 13 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **83 skills across 13 plugins.**
 
 ## How to trigger a skill
 
@@ -24,7 +24,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
-- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (10) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
+- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (11) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
 - [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (6) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
@@ -141,6 +141,14 @@ Install: `/plugin install oracle-otbi-skills@treasury-analyst-skills`
 Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
 
 Install: `/plugin install sponsored-projects-ar-skills@treasury-analyst-skills`
+
+### `sponsored-projects-ar-skills:compliance-risk-anomaly`
+
+**Invoke:** `/sponsored-projects-ar-skills:compliance-risk-anomaly` — or just describe the task.
+
+**What it does:** Identifies compliance risks, exceptions, and anomalies in sponsored/grant receivables data across all sponsor types — scanning the public exception patterns (billing exceptions, holds, unapplied receipts, at-risk receipts in aging data), the sponsored-specific risks (allowability-suspect charges, funding-limit breaches, overdue-beyond-sponsor-terms), and statistical anomalies (outlier aging, DSO spikes, unusual adjustment and credit-memo volumes), then cross-checking PPM costs against AR billing for alignment. Use for audit-, risk-, or exception-focused questions on sponsored AR.
+
+**Triggers:** `sponsored AR exceptions`, `grant AR anomalies`, `billing exceptions scan`, `risk register receivables`, `unusual credit memos`, `DSO spike`, `funding limit breach`, `overdue beyond terms`, `AR risk review`, `exception report grants`, `at-risk receipts`
 
 ### `sponsored-projects-ar-skills:federal-billing-cash-management`
 
