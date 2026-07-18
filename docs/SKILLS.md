@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **81 skills across 13 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **82 skills across 13 plugins.**
 
 ## How to trigger a skill
 
@@ -24,7 +24,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
-- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (9) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
+- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (10) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
 - [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (6) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
@@ -149,6 +149,14 @@ Install: `/plugin install sponsored-projects-ar-skills@treasury-analyst-skills`
 **What it does:** Explains federal payment methods — Letter of Credit / Payment Management System drawdowns, advances, and reimbursement under §200.305 — and how each affects unbilled AR, billed AR, cash application, and aging in Oracle Fusion PPM + Receivables analysis: distinguishing draws from invoices, monitoring the expenditure-to-draw lag, overdraw debts (§200.346), SF-270-style documentation, and why federal write-offs can't hit the award. Use when analyzing unbilled/billed transitions, cash receipts from federal sponsors, federal AR aging, or drawdown-vs-invoicing questions.
 
 **Triggers:** `LOC drawdown`, `letter of credit billing`, `PMS draw`, `payment management system`, `federal reimbursement`, `SF-270`, `expenditure to draw lag`, `federal advance payment`, `federal AR aging`, `drawdown vs invoice`, `overdraw`, `federal cash management`
+
+### `sponsored-projects-ar-skills:federal-cost-allowability`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-cost-allowability` — or just describe the task.
+
+**What it does:** Applies the Uniform Guidance cost principles to evaluate whether costs or billed amounts on federal awards are allowable, allocable, and reasonable — running the §200.403 factor tests, the §200.404 prudent-person standard, and §200.405 relative-benefit allocation, applying the special rules (administrative salaries under §200.413, equipment, travel, participant support) and the always-unallowable list (§200.426 bad debts and related collection costs), and flagging suspect items with CFR citations and recommended actions. Use when reviewing invoices, adjustments, write-offs, or cost data on federal awards, or for any "can this be charged/billed?" question.
+
+**Triggers:** `allowable cost`, `allowability`, `can we charge this to the grant`, `§200.403`, `unallowable`, `allocable`, `cost principles`, `questioned cost review`, `admin salary direct charge`, `prior approval cost`, `prudent person test`, `bill this to the award`
 
 ### `sponsored-projects-ar-skills:federal-effort-reporting-basics`
 

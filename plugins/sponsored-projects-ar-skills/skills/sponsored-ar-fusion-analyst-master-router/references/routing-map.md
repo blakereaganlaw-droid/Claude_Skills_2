@@ -15,6 +15,7 @@
 | Federal rules: Uniform Guidance, thresholds, allowability, Single Audit | `uniform-guidance-federal-core` | "2 CFR 200", "is this allowable", "de minimis rate" |
 | Federal money movement: LOC/PMS draws, advances, reimbursement, federal aging | `federal-billing-cash-management` | "drawdown", "SF-270", "expenditure to draw lag" |
 | Salary/effort charging on federal awards | `federal-effort-reporting-basics` | "effort certification", "salary allocation", "§200.430" |
+| Item-level "can this be charged/billed?" screening | `federal-cost-allowability` | "is this allowable", "charge this to the grant", "admin salary direct" |
 | Federal risk: questioned costs, write-offs, Single Audit exposure | `federal-sponsored-ar-compliance-risk` | "can we write this off", "audit risk", "SEFA" |
 Multi-part questions run the chain: domain-knowledge (profile) → recon and/or KPI (analyze) →
 reporting (deliver). The router owns sequencing and the final structure.

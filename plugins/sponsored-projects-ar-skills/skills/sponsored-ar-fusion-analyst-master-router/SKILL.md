@@ -39,6 +39,8 @@ description: >-
      `sponsored-projects-ar-skills:uniform-guidance-federal-core`; draws/advances/reimbursement
      and federal aging → `sponsored-projects-ar-skills:federal-billing-cash-management`;
      salary/effort charges → `sponsored-projects-ar-skills:federal-effort-reporting-basics`;
+     "can this cost be charged/billed?" item screening →
+     `sponsored-projects-ar-skills:federal-cost-allowability`;
      risk assessment, write-offs, questioned costs, Single Audit exposure →
      `sponsored-projects-ar-skills:federal-sponsored-ar-compliance-risk`.
 2. **Confirm the award/bill-plan type up front — it changes every downstream answer.**

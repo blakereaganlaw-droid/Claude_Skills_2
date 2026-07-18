@@ -56,8 +56,9 @@ description: >-
    the checklist and the questioned-cost math.
 6. **Deliver concisely:** the standard explained, the red-flag scan of the data at hand, the
    AR-impact statement (what's at risk if support fails), and a pointer to the allowability
-   frame (`sponsored-projects-ar-skills:uniform-guidance-federal-core`) — with the standing
-   disclaimer that the regulation, agency terms, and institutional policy govern.
+   layer — item screening via `sponsored-projects-ar-skills:federal-cost-allowability`, the
+   broader frame via `sponsored-projects-ar-skills:uniform-guidance-federal-core` — with the
+   standing disclaimer that the regulation, agency terms, and institutional policy govern.
 
 ## Why / learn
 Effort is where federal cost compliance is won or lost for one structural reason: salaries are
