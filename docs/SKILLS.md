@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **54 skills across 9 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **58 skills across 10 plugins.**
 
 ## How to trigger a skill
 
@@ -31,6 +31,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 - [`machine-learning-skills`](#machine-learning-skills) (6) — Framing ML problems, time-series forecasting, supervised modeling, evaluation, feature engineering, and anomaly detection.
 - [`continuous-improvement-skills`](#continuous-improvement-skills) (6) — Lean, Toyota Production System, Six Sigma, and co-design: value-stream mapping, root-cause analysis, DMAIC, standard work, A3, and kaizen.
 - [`coding-agent-skills`](#coding-agent-skills) (6) — Python for analysts, Claude Code harness config, autonomous agent design, prompt engineering, git/code review, and authoring Agent Skills.
+- [`metacognition-skills`](#metacognition-skills) (4) — Composed meta-cognition suite: hierarchical memory management, reflective learning, adaptive analysis, and knowledge crystallization for cumulative improvement across sessions.
 
 ## `cash-management-skills`
 
@@ -517,4 +518,42 @@ Install: `/plugin install coding-agent-skills@treasury-analyst-skills`
 **What it does:** Authors and reviews Agent Skills (SKILL.md files) to this library's "do + teach" house standard and the open Agent Skills spec — correct frontmatter, discoverable descriptions, progressive disclosure, and privacy-safe tailoring. Use when creating a new skill, editing an existing one, reviewing a skill for quality, or setting up a new plugin in this repo.
 
 **Triggers:** `write a skill`, `new skill`, `SKILL.md`, `authoring standard`, `skill description`, `add a skill`, `review a skill`, `do and teach`
+
+## `metacognition-skills`
+
+Composed meta-cognition suite: hierarchical memory management, reflective learning, adaptive analysis, and knowledge crystallization for cumulative improvement across sessions.
+
+Install: `/plugin install metacognition-skills@treasury-analyst-skills`
+
+### `metacognition-skills:dynamic-analysis-engine`
+
+**Invoke:** `/metacognition-skills:dynamic-analysis-engine` — or just describe the task.
+
+**What it does:** Performs adaptive, iterative, hypothesis-driven analysis of data (tabular, numerical, logs, datasets) or text (documents, narratives, arguments, codebases) — orienting on the material, decomposing into prioritized sub-questions, mixing quantitative and qualitative methods, testing explicit hypotheses with code, controlling its own depth, and synthesizing findings with calibrated confidence and stated limitations. Use for any non-trivial analysis where the path is not obvious upfront and depth, methods, or framing should adapt to what emerges.
+
+**Triggers:** `analyze this`, `deep analysis`, `investigate`, `dig into this data`, `what is driving`, `explore this dataset`, `form a hypothesis`, `root cause the numbers`, `multi-angle analysis`, `iterative analysis`, `adaptive analysis`, `why did this change`
+
+### `metacognition-skills:hierarchical-memory-manager`
+
+**Invoke:** `/metacognition-skills:hierarchical-memory-manager` — or just describe the task.
+
+**What it does:** Maintains multi-layered, actively curated memory across sessions and long contexts — Working (current task state), Episodic (timestamped events and decisions), and Semantic (durable facts, preferences, lessons) — with periodic compaction, contradiction detection, and progressive disclosure, structuring native memory, MEMORY.md, and project files rather than replacing them. Use at session start, during long multi-turn work, when context grows large, when past information is referenced, or when asked to remember something.
+
+**Triggers:** `remember this`, `memory`, `what did we decide`, `last session`, `continuity`, `compact the context`, `working memory`, `episodic memory`, `semantic memory`, `MEMORY.md`, `memory layers`, `save for later`
+
+### `metacognition-skills:knowledge-crystallizer`
+
+**Invoke:** `/metacognition-skills:knowledge-crystallizer` — or just describe the task.
+
+**What it does:** Extracts, validates, and integrates durable insights from analysis, reflection, and experience into structured semantic memory and evolving working methods — harvesting candidate insights, checking them against existing knowledge for consistency and evidence strength, distilling them into atomic well-scoped entries, integrating with an audit trail, and pruning redundant or stale items. Use after significant analysis or reflection cycles, when a pattern recurs across interactions, at session end, or when consolidating lessons into permanent knowledge or skill updates.
+
+**Triggers:** `crystallize`, `consolidate knowledge`, `distill lessons`, `save what we learned`, `make this permanent`, `update working methods`, `clean up the knowledge base`, `merge duplicate notes`, `retire stale facts`, `capability map`
+
+### `metacognition-skills:reflective-learner`
+
+**Invoke:** `/metacognition-skills:reflective-learner` — or just describe the task.
+
+**What it does:** Runs structured self-reflection and error-analysis cycles — situation, outcome, strengths, weaknesses, root cause, lessons, actionable updates — and integrates user corrections into durable working methods, turning experience into explicit, auditable improvement instead of leaving learning implicit. Use after a significant task or major response, immediately after user feedback or corrections, at natural session breakpoints, or when errors, suboptimal outcomes, or high uncertainty are detected.
+
+**Triggers:** `reflect`, `retrospective`, `lessons learned`, `what went wrong`, `post-mortem`, `error analysis`, `self-review`, `you got this wrong`, `that's not what I meant`, `feedback`, `correction`, `improve your approach`, `do better next time`
 

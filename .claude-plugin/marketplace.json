@@ -60,6 +60,12 @@
       "source": "./plugins/coding-agent-skills",
       "description": "Python for analysts, Claude Code harness config, autonomous agent design, prompt engineering, git/code review, and authoring Agent Skills.",
       "category": "development"
+    },
+    {
+      "name": "metacognition-skills",
+      "source": "./plugins/metacognition-skills",
+      "description": "Composed meta-cognition suite: hierarchical memory management, reflective learning, adaptive analysis, and knowledge crystallization for cumulative improvement across sessions.",
+      "category": "development"
     }
   ]
 }
