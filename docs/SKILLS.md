@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **72 skills across 12 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **80 skills across 13 plugins.**
 
 ## How to trigger a skill
 
@@ -24,6 +24,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
+- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (8) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
 - [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (6) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
@@ -134,6 +135,76 @@ Install: `/plugin install oracle-otbi-skills@treasury-analyst-skills`
 **What it does:** Chooses the right OTBI subject area and columns for a reporting question, explains fact vs. dimension folders and the one-subject-area-per-analysis limit, and gives cross-pillar workarounds (BI Publisher SQL, side-by-side dashboard analyses on a shared prompt, or FDI/OAC). Covers the four Oracle Cash Management subject areas and when to use each. Use when unsure which subject area or columns to query, or when a report seems to need two subject areas or two Fusion pillars.
 
 **Triggers:** `which subject area`, `pick a subject area`, `what subject area for`, `cross-subject-area`, `join two subject areas`, `Cash Management subject area`, `single subject area limit`, `column not available`, `fact vs dimension folder`
+
+## `sponsored-projects-ar-skills`
+
+Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
+
+Install: `/plugin install sponsored-projects-ar-skills@treasury-analyst-skills`
+
+### `sponsored-projects-ar-skills:federal-billing-cash-management`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-billing-cash-management` — or just describe the task.
+
+**What it does:** Explains federal payment methods — Letter of Credit / Payment Management System drawdowns, advances, and reimbursement under §200.305 — and how each affects unbilled AR, billed AR, cash application, and aging in Oracle Fusion PPM + Receivables analysis: distinguishing draws from invoices, monitoring the expenditure-to-draw lag, overdraw debts (§200.346), SF-270-style documentation, and why federal write-offs can't hit the award. Use when analyzing unbilled/billed transitions, cash receipts from federal sponsors, federal AR aging, or drawdown-vs-invoicing questions.
+
+**Triggers:** `LOC drawdown`, `letter of credit billing`, `PMS draw`, `payment management system`, `federal reimbursement`, `SF-270`, `expenditure to draw lag`, `federal advance payment`, `federal AR aging`, `drawdown vs invoice`, `overdraw`, `federal cash management`
+
+### `sponsored-projects-ar-skills:federal-effort-reporting-basics`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-effort-reporting-basics` — or just describe the task.
+
+**What it does:** Explains the Uniform Guidance standards for charging personnel costs to federal awards (§200.430) — reasonable compensation, consistent institutional policy, records that accurately reflect total work activity and support salary distribution, budget estimates adjusted to actuals — and why unsupported effort turns into questioned costs that claw back previously billed AR. Use for questions about salary charges, effort reporting, payroll allocation, effort certification, or when federal project data shows high personnel-cost density.
+
+**Triggers:** `effort reporting`, `effort certification`, `salary allocation federal`, `§200.430`, `personnel costs grant`, `payroll charged to award`, `time and effort`, `salary cap`, `questioned personnel costs`, `effort commitment`, `charging salaries to grants`
+
+### `sponsored-projects-ar-skills:fusion-ar-ppm-domain-knowledge`
+
+**Invoke:** `/sponsored-projects-ar-skills:fusion-ar-ppm-domain-knowledge` — or just describe the task.
+
+**What it does:** Provides the authoritative public-domain map of how sponsored projects data flows between Oracle Fusion PPM/Grants and Receivables — award and bill-plan types, the relevant OTBI subject areas on both sides, the PPM-to-AutoInvoice-to-AR integration and status flow, and a data-profiling routine for any uploaded sponsored-AR extract, with the standard gotchas flagged. Use as the first analytical step after the sponsored-AR router, or whenever the question is about data sources, subject areas, terminology, or column mapping.
+
+**Triggers:** `PPM subject area`, `project billing subject area`, `where does unbilled AR come from`, `AutoInvoice PPM`, `sponsored AR data model`, `map these columns`, `grants data source`, `project invoice flow`, `bill plan type`, `confirm invoice acceptance`
+
+### `sponsored-projects-ar-skills:reporting-visualization-recommendations`
+
+**Invoke:** `/sponsored-projects-ar-skills:reporting-visualization-recommendations` — or just describe the task.
+
+**What it does:** Turns sponsored-AR analysis into finished deliverables — the standard structured report (executive summary, data validation, detailed tables, visual descriptions, insights by financial/operational/compliance/strategic angle), suggested OTBI-style report patterns (AR aging by project, project invoices prior to acceptance), and actionable recommendations covering collection priorities, billing acceleration, and data quality, with multi-currency, intercompany, and partial-payment edge cases handled. Use as the final step of any sponsored-AR analysis, or when the user asks for summaries, dashboards, report designs, or next steps on sponsored/grants receivables.
+
+**Triggers:** `sponsored AR report`, `grants AR summary`, `AR dashboard for projects`, `executive summary receivables`, `OTBI report for sponsored projects`, `aging by sponsor report`, `what should we do about unbilled`, `present sponsored AR`, `next steps grants AR`
+
+### `sponsored-projects-ar-skills:sponsored-ar-fusion-analyst-master-router`
+
+**Invoke:** `/sponsored-projects-ar-skills:sponsored-ar-fusion-analyst-master-router` — or just describe the task.
+
+**What it does:** Routes and coordinates every analysis of sponsored projects, awards, and grants receivables data in Oracle Fusion Cloud (Receivables + PPM/Grants integration) — classifying the question, confirming the award/bill-plan type, requiring data or a clear description before any calculation, dispatching to the right sub-skill, and enforcing the standard output structure. Use FIRST for any sponsored-AR question, before any analysis.
+
+**Triggers:** `sponsored projects`, `grants`, `awards`, `project invoices`, `PPM receivables`, `unbilled AR`, `project contract billing`, `sponsor AR`, `grant receivables`, `award billing`, `sponsored research billing`, `grants AR analysis`
+
+### `sponsored-projects-ar-skills:sponsored-ar-kpi-trends-forecast`
+
+**Invoke:** `/sponsored-projects-ar-skills:sponsored-ar-kpi-trends-forecast` — or just describe the task.
+
+**What it does:** Computes the core KPI set for sponsored-project receivables — AR outstanding, DSO, aging distribution and turnover, receipts vs transactions, plus sponsor/project-specific measures like burn rate vs funding, invoice-to-revenue ratio, and collections effectiveness — then runs trend analysis by sponsor, project type, and award category, and builds simple disclosed- assumption forecasts, reading results from liquidity, sponsor-relationship, and budget angles. Use for performance overviews, benchmarking, trend, or forward-looking sponsored-AR questions.
+
+**Triggers:** `sponsored AR KPIs`, `DSO by sponsor`, `AR aging trend`, `collections effectiveness`, `burn rate vs funding`, `grant AR metrics`, `receivables benchmark`, `forecast collections`, `invoice to revenue ratio`, `sponsor AR performance`, `YoY AR comparison`
+
+### `sponsored-projects-ar-skills:unbilled-billed-ar-wip-recon`
+
+**Invoke:** `/sponsored-projects-ar-skills:unbilled-billed-ar-wip-recon` — or just describe the task.
+
+**What it does:** Reconciles unbilled (WIP) versus billed AR for sponsored projects and tracks the billing lifecycle — measuring pipeline by billing status (Ready to Bill, In Progress, Billed, Error), reconciling PPM revenue events against Receivables invoices, isolating holds and exceptions, and handling cost-reimbursable, letter-of-credit, and multi-project-contract edge cases. Use when the question involves work-in-progress, unbilled receivables, draft invoices, billing backlog, invoices in error, or PPM-to-AR reconciliation variances.
+
+**Triggers:** `unbilled AR`, `WIP reconciliation`, `billing status`, `draft invoices`, `billing backlog`, `invoices in error`, `ready to bill`, `PPM to AR reconciliation`, `unbilled to billed`, `billing exceptions`, `LOC billing`, `stuck invoices`
+
+### `sponsored-projects-ar-skills:uniform-guidance-federal-core`
+
+**Invoke:** `/sponsored-projects-ar-skills:uniform-guidance-federal-core` — or just describe the task.
+
+**What it does:** Provides core educational knowledge of 2 CFR Part 200 (Uniform Guidance) for federal awards — the subpart structure, post-2024 thresholds (15% de minimis F&A on MTDC, $1,000,000 Single Audit, $10,000 equipment), financial management standards (§200.302), payment standards (§200.305), cost principles and always-unallowable costs (Subpart E), and refund obligations — as context for sponsored projects billing and receivables analysis. Use for any question involving federal awards, Uniform Guidance, 2 CFR 200, cost principles, Single Audit, or when analyzing AR data for federal sponsors.
+
+**Triggers:** `uniform guidance`, `2 CFR 200`, `federal award compliance`, `cost principles`, `single audit`, `de minimis rate`, `MTDC`, `unallowable costs`, `allowability`, `federal grant rules`, `questioned costs`, `F&A rate`
 
 ## `oracle-fusion-finance-skills`
 
