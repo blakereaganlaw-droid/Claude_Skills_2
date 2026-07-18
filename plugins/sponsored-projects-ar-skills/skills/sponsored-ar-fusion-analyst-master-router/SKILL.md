@@ -29,6 +29,9 @@ description: >-
      for any new dataset or engagement).
    - *"What's unbilled vs billed / stuck in the billing pipeline?"* →
      `sponsored-projects-ar-skills:unbilled-billed-ar-wip-recon`.
+   - *"Revenue vs invoiced / over- or under-billed / GL tie-out?"* →
+     `sponsored-projects-ar-skills:revenue-billing-reconciliation` (the accounting view;
+     the pipeline skill above is the operational view).
    - *"How are we performing / trending / what's coming?"* →
      `sponsored-projects-ar-skills:sponsored-ar-kpi-trends-forecast`.
    - *"Summarize / build a report / what should we do?"* →
