@@ -86,6 +86,12 @@
       "category": "development"
     },
     {
+      "name": "full-stack-dev-skills",
+      "source": "./plugins/full-stack-dev-skills",
+      "description": "Full-stack application development with a lean-code philosophy: architecture, FastAPI backends, databases/ORM, modern dynamic frontends, realtime features, ML in production, testing strategy, and deployment.",
+      "category": "development"
+    },
+    {
       "name": "coding-agent-skills",
       "source": "./plugins/coding-agent-skills",
       "description": "Python for analysts, Claude Code harness config, autonomous agent design, prompt engineering, git/code review, and authoring Agent Skills.",

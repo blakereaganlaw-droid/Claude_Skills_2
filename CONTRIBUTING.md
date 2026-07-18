@@ -21,7 +21,7 @@ Never commit real client, bank, or account data. Sanitize to structural examples
 artifacts in `*.private.md` or `references/*.local.*` (git-ignored).
 
 ## Build status (waves)
-All eight waves are complete: **86 skills across 14 plugins** (plus 6 plugin subagents),
+All nine waves are complete: **95 skills across 15 plugins** (plus 6 plugin subagents),
 `validate.sh` clean.
 - **Wave 0 — Foundation:** ✅ repo scaffold, authoring standard + template, `bank-reconciliation`
   exemplar, validator.
@@ -49,6 +49,10 @@ All eight waves are complete: **86 skills across 14 plugins** (plus 6 plugin sub
   orchestration skill plus six read-only subagents (performance, accuracy/correctness,
   structure/architecture, clarity/maintainability, robustness/edge-cases, board-chair) in
   the plugin's `agents/` folder.
+- **Wave 7 — Full-stack development (completed after Wave 8):** ✅ `full-stack-dev-skills`
+  (9): lean-code principles, app architecture, FastAPI backends, database/ORM, modern
+  dynamic frontends, realtime features, ML in production, testing strategy, deploy &
+  operate.
 
 Each plugin is independently installable and useful. Next: tailoring skills to your real
 environment (Oracle OTBI reports, reconciliation process, chart of accounts, bank statement
