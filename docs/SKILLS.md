@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **101 skills across 16 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **102 skills across 16 plugins.**
 
 ## How to trigger a skill
 
@@ -25,7 +25,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
 - [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (13) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
-- [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (7) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, period close, plus the fusion-treasury-architect subagent and its consult skill for configuration-specific guidance.
+- [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (8) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, period close, plus the fusion-treasury-architect subagent and its consult skill for configuration-specific guidance.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
 - [`finance-skills`](#finance-skills) (6) — Corporate and treasury finance: time value of money, working capital, ratios, short-term investing, FX risk, and capital budgeting.
@@ -310,6 +310,14 @@ Install: `/plugin install oracle-fusion-finance-skills@treasury-analyst-skills`
 **What it does:** Drives period close in Oracle Fusion Cloud — the subledger-to-GL close sequence (AP, AR, FA, projects, then GL), period statuses per module, exception sweeps (unaccounted transactions, stuck interface rows), subledger-to-GL reconciliation, and the Close Monitor/close calendar. Use when closing a period in Fusion, deciding the close order, chasing why a period won't close, or reconciling a subledger to its GL control account at close.
 
 **Triggers:** `period close fusion`, `close the period`, `period status`, `can't close period`, `close AP period`, `sweep unaccounted`, `subledger close`, `close monitor`, `period end fusion`, `exceptions preventing close`
+
+### `oracle-fusion-finance-skills:oracle-fusion-financials-architect`
+
+**Invoke:** `/oracle-fusion-finance-skills:oracle-fusion-financials-architect` — or just describe the task.
+
+**What it does:** Acts as "Thales", a principal-level Oracle Fusion Cloud Financials architect (public-sector/higher-ed, multi-entity) covering Cash Management, Treasury, Subledger Accounting, and reconciliation-engine design. Treats Oracle setup as code: delivers YAML setup-object schemas, executable validation rules, migration playbooks with rollback, ADRs, and test scenarios — deterministic reconciliation and SLA-first accounting are non-negotiable. Use for Fusion architecture and configuration governance, reconciliation rule design, OTBI/BIP/REST integration patterns, security/SoD models, or EBS/PeopleSoft-to-Fusion migration planning.
+
+**Triggers:** `fusion architect`, `oracle architecture`, `setup objects`, `configuration as code`, `reconciliation design`, `subledger accounting`, `SLA`, `data access set`, `ledger set`, `MOAC`, `encumbrance`, `migration playbook`, `validation rules`, `setup governance`, `treasury architecture. metadata: version: "1.0" author: Synthesized from 2026 Oracle Cloud ecosystem + public-sector treasury practices; adapted to house standard`
 
 ## `banking-skills`
 

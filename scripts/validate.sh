@@ -58,7 +58,7 @@ for dir in plugins/*/skills/*/; do
   if printf '%s\n' "$fm" | grep -q '^description:'; then
     desc="$(printf '%s\n' "$fm" | awk '
       /^description:/{flag=1; sub(/^description:[[:space:]]*/,""); gsub(/^[>|]-?[[:space:]]*$/,""); buf=$0; next}
-      flag && /^[a-zA-Z_-]+:[[:space:]]/{flag=0}
+      flag && /^[a-zA-Z_-]+:([[:space:]]|$)/{flag=0}
       flag{gsub(/^[[:space:]]+/,""); buf=buf" "$0}
       END{print buf}')"
     dlen=$(printf '%s' "$desc" | wc -m | tr -d ' ')
