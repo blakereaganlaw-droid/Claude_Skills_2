@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **85 skills across 13 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **86 skills across 14 plugins.**
 
 ## How to trigger a skill
 
@@ -34,6 +34,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 - [`data-tools-skills`](#data-tools-skills) (6) — Practical data plumbing: Excel automation with Python, CSV/flat-file wrangling, DuckDB local analytics, PDF data extraction, REST API data pulls, and data-file hygiene.
 - [`machine-learning-skills`](#machine-learning-skills) (6) — Framing ML problems, time-series forecasting, supervised modeling, evaluation, feature engineering, and anomaly detection.
 - [`continuous-improvement-skills`](#continuous-improvement-skills) (6) — Lean, Toyota Production System, Six Sigma, and co-design: value-stream mapping, root-cause analysis, DMAIC, standard work, A3, and kaizen.
+- [`board-of-advisors-skills`](#board-of-advisors-skills) (1) — Multi-agent Board of Advisors code review: five read-only specialist subagents plus a board-chair synthesizer, orchestrated by the board-review skill into a ranked, goal-preserving optimization report.
 - [`coding-agent-skills`](#coding-agent-skills) (6) — Python for analysts, Claude Code harness config, autonomous agent design, prompt engineering, git/code review, and authoring Agent Skills.
 
 ## `cash-management-skills`
@@ -739,6 +740,20 @@ Install: `/plugin install continuous-improvement-skills@treasury-analyst-skills`
 **What it does:** Maps a process end to end in current and future state, quantifying cycle time, lead time, and value-added vs non-value-added time to expose waste and improve flow; scopes the effort first with SIPOC. Use when analyzing a whole process, mapping a value stream, drawing a current- or future-state map, measuring lead vs cycle time, or scoping a process with SIPOC.
 
 **Triggers:** `value stream mapping`, `VSM`, `current state`, `future state`, `process map`, `SIPOC`, `lead time`, `cycle time`, `waste`, `flow`
+
+## `board-of-advisors-skills`
+
+Multi-agent Board of Advisors code review: five read-only specialist subagents plus a board-chair synthesizer, orchestrated by the board-review skill into a ranked, goal-preserving optimization report.
+
+Install: `/plugin install board-of-advisors-skills@treasury-analyst-skills`
+
+### `board-of-advisors-skills:board-review`
+
+**Invoke:** `/board-of-advisors-skills:board-review` — or just describe the task.
+
+**What it does:** Runs the full Board of Advisors multi-agent swarm — five read-only specialist subagents (performance, accuracy/correctness, structure/architecture, clarity/maintainability, robustness/edge-cases) launched in parallel over the code under review, then the board-chair subagent synthesizing their findings into one deduplicated, ranked revision report that optimizes for speed and accuracy while strictly preserving the original deliverable goals. Nothing is implemented without explicit user approval. Use when the user asks for a board review, board of advisors, full optimization review, performance+accuracy audit, or a deep multi-angle code audit.
+
+**Triggers:** `board review`, `board of advisors`, `run the board`, `full optimization review`, `performance and accuracy audit`, `deep code audit`, `multi-agent review`, `suboptimal code audit`, `optimize this code thoroughly`
 
 ## `coding-agent-skills`
 
