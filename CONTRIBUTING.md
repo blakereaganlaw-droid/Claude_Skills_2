@@ -21,7 +21,7 @@ Never commit real client, bank, or account data. Sanitize to structural examples
 artifacts in `*.private.md` or `references/*.local.*` (git-ignored).
 
 ## Build status (waves)
-All nine waves are complete: **95 skills across 15 plugins** (plus 6 plugin subagents),
+All ten waves are complete: **96 skills across 15 plugins** (plus 7 plugin subagents),
 `validate.sh` clean.
 - **Wave 0 — Foundation:** ✅ repo scaffold, authoring standard + template, `bank-reconciliation`
   exemplar, validator.
@@ -53,6 +53,10 @@ All nine waves are complete: **95 skills across 15 plugins** (plus 6 plugin suba
   (9): lean-code principles, app architecture, FastAPI backends, database/ORM, modern
   dynamic frontends, realtime features, ML in production, testing strategy, deploy &
   operate.
+- **Wave 9 — Fusion Treasury Architect:** ✅ `fusion-treasury-architect` subagent (elite
+  configuration-specific Oracle Fusion Financials/Treasury persona: FSM tasks, Redwood
+  navigation, SLA, bank-file parsing, structured troubleshooting) + the
+  `fusion-architect-consult` skill, added to `oracle-fusion-finance-skills`.
 
 Each plugin is independently installable and useful. Next: tailoring skills to your real
 environment (Oracle OTBI reports, reconciliation process, chart of accounts, bank statement
