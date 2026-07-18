@@ -38,7 +38,9 @@ description: >-
      thresholds, allowability →
      `sponsored-projects-ar-skills:uniform-guidance-federal-core`; draws/advances/reimbursement
      and federal aging → `sponsored-projects-ar-skills:federal-billing-cash-management`;
-     salary/effort charges → `sponsored-projects-ar-skills:federal-effort-reporting-basics`.
+     salary/effort charges → `sponsored-projects-ar-skills:federal-effort-reporting-basics`;
+     risk assessment, write-offs, questioned costs, Single Audit exposure →
+     `sponsored-projects-ar-skills:federal-sponsored-ar-compliance-risk`.
 2. **Confirm the award/bill-plan type up front — it changes every downstream answer.**
    **Cost-reimbursable** awards bill actual incurred expenses (unbilled AR is expense-driven);
    **fixed-price/milestone** awards bill pre-set amounts on events (unbilled AR is

@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **80 skills across 13 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **81 skills across 13 plugins.**
 
 ## How to trigger a skill
 
@@ -24,7 +24,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
-- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (8) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
+- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (9) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
 - [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (6) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
@@ -157,6 +157,14 @@ Install: `/plugin install sponsored-projects-ar-skills@treasury-analyst-skills`
 **What it does:** Explains the Uniform Guidance standards for charging personnel costs to federal awards (§200.430) — reasonable compensation, consistent institutional policy, records that accurately reflect total work activity and support salary distribution, budget estimates adjusted to actuals — and why unsupported effort turns into questioned costs that claw back previously billed AR. Use for questions about salary charges, effort reporting, payroll allocation, effort certification, or when federal project data shows high personnel-cost density.
 
 **Triggers:** `effort reporting`, `effort certification`, `salary allocation federal`, `§200.430`, `personnel costs grant`, `payroll charged to award`, `time and effort`, `salary cap`, `questioned personnel costs`, `effort commitment`, `charging salaries to grants`
+
+### `sponsored-projects-ar-skills:federal-sponsored-ar-compliance-risk`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-sponsored-ar-compliance-risk` — or just describe the task.
+
+**What it does:** Assesses compliance and audit risk in Receivables data for federal sponsored projects — identifying federal awards, scanning for high-risk patterns (aged federal AR, frequent adjustments/credit memos, write-offs, unbilled build-up, allowability-suspect costs), applying the §200.426 bad-debt and §200.410 questioned-cost rules to adjustments and write-off proposals, mapping Single Audit/SEFA implications, and grading documentation readiness — delivered as a prioritized risk assessment that is explicitly not an audit opinion. Use for aging analysis, exception review, write-off recommendations, or any risk-focused question on federal awards.
+
+**Triggers:** `federal AR risk`, `questioned costs`, `write off federal receivable`, `single audit exposure`, `SEFA`, `federal compliance risk`, `audit risk sponsored projects`, `federal adjustments review`, `closeout residual balance`, `subrecipient risk`, `cost sharing shortfall`
 
 ### `sponsored-projects-ar-skills:fusion-ar-ppm-domain-knowledge`
 
