@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **86 skills across 14 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **95 skills across 15 plugins.**
 
 ## How to trigger a skill
 
@@ -35,6 +35,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 - [`machine-learning-skills`](#machine-learning-skills) (6) — Framing ML problems, time-series forecasting, supervised modeling, evaluation, feature engineering, and anomaly detection.
 - [`continuous-improvement-skills`](#continuous-improvement-skills) (6) — Lean, Toyota Production System, Six Sigma, and co-design: value-stream mapping, root-cause analysis, DMAIC, standard work, A3, and kaizen.
 - [`board-of-advisors-skills`](#board-of-advisors-skills) (1) — Multi-agent Board of Advisors code review: five read-only specialist subagents plus a board-chair synthesizer, orchestrated by the board-review skill into a ranked, goal-preserving optimization report.
+- [`full-stack-dev-skills`](#full-stack-dev-skills) (9) — Full-stack application development with a lean-code philosophy: architecture, FastAPI backends, databases/ORM, modern dynamic frontends, realtime features, ML in production, testing strategy, and deployment.
 - [`coding-agent-skills`](#coding-agent-skills) (6) — Python for analysts, Claude Code harness config, autonomous agent design, prompt engineering, git/code review, and authoring Agent Skills.
 
 ## `cash-management-skills`
@@ -754,6 +755,84 @@ Install: `/plugin install board-of-advisors-skills@treasury-analyst-skills`
 **What it does:** Runs the full Board of Advisors multi-agent swarm — five read-only specialist subagents (performance, accuracy/correctness, structure/architecture, clarity/maintainability, robustness/edge-cases) launched in parallel over the code under review, then the board-chair subagent synthesizing their findings into one deduplicated, ranked revision report that optimizes for speed and accuracy while strictly preserving the original deliverable goals. Nothing is implemented without explicit user approval. Use when the user asks for a board review, board of advisors, full optimization review, performance+accuracy audit, or a deep multi-angle code audit.
 
 **Triggers:** `board review`, `board of advisors`, `run the board`, `full optimization review`, `performance and accuracy audit`, `deep code audit`, `multi-agent review`, `suboptimal code audit`, `optimize this code thoroughly`
+
+## `full-stack-dev-skills`
+
+Full-stack application development with a lean-code philosophy: architecture, FastAPI backends, databases/ORM, modern dynamic frontends, realtime features, ML in production, testing strategy, and deployment.
+
+Install: `/plugin install full-stack-dev-skills@treasury-analyst-skills`
+
+### `full-stack-dev-skills:backend-api-development`
+
+**Invoke:** `/full-stack-dev-skills:backend-api-development` — or just describe the task.
+
+**What it does:** Builds lean FastAPI backends — routing and dependency injection, Pydantic models as the single validation/serialization layer, auth (session cookies vs JWT, chosen by client type), consistent error handling, pagination, and the auto-generated OpenAPI schema as the API contract. Use when creating or extending a REST API, adding authentication, fixing validation or error-handling inconsistencies, or designing endpoints.
+
+**Triggers:** `FastAPI`, `build an API`, `REST endpoint`, `pydantic validation`, `API auth`, `JWT vs session`, `API error handling`, `pagination endpoint`, `OpenAPI schema`, `dependency injection fastapi`, `CRUD API`
+
+### `full-stack-dev-skills:database-and-orm`
+
+**Invoke:** `/full-stack-dev-skills:database-and-orm` — or just describe the task.
+
+**What it does:** Designs and operates the application data layer the lean way — schema design with real constraints, SQLAlchemy/SQLModel models, Alembic migrations as the only schema-change path, query patterns that avoid N+1 and load only what's needed, transactions at the service boundary, and the SQLite-first-Postgres-ready growth path. Use when designing tables, writing or reviewing ORM queries, setting up or fixing migrations, debugging slow or N+1-ridden endpoints, or moving dev SQLite to production Postgres.
+
+**Triggers:** `database schema`, `SQLAlchemy`, `SQLModel`, `alembic migration`, `N+1 query`, `ORM slow`, `design tables`, `foreign key`, `sqlite to postgres`, `transaction handling`, `database indexes app`
+
+### `full-stack-dev-skills:deploy-and-operate`
+
+**Invoke:** `/full-stack-dev-skills:deploy-and-operate` — or just describe the task.
+
+**What it does:** Ships and runs full-stack apps the lean way — small multi-stage Docker images, a CI pipeline shaped lint → test → build → migrate → deploy, twelve-factor environment and secrets discipline, health endpoints, structured logging with request IDs, and the minimal observability that answers "is it up and what broke" — plus rollback as a first-class path. Use when containerizing an app, setting up CI/CD, wiring environments and secrets, adding health checks or logging, or designing the deploy/rollback flow.
+
+**Triggers:** `dockerfile`, `deploy the app`, `CI/CD pipeline`, `github actions deploy`, `environment variables prod`, `secrets management app`, `health check endpoint`, `structured logging`, `rollback deploy`, `container image size`, `run migrations on deploy`, `observability basics`
+
+### `full-stack-dev-skills:frontend-modern-ui`
+
+**Invoke:** `/full-stack-dev-skills:frontend-modern-ui` — or just describe the task.
+
+**What it does:** Builds lean, dynamic frontends — React + Vite when the UI is a real application (components by feature, server state via TanStack Query vs local UI state, forms, accessibility basics), htmx + server templates when it's mostly forms and tables, and the judgment call between them. Use when building or restructuring a web UI, untangling React state, wiring data fetching, choosing React vs htmx, or reviewing frontend code for excess complexity.
+
+**Triggers:** `react component`, `frontend state management`, `tanstack query`, `useEffect fetch`, `htmx`, `vite setup`, `form handling react`, `UI architecture`, `frontend too complex`, `SPA vs server rendered`, `component design`
+
+### `full-stack-dev-skills:full-stack-app-architecture`
+
+**Invoke:** `/full-stack-dev-skills:full-stack-app-architecture` — or just describe the task.
+
+**What it does:** Chooses and structures a full-stack application the lean way — picking the stack (default: FastAPI + React/Vite or htmx, SQLite-first), monolith-first project layout, module boundaries that follow features not layers, twelve-factor config/env handling, and the criteria for when (rarely, late) to split services. Use when starting an app, restructuring a project, choosing between monolith and services, or deciding where new code should live.
+
+**Triggers:** `app architecture`, `project structure`, `monolith vs microservices`, `choose the stack`, `folder layout`, `where should this code live`, `new web app setup`, `scaffold project`, `module boundaries`, `config management app`
+
+### `full-stack-dev-skills:lean-code-principles`
+
+**Invoke:** `/full-stack-dev-skills:lean-code-principles` — or just describe the task.
+
+**What it does:** Applies the lean-code discipline that anchors this plugin — minimizing lines of code by leaning on frameworks and the standard library, YAGNI, small public surface area, deleting code as a feature, and judging when an abstraction pays for itself versus when it's speculative cost. Use when writing or reviewing application code, deciding whether to add a dependency/abstraction/layer, simplifying an overgrown module, or setting coding standards for a project.
+
+**Triggers:** `lean code`, `minimize lines of code`, `YAGNI`, `over-engineering`, `simplify this code`, `too much boilerplate`, `do we need this abstraction`, `code review simplicity`, `delete code`, `small diff`, `keep it simple`
+
+### `full-stack-dev-skills:ml-in-production`
+
+**Invoke:** `/full-stack-dev-skills:ml-in-production` — or just describe the task.
+
+**What it does:** Puts machine-learning models into applications the lean way — packaging a trained model as a versioned artifact, serving it behind a FastAPI endpoint with Pydantic-validated inputs, choosing batch vs realtime inference by the product's actual latency need, keeping the feature pipeline identical between training and serving, and monitoring predictions and drift so the model earns continued trust. Use when deploying a model into an app, building an inference endpoint, choosing a serving pattern, debugging training/serving skew, or setting up prediction logging and drift checks.
+
+**Triggers:** `deploy ML model`, `model serving`, `inference endpoint`, `predict API`, `batch scoring`, `model versioning`, `training serving skew`, `model monitoring`, `drift detection production`, `ml pipeline app`, `score in real time`
+
+### `full-stack-dev-skills:realtime-and-dynamic-features`
+
+**Invoke:** `/full-stack-dev-skills:realtime-and-dynamic-features` — or just describe the task.
+
+**What it does:** Adds the highly dynamic layer to full-stack apps the lean way — choosing polling vs Server-Sent Events vs WebSockets by actual need, streaming responses (including LLM token streams), live-updating dashboards, optimistic UI, and background jobs with progress reporting, using FastAPI primitives and minimal client code. Use when a page must update without reload, a response should stream, long work must run in the background with status, or when choosing the realtime transport.
+
+**Triggers:** `websocket`, `server-sent events`, `SSE`, `live updates`, `streaming response`, `real-time dashboard`, `background job progress`, `optimistic UI`, `long running task API`, `push updates`, `live refresh`, `stream LLM tokens`
+
+### `full-stack-dev-skills:testing-strategy`
+
+**Invoke:** `/full-stack-dev-skills:testing-strategy` — or just describe the task.
+
+**What it does:** Designs minimal effective test suites for full-stack apps — testing behavior at the API boundary over mocking internals, pytest fixtures for real (test) databases, a handful of Playwright end-to-end tests for critical user flows only, regression tests for every fixed bug, and explicit judgment about what NOT to test — so the suite catches real breakage without taxing every refactor. Use when setting up testing for an app, deciding what to test at which level, reviewing a slow or brittle suite, or adding tests around a bug.
+
+**Triggers:** `testing strategy`, `what to test`, `pytest setup`, `test the API`, `mock or not`, `brittle tests`, `slow test suite`, `playwright e2e`, `test coverage target`, `regression test`, `test pyramid`, `integration vs unit`
 
 ## `coding-agent-skills`
 
