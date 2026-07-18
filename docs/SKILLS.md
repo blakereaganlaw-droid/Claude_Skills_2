@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **58 skills across 10 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **100 skills across 16 plugins.**
 
 ## How to trigger a skill
 
@@ -24,12 +24,18 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
+- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (13) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
+- [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (7) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, period close, plus the fusion-treasury-architect subagent and its consult skill for configuration-specific guidance.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
 - [`finance-skills`](#finance-skills) (6) — Corporate and treasury finance: time value of money, working capital, ratios, short-term investing, FX risk, and capital budgeting.
+- [`treasury-accounting-skills`](#treasury-accounting-skills) (6) — Advanced treasury and accounting operations: debt facilities and covenant compliance, hedging and derivatives, investment policy compliance, accruals and prepaids, intercompany accounting, and audit readiness.
 - [`data-analytics-bi-skills`](#data-analytics-bi-skills) (7) — SQL, exploratory analysis, data cleaning, statistics, inference, dashboard design, and spreadsheet modeling for business intelligence.
+- [`data-tools-skills`](#data-tools-skills) (6) — Practical data plumbing: Excel automation with Python, CSV/flat-file wrangling, DuckDB local analytics, PDF data extraction, REST API data pulls, and data-file hygiene.
 - [`machine-learning-skills`](#machine-learning-skills) (6) — Framing ML problems, time-series forecasting, supervised modeling, evaluation, feature engineering, and anomaly detection.
 - [`continuous-improvement-skills`](#continuous-improvement-skills) (6) — Lean, Toyota Production System, Six Sigma, and co-design: value-stream mapping, root-cause analysis, DMAIC, standard work, A3, and kaizen.
+- [`board-of-advisors-skills`](#board-of-advisors-skills) (1) — Multi-agent Board of Advisors code review: five read-only specialist subagents plus a board-chair synthesizer, orchestrated by the board-review skill into a ranked, goal-preserving optimization report.
+- [`full-stack-dev-skills`](#full-stack-dev-skills) (9) — Full-stack application development with a lean-code philosophy: architecture, FastAPI backends, databases/ORM, modern dynamic frontends, realtime features, ML in production, testing strategy, and deployment.
 - [`coding-agent-skills`](#coding-agent-skills) (6) — Python for analysts, Claude Code harness config, autonomous agent design, prompt engineering, git/code review, and authoring Agent Skills.
 - [`metacognition-skills`](#metacognition-skills) (4) — Composed meta-cognition suite: hierarchical memory management, reflective learning, adaptive analysis, and knowledge crystallization for cumulative improvement across sessions.
 
@@ -132,6 +138,178 @@ Install: `/plugin install oracle-otbi-skills@treasury-analyst-skills`
 **What it does:** Chooses the right OTBI subject area and columns for a reporting question, explains fact vs. dimension folders and the one-subject-area-per-analysis limit, and gives cross-pillar workarounds (BI Publisher SQL, side-by-side dashboard analyses on a shared prompt, or FDI/OAC). Covers the four Oracle Cash Management subject areas and when to use each. Use when unsure which subject area or columns to query, or when a report seems to need two subject areas or two Fusion pillars.
 
 **Triggers:** `which subject area`, `pick a subject area`, `what subject area for`, `cross-subject-area`, `join two subject areas`, `Cash Management subject area`, `single subject area limit`, `column not available`, `fact vs dimension folder`
+
+## `sponsored-projects-ar-skills`
+
+Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
+
+Install: `/plugin install sponsored-projects-ar-skills@treasury-analyst-skills`
+
+### `sponsored-projects-ar-skills:compliance-risk-anomaly`
+
+**Invoke:** `/sponsored-projects-ar-skills:compliance-risk-anomaly` — or just describe the task.
+
+**What it does:** Identifies compliance risks, exceptions, and anomalies in sponsored/grant receivables data across all sponsor types — scanning the public exception patterns (billing exceptions, holds, unapplied receipts, at-risk receipts in aging data), the sponsored-specific risks (allowability-suspect charges, funding-limit breaches, overdue-beyond-sponsor-terms), and statistical anomalies (outlier aging, DSO spikes, unusual adjustment and credit-memo volumes), then cross-checking PPM costs against AR billing for alignment. Use for audit-, risk-, or exception-focused questions on sponsored AR.
+
+**Triggers:** `sponsored AR exceptions`, `grant AR anomalies`, `billing exceptions scan`, `risk register receivables`, `unusual credit memos`, `DSO spike`, `funding limit breach`, `overdue beyond terms`, `AR risk review`, `exception report grants`, `at-risk receipts`
+
+### `sponsored-projects-ar-skills:federal-billing-cash-management`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-billing-cash-management` — or just describe the task.
+
+**What it does:** Explains federal payment methods — Letter of Credit / Payment Management System drawdowns, advances, and reimbursement under §200.305 — and how each affects unbilled AR, billed AR, cash application, and aging in Oracle Fusion PPM + Receivables analysis: distinguishing draws from invoices, monitoring the expenditure-to-draw lag, overdraw debts (§200.346), SF-270-style documentation, and why federal write-offs can't hit the award. Use when analyzing unbilled/billed transitions, cash receipts from federal sponsors, federal AR aging, or drawdown-vs-invoicing questions.
+
+**Triggers:** `LOC drawdown`, `letter of credit billing`, `PMS draw`, `payment management system`, `federal reimbursement`, `SF-270`, `expenditure to draw lag`, `federal advance payment`, `federal AR aging`, `drawdown vs invoice`, `overdraw`, `federal cash management`
+
+### `sponsored-projects-ar-skills:federal-cost-allowability`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-cost-allowability` — or just describe the task.
+
+**What it does:** Applies the Uniform Guidance cost principles to evaluate whether costs or billed amounts on federal awards are allowable, allocable, and reasonable — running the §200.403 factor tests, the §200.404 prudent-person standard, and §200.405 relative-benefit allocation, applying the special rules (administrative salaries under §200.413, equipment, travel, participant support) and the always-unallowable list (§200.426 bad debts and related collection costs), and flagging suspect items with CFR citations and recommended actions. Use when reviewing invoices, adjustments, write-offs, or cost data on federal awards, or for any "can this be charged/billed?" question.
+
+**Triggers:** `allowable cost`, `allowability`, `can we charge this to the grant`, `§200.403`, `unallowable`, `allocable`, `cost principles`, `questioned cost review`, `admin salary direct charge`, `prior approval cost`, `prudent person test`, `bill this to the award`
+
+### `sponsored-projects-ar-skills:federal-effort-reporting-basics`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-effort-reporting-basics` — or just describe the task.
+
+**What it does:** Explains the Uniform Guidance standards for charging personnel costs to federal awards (§200.430) — reasonable compensation, consistent institutional policy, records that accurately reflect total work activity and support salary distribution, budget estimates adjusted to actuals — and why unsupported effort turns into questioned costs that claw back previously billed AR. Use for questions about salary charges, effort reporting, payroll allocation, effort certification, or when federal project data shows high personnel-cost density.
+
+**Triggers:** `effort reporting`, `effort certification`, `salary allocation federal`, `§200.430`, `personnel costs grant`, `payroll charged to award`, `time and effort`, `salary cap`, `questioned personnel costs`, `effort commitment`, `charging salaries to grants`
+
+### `sponsored-projects-ar-skills:federal-sponsored-ar-compliance-risk`
+
+**Invoke:** `/sponsored-projects-ar-skills:federal-sponsored-ar-compliance-risk` — or just describe the task.
+
+**What it does:** Assesses compliance and audit risk in Receivables data for federal sponsored projects — identifying federal awards, scanning for high-risk patterns (aged federal AR, frequent adjustments/credit memos, write-offs, unbilled build-up, allowability-suspect costs), applying the §200.426 bad-debt and §200.410 questioned-cost rules to adjustments and write-off proposals, mapping Single Audit/SEFA implications, and grading documentation readiness — delivered as a prioritized risk assessment that is explicitly not an audit opinion. Use for aging analysis, exception review, write-off recommendations, or any risk-focused question on federal awards.
+
+**Triggers:** `federal AR risk`, `questioned costs`, `write off federal receivable`, `single audit exposure`, `SEFA`, `federal compliance risk`, `audit risk sponsored projects`, `federal adjustments review`, `closeout residual balance`, `subrecipient risk`, `cost sharing shortfall`
+
+### `sponsored-projects-ar-skills:fusion-ar-ppm-domain-knowledge`
+
+**Invoke:** `/sponsored-projects-ar-skills:fusion-ar-ppm-domain-knowledge` — or just describe the task.
+
+**What it does:** Provides the authoritative public-domain map of how sponsored projects data flows between Oracle Fusion PPM/Grants and Receivables — award and bill-plan types, the relevant OTBI subject areas on both sides, the PPM-to-AutoInvoice-to-AR integration and status flow, and a data-profiling routine for any uploaded sponsored-AR extract, with the standard gotchas flagged. Use as the first analytical step after the sponsored-AR router, or whenever the question is about data sources, subject areas, terminology, or column mapping.
+
+**Triggers:** `PPM subject area`, `project billing subject area`, `where does unbilled AR come from`, `AutoInvoice PPM`, `sponsored AR data model`, `map these columns`, `grants data source`, `project invoice flow`, `bill plan type`, `confirm invoice acceptance`
+
+### `sponsored-projects-ar-skills:reporting-visualization-recommendations`
+
+**Invoke:** `/sponsored-projects-ar-skills:reporting-visualization-recommendations` — or just describe the task.
+
+**What it does:** Turns sponsored-AR analysis into finished deliverables — the standard structured report (executive summary, data validation, detailed tables, visual descriptions, insights by financial/operational/compliance/strategic angle), suggested OTBI-style report patterns (AR aging by project, project invoices prior to acceptance), and actionable recommendations covering collection priorities, billing acceleration, and data quality, with multi-currency, intercompany, and partial-payment edge cases handled. Use as the final step of any sponsored-AR analysis, or when the user asks for summaries, dashboards, report designs, or next steps on sponsored/grants receivables.
+
+**Triggers:** `sponsored AR report`, `grants AR summary`, `AR dashboard for projects`, `executive summary receivables`, `OTBI report for sponsored projects`, `aging by sponsor report`, `what should we do about unbilled`, `present sponsored AR`, `next steps grants AR`
+
+### `sponsored-projects-ar-skills:revenue-billing-reconciliation`
+
+**Invoke:** `/sponsored-projects-ar-skills:revenue-billing-reconciliation` — or just describe the task.
+
+**What it does:** Reconciles PPM revenue recognition against AR billing for sponsored awards from the accounting side — the documented Generate Revenue → events → invoice flow, the variance identity (recognized revenue − billed = unbilled or over-billed), funding-limit checks against contract amounts, and the unbilled-AR account roll (DR Unbilled Receivable / CR Revenue at recognition; DR Receivable / CR Unbilled Receivable at invoicing) through to GL tie-out. Use for questions about revenue vs invoiced amounts, over/under-billing, unbilled balance substantiation, or tying sponsored revenue and receivables to the GL.
+
+**Triggers:** `revenue vs billing`, `over billed`, `under billed`, `revenue reconciliation`, `unbilled receivable account`, `GL tie-out sponsored`, `recognized vs invoiced`, `revenue events`, `billing in excess`, `substantiate unbilled balance`, `project revenue reconciliation`
+
+### `sponsored-projects-ar-skills:sponsored-ar-aging-collections`
+
+**Invoke:** `/sponsored-projects-ar-skills:sponsored-ar-aging-collections` — or just describe the task.
+
+**What it does:** Performs detailed aging, DSO, and collections analysis for sponsored/grant receivables at the sponsor, contract, and project level — public-standard metrics (current/overdue/future AR, aging amounts and counts on a declared invoice-date or schedule-date basis, % overdue, average days outstanding/overdue), breakdowns by award type, business unit, ledger, and receivable GL account, sponsor concentration and late-payment risk, and cross-referencing receipts and credit-memo applications — producing a prioritized collection list with cash-flow implications. Use for overdue invoices, aging buckets, collections prioritization, or cash-flow risk questions on sponsored data.
+
+**Triggers:** `sponsored aging`, `overdue sponsor invoices`, `grant collections`, `aging buckets by sponsor`, `collection priority list`, `late paying sponsors`, `sponsor concentration`, `days overdue`, `past due grants AR`, `collections analysis`
+
+### `sponsored-projects-ar-skills:sponsored-ar-fusion-analyst-master-router`
+
+**Invoke:** `/sponsored-projects-ar-skills:sponsored-ar-fusion-analyst-master-router` — or just describe the task.
+
+**What it does:** Routes and coordinates every analysis of sponsored projects, awards, and grants receivables data in Oracle Fusion Cloud (Receivables + PPM/Grants integration) — classifying the question, confirming the award/bill-plan type, requiring data or a clear description before any calculation, dispatching to the right sub-skill, and enforcing the standard output structure. Use FIRST for any sponsored-AR question, before any analysis.
+
+**Triggers:** `sponsored projects`, `grants`, `awards`, `project invoices`, `PPM receivables`, `unbilled AR`, `project contract billing`, `sponsor AR`, `grant receivables`, `award billing`, `sponsored research billing`, `grants AR analysis`
+
+### `sponsored-projects-ar-skills:sponsored-ar-kpi-trends-forecast`
+
+**Invoke:** `/sponsored-projects-ar-skills:sponsored-ar-kpi-trends-forecast` — or just describe the task.
+
+**What it does:** Computes the core KPI set for sponsored-project receivables — AR outstanding, DSO, aging distribution and turnover, receipts vs transactions, plus sponsor/project-specific measures like burn rate vs funding, invoice-to-revenue ratio, and collections effectiveness — then runs trend analysis by sponsor, project type, and award category, and builds simple disclosed- assumption forecasts, reading results from liquidity, sponsor-relationship, and budget angles. Use for performance overviews, benchmarking, trend, or forward-looking sponsored-AR questions.
+
+**Triggers:** `sponsored AR KPIs`, `DSO by sponsor`, `AR aging trend`, `collections effectiveness`, `burn rate vs funding`, `grant AR metrics`, `receivables benchmark`, `forecast collections`, `invoice to revenue ratio`, `sponsor AR performance`, `YoY AR comparison`
+
+### `sponsored-projects-ar-skills:unbilled-billed-ar-wip-recon`
+
+**Invoke:** `/sponsored-projects-ar-skills:unbilled-billed-ar-wip-recon` — or just describe the task.
+
+**What it does:** Reconciles unbilled (WIP) versus billed AR for sponsored projects and tracks the billing lifecycle — measuring pipeline by billing status (Ready to Bill, In Progress, Billed, Error), reconciling PPM revenue events against Receivables invoices, isolating holds and exceptions, and handling cost-reimbursable, letter-of-credit, and multi-project-contract edge cases. Use when the question involves work-in-progress, unbilled receivables, draft invoices, billing backlog, invoices in error, or PPM-to-AR reconciliation variances.
+
+**Triggers:** `unbilled AR`, `WIP reconciliation`, `billing status`, `draft invoices`, `billing backlog`, `invoices in error`, `ready to bill`, `PPM to AR reconciliation`, `unbilled to billed`, `billing exceptions`, `LOC billing`, `stuck invoices`
+
+### `sponsored-projects-ar-skills:uniform-guidance-federal-core`
+
+**Invoke:** `/sponsored-projects-ar-skills:uniform-guidance-federal-core` — or just describe the task.
+
+**What it does:** Provides core educational knowledge of 2 CFR Part 200 (Uniform Guidance) for federal awards — the subpart structure, post-2024 thresholds (15% de minimis F&A on MTDC, $1,000,000 Single Audit, $10,000 equipment), financial management standards (§200.302), payment standards (§200.305), cost principles and always-unallowable costs (Subpart E), and refund obligations — as context for sponsored projects billing and receivables analysis. Use for any question involving federal awards, Uniform Guidance, 2 CFR 200, cost principles, Single Audit, or when analyzing AR data for federal sponsors.
+
+**Triggers:** `uniform guidance`, `2 CFR 200`, `federal award compliance`, `cost principles`, `single audit`, `de minimis rate`, `MTDC`, `unallowable costs`, `allowability`, `federal grant rules`, `questioned costs`, `F&A rate`
+
+## `oracle-fusion-finance-skills`
+
+Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, period close, plus the fusion-treasury-architect subagent and its consult skill for configuration-specific guidance.
+
+Install: `/plugin install oracle-fusion-finance-skills@treasury-analyst-skills`
+
+### `oracle-fusion-finance-skills:fusion-ap-invoice-to-pay`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-ap-invoice-to-pay` — or just describe the task.
+
+**What it does:** Runs the Oracle Fusion Payables invoice-to-pay cycle — invoice entry and validation, PO matching (2/3/4-way), holds and their releases, approval workflow, accounting, and paying through Payment Process Requests (PPRs) that build payment files. Use when entering or fixing an AP invoice in Fusion, releasing holds, investigating why an invoice isn't paid, or running and troubleshooting a payment batch.
+
+**Triggers:** `fusion AP`, `payables invoice`, `invoice hold`, `release hold`, `invoice validation`, `PO matching`, `three-way match`, `payment process request`, `PPR`, `payment batch`, `invoice not paid`, `pay run fusion`, `payables approval`
+
+### `oracle-fusion-finance-skills:fusion-ar-and-collections`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-ar-and-collections` — or just describe the task.
+
+**What it does:** Runs Oracle Fusion Receivables — creating and importing AR transactions (invoices, credit memos), applying receipts manually and through lockbox/automatch, keeping unapplied and on-account cash honest, and working aging and the Advanced Collections dunning/strategy cycle. Use when booking or fixing an AR transaction in Fusion, applying or troubleshooting receipts, reconciling unapplied cash, or setting up aging and collections follow-up.
+
+**Triggers:** `fusion AR`, `receivables invoice`, `apply receipt`, `unapplied receipt`, `on-account`, `lockbox`, `autoapply`, `credit memo fusion`, `AR aging`, `collections fusion`, `dunning`, `receipt application`, `customer balance`
+
+### `oracle-fusion-finance-skills:fusion-architect-consult`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-architect-consult` — or just describe the task.
+
+**What it does:** Consults the fusion-treasury-architect subagent — an elite Oracle Cloud Fusion Financials and Treasury architect persona — for expert, configuration-specific answers: exact FSM task names and Redwood UI navigation, COA/value-set/CVR design, SLA mapping and journal line rules, bank statement parsing (BAI2/CAMT.053/MT940 with segment-level detail), reconciliation rule sets and tolerances, AutoInvoice/lockbox/PPR configuration, and structured error troubleshooting (root cause → diagnostics → resolution). Use for deep Fusion configuration design, integration architecture, or error diagnosis beyond the teaching skills.
+
+**Triggers:** `fusion configuration`, `FSM task`, `redwood navigation`, `configure SLA`, `CVR design`, `BAI2 parsing rule`, `reconciliation rule setup`, `AutoInvoice grouping rule`, `PPR setup`, `fusion error troubleshooting`, `lockbox configuration`, `fusion architect`
+
+### `oracle-fusion-finance-skills:fusion-cash-management-module`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-cash-management-module` — or just describe the task.
+
+**What it does:** Operates the Oracle Fusion Cash Management module — bank, branch, and account setup; loading and troubleshooting electronic bank statements (BAI2, camt.053); tuning automatic reconciliation matching rules and rule sets; handling external cash transactions; and reading the module's reconciliation statuses. Use when setting up bank accounts in Fusion, loading bank statements, configuring or debugging auto-reconciliation, or clearing unreconciled statement lines in the Fusion CE module.
+
+**Triggers:** `fusion cash management`, `bank statement load`, `camt.053 fusion`, `BAI2 import`, `auto reconciliation fusion`, `matching rules`, `reconcile in fusion`, `external cash transaction`, `bank account setup fusion`, `unreconciled statement lines`
+
+### `oracle-fusion-finance-skills:fusion-fbdi-data-loading`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-fbdi-data-loading` — or just describe the task.
+
+**What it does:** Loads data into Oracle Fusion Cloud with File-Based Data Import (FBDI) — picks the right import template, fills it without breaking its hidden formatting rules, generates and uploads the zip, runs the interface loader and the module import job, and works the error-correction loop until every row lands. Covers GL journal import (GL_INTERFACE) in depth. Use when bulk-loading journals, invoices, or other records into Fusion, or when an FBDI load errors out.
+
+**Triggers:** `FBDI`, `file-based data import`, `journal import`, `GL_INTERFACE`, `import journals`, `load data into fusion`, `FBDI template`, `interface loader`, `ESS import job`, `correct import errors`, `bulk load fusion`
+
+### `oracle-fusion-finance-skills:fusion-gl-and-journals`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-gl-and-journals` — or just describe the task.
+
+**What it does:** Works General Ledger in Oracle Fusion Cloud — reads the ledger and chart-of-accounts structure (segments, value sets, hierarchies, cross-validation rules), creates manual and spreadsheet (ADFdi) journals, routes them through approval, posts them, and troubleshoots unposted or rejected journals. Use when entering or fixing a journal in Fusion GL, explaining a ledger/COA setup, or diagnosing why a journal won't post.
+
+**Triggers:** `fusion journal`, `GL journal entry`, `create journal in fusion`, `ADFdi journal`, `spreadsheet journal`, `journal approval`, `post journal`, `journal won't post`, `cross-validation rule`, `chart of accounts segments`, `fusion ledger`
+
+### `oracle-fusion-finance-skills:fusion-period-close`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-period-close` — or just describe the task.
+
+**What it does:** Drives period close in Oracle Fusion Cloud — the subledger-to-GL close sequence (AP, AR, FA, projects, then GL), period statuses per module, exception sweeps (unaccounted transactions, stuck interface rows), subledger-to-GL reconciliation, and the Close Monitor/close calendar. Use when closing a period in Fusion, deciding the close order, chasing why a period won't close, or reconciling a subledger to its GL control account at close.
+
+**Triggers:** `period close fusion`, `close the period`, `period status`, `can't close period`, `close AP period`, `sweep unaccounted`, `subledger close`, `close monitor`, `period end fusion`, `exceptions preventing close`
 
 ## `banking-skills`
 
@@ -295,6 +473,60 @@ Install: `/plugin install finance-skills@treasury-analyst-skills`
 
 **Triggers:** `working capital`, `cash conversion cycle`, `CCC`, `DSO`, `DPO`, `DIO`, `days sales outstanding`, `days payable outstanding`, `days inventory outstanding`, `receivables`, `payables`, `inventory days`, `operating cycle`
 
+## `treasury-accounting-skills`
+
+Advanced treasury and accounting operations: debt facilities and covenant compliance, hedging and derivatives, investment policy compliance, accruals and prepaids, intercompany accounting, and audit readiness.
+
+Install: `/plugin install treasury-accounting-skills@treasury-analyst-skills`
+
+### `treasury-accounting-skills:accruals-and-prepaids`
+
+**Invoke:** `/treasury-accounting-skills:accruals-and-prepaids` — or just describe the task.
+
+**What it does:** Builds and maintains accrual and prepaid processes that survive audit — identifying what needs accruing at cutoff, estimating defensibly when invoices haven't arrived, running amortization schedules for prepaids, reversing correctly, true-ing up estimates against actuals, and testing cutoff so expenses land in the right period. Use when booking month-end accruals, setting up or amortizing a prepaid, investigating an expense that hit the wrong period, reviewing accrual completeness, or measuring estimate accuracy.
+
+**Triggers:** `accrual`, `accrue`, `prepaid`, `accrued expense`, `cutoff`, `amortization schedule`, `reversing entry`, `true-up`, `accrual completeness`, `expense in wrong period`, `unbilled`, `month-end accruals`
+
+### `treasury-accounting-skills:audit-readiness-and-pbc`
+
+**Invoke:** `/treasury-accounting-skills:audit-readiness-and-pbc` — or just describe the task.
+
+**What it does:** Gets finance and treasury through an external audit efficiently — running the PBC (prepared-by-client) list as a managed project, producing workpapers and reconciliations that stand alone, preparing for the cash/debt/investment areas auditors always hit (confirmations, cutoff, coverage of controls), handling walkthroughs and sample requests, and responding to findings without thrash. Use when an audit or interim fieldwork is coming, a PBC list just arrived, an auditor asks for support or a walkthrough, or a finding needs a response.
+
+**Triggers:** `audit`, `PBC list`, `prepared by client`, `auditor request`, `bank confirmation`, `walkthrough`, `audit evidence`, `workpaper`, `audit finding`, `management letter`, `interim fieldwork`, `audit readiness`, `support for the auditors`
+
+### `treasury-accounting-skills:debt-facilities-and-covenants`
+
+**Invoke:** `/treasury-accounting-skills:debt-facilities-and-covenants` — or just describe the task.
+
+**What it does:** Manages corporate debt facilities day to day — revolver draws and paydowns, term loan amortization, interest calculations (SOFR + spread, day-count conventions), availability and borrowing-base tracking, and the covenant compliance cycle: computing leverage/coverage ratios exactly as the credit agreement defines them and producing the compliance certificate. Use when drawing or repaying a facility, verifying an interest charge, computing covenants, preparing a compliance certificate, or assessing headroom.
+
+**Triggers:** `revolver draw`, `credit facility`, `term loan`, `covenant`, `leverage ratio`, `interest coverage`, `compliance certificate`, `borrowing base`, `facility availability`, `SOFR interest`, `debt covenant headroom`, `paydown`
+
+### `treasury-accounting-skills:hedging-and-derivatives`
+
+**Invoke:** `/treasury-accounting-skills:hedging-and-derivatives` — or just describe the task.
+
+**What it does:** Runs a corporate hedging program — choosing and pricing the workhorse instruments (FX forwards and swaps, interest-rate swaps, caps/collars), sizing hedges against measured exposures, executing through the trade lifecycle (quote, execute, confirm, settle), monitoring mark-to-market and counterparty exposure, and understanding hedge accounting (cash flow vs fair value designation, effectiveness, documentation) well enough to keep hedges from whipsawing earnings. Use when hedging an FX or interest-rate exposure, evaluating a forward or swap quote, rolling or unwinding a hedge, or setting up hedge accounting documentation.
+
+**Triggers:** `hedge`, `FX forward`, `forward points`, `interest rate swap`, `cap`, `collar`, `hedge accounting`, `cash flow hedge`, `mark to market`, `unwind hedge`, `hedge effectiveness`, `ISDA`, `notional`, `hedge ratio`
+
+### `treasury-accounting-skills:intercompany-accounting`
+
+**Invoke:** `/treasury-accounting-skills:intercompany-accounting` — or just describe the task.
+
+**What it does:** Keeps intercompany accounting clean across entities — structuring IC transactions (billing, loans, allocations) with agreements behind them, booking both sides symmetrically, reconciling IC balances so they mirror each other, settling per policy, handling FX on cross-currency balances, and making consolidation eliminations net to zero. Use when booking or reconciling intercompany transactions, chasing an out-of-balance IC account, setting up an IC billing or loan arrangement, or preparing eliminations for consolidation.
+
+**Triggers:** `intercompany`, `IC reconciliation`, `intercompany out of balance`, `elimination entries`, `IC billing`, `intercompany loan`, `transfer pricing entry`, `IC mismatch`, `consolidation eliminations`, `due to due from`, `intercompany settlement`
+
+### `treasury-accounting-skills:investment-policy-compliance`
+
+**Invoke:** `/treasury-accounting-skills:investment-policy-compliance` — or just describe the task.
+
+**What it does:** Writes and enforces a corporate investment policy for excess cash — permitted instruments and ratings, concentration and counterparty limits, maturity/liquidity tiers matched to the cash forecast, and the monthly compliance check that proves the portfolio sits inside policy, plus the exception/waiver process when it doesn't. Use when drafting or updating an investment policy statement, checking holdings against policy, setting counterparty or concentration limits, or handling a rating downgrade or policy breach.
+
+**Triggers:** `investment policy`, `IPS`, `permitted investments`, `counterparty limit`, `concentration limit`, `rating downgrade`, `policy compliance check`, `excess cash investment`, `money market fund policy`, `portfolio compliance`, `investment guidelines`
+
 ## `data-analytics-bi-skills`
 
 SQL, exploratory analysis, data cleaning, statistics, inference, dashboard design, and spreadsheet modeling for business intelligence.
@@ -356,6 +588,60 @@ Install: `/plugin install data-analytics-bi-skills@treasury-analyst-skills`
 **What it does:** Reasons from a sample to a population with confidence intervals and hypothesis tests (t-test, chi-square, ANOVA) — choosing the right test, checking its assumptions, and interpreting p-values, effect size, and Type I/II errors correctly rather than treating "significant" as a verdict. Use when testing a claim, comparing groups, running an A/B test, or quantifying the uncertainty of an estimate from a sample.
 
 **Triggers:** `hypothesis test`, `p-value`, `statistical significance`, `confidence interval`, `t-test`, `chi-square`, `ANOVA`, `effect size`, `sampling`, `sampling distribution`, `type I error`, `type II error`, `statistical power`, `A/B test`, `significance level`, `null hypothesis`
+
+## `data-tools-skills`
+
+Practical data plumbing: Excel automation with Python, CSV/flat-file wrangling, DuckDB local analytics, PDF data extraction, REST API data pulls, and data-file hygiene.
+
+Install: `/plugin install data-tools-skills@treasury-analyst-skills`
+
+### `data-tools-skills:csv-and-flat-file-wrangling`
+
+**Invoke:** `/data-tools-skills:csv-and-flat-file-wrangling` — or just describe the task.
+
+**What it does:** Ingests real-world CSV and flat-file exports safely — detecting encodings and delimiters, surviving bank/ERP export quirks (BOMs, footers, quoted commas, leading-zero IDs, mixed date formats), validating the parsed schema, and merging files without silent row loss. Use when loading a CSV that parses wrong, combining exports from different systems, or hardening a recurring file feed.
+
+**Triggers:** `csv parsing`, `delimiter`, `encoding error`, `utf-8 vs latin-1`, `BOM`, `pipe delimited`, `fixed width file`, `load csv pandas`, `merge csv files`, `bank export csv`, `leading zeros lost`, `csv broken columns`
+
+### `data-tools-skills:data-file-hygiene`
+
+**Invoke:** `/data-tools-skills:data-file-hygiene` — or just describe the task.
+
+**What it does:** Keeps analysis files trustworthy and safe to share — naming and foldering conventions that sort correctly and explain themselves, raw/processed/output separation, lightweight versioning of data and scripts, and sanitizing sensitive data (account numbers, customer names, balances) before anything leaves your machine or enters git. Use when organizing a data project, naming recurring extract files, deciding what may be committed or emailed, or scrubbing a dataset for sharing.
+
+**Triggers:** `file naming convention`, `organize data files`, `folder structure analysis`, `version data files`, `sanitize data`, `anonymize spreadsheet`, `remove sensitive data`, `what can I commit`, `data retention files`, `raw vs processed`
+
+### `data-tools-skills:duckdb-local-analytics`
+
+**Invoke:** `/data-tools-skills:duckdb-local-analytics` — or just describe the task.
+
+**What it does:** Runs real SQL directly over local CSV, Parquet, and Excel files with DuckDB — no database server — for joins across files, aggregations on data too big for Excel, and repeatable analysis scripts, from the CLI or Python, persisting results back to files or a .duckdb database. Use when joining or aggregating local files with SQL, when a dataset chokes Excel/pandas memory, or when replacing a fragile chain of spreadsheet lookups with one query.
+
+**Triggers:** `duckdb`, `query csv with sql`, `join csv files`, `sql on parquet`, `local sql`, `read_csv_auto`, `analyze large csv`, `sql without a database`, `parquet analytics`, `out of memory pandas`
+
+### `data-tools-skills:excel-automation-python`
+
+**Invoke:** `/data-tools-skills:excel-automation-python` — or just describe the task.
+
+**What it does:** Reads, writes, and formats real Excel workbooks with Python — pandas for data in/out, openpyxl for formulas, multiple sheets, number formats, column widths, and styling — so recurring spreadsheet deliverables become a script instead of hand work. Use when automating an Excel report, converting data to a formatted .xlsx, reading a messy workbook into a DataFrame, or deciding between pandas and openpyxl.
+
+**Triggers:** `excel automation`, `openpyxl`, `write xlsx`, `read excel python`, `pandas to_excel`, `format excel with python`, `excel report script`, `xlsxwriter`, `automate spreadsheet`, `excel formulas python`
+
+### `data-tools-skills:pdf-data-extraction`
+
+**Invoke:** `/data-tools-skills:pdf-data-extraction` — or just describe the task.
+
+**What it does:** Extracts tables and text from PDFs into usable data — choosing between pdfplumber and camelot by PDF type, detecting scanned-vs-native pages, handling multi-page tables, bank-statement and invoice layouts, and validating extracted numbers against the document's own totals. Use when pulling transactions from a PDF bank statement, tabling data out of a PDF report or invoice, or when a PDF extraction comes out scrambled.
+
+**Triggers:** `extract pdf table`, `pdf to excel`, `pdfplumber`, `camelot`, `parse bank statement pdf`, `pdf invoice data`, `scanned pdf`, `OCR pdf`, `pdf text extraction`, `table extraction python`
+
+### `data-tools-skills:rest-api-data-pulls`
+
+**Invoke:** `/data-tools-skills:rest-api-data-pulls` — or just describe the task.
+
+**What it does:** Pulls data from REST APIs into files and DataFrames reliably — authentication patterns, query and field selection, pagination until exhaustion, retries with backoff for rate limits and transient failures, and flattening nested JSON — using Oracle Fusion Cloud REST APIs as the worked example. Use when extracting data from a REST API (Fusion or any SaaS), when a pull returns partial data, or when hardening a recurring API extract.
+
+**Triggers:** `rest api pull`, `call api python`, `fusion rest api`, `pagination`, `api rate limit`, `429 retry`, `requests python`, `extract data from api`, `api to csv`, `json to dataframe`, `oauth token api`
 
 ## `machine-learning-skills`
 
@@ -464,6 +750,98 @@ Install: `/plugin install continuous-improvement-skills@treasury-analyst-skills`
 **What it does:** Maps a process end to end in current and future state, quantifying cycle time, lead time, and value-added vs non-value-added time to expose waste and improve flow; scopes the effort first with SIPOC. Use when analyzing a whole process, mapping a value stream, drawing a current- or future-state map, measuring lead vs cycle time, or scoping a process with SIPOC.
 
 **Triggers:** `value stream mapping`, `VSM`, `current state`, `future state`, `process map`, `SIPOC`, `lead time`, `cycle time`, `waste`, `flow`
+
+## `board-of-advisors-skills`
+
+Multi-agent Board of Advisors code review: five read-only specialist subagents plus a board-chair synthesizer, orchestrated by the board-review skill into a ranked, goal-preserving optimization report.
+
+Install: `/plugin install board-of-advisors-skills@treasury-analyst-skills`
+
+### `board-of-advisors-skills:board-review`
+
+**Invoke:** `/board-of-advisors-skills:board-review` — or just describe the task.
+
+**What it does:** Runs the full Board of Advisors multi-agent swarm — five read-only specialist subagents (performance, accuracy/correctness, structure/architecture, clarity/maintainability, robustness/edge-cases) launched in parallel over the code under review, then the board-chair subagent synthesizing their findings into one deduplicated, ranked revision report that optimizes for speed and accuracy while strictly preserving the original deliverable goals. Nothing is implemented without explicit user approval. Use when the user asks for a board review, board of advisors, full optimization review, performance+accuracy audit, or a deep multi-angle code audit.
+
+**Triggers:** `board review`, `board of advisors`, `run the board`, `full optimization review`, `performance and accuracy audit`, `deep code audit`, `multi-agent review`, `suboptimal code audit`, `optimize this code thoroughly`
+
+## `full-stack-dev-skills`
+
+Full-stack application development with a lean-code philosophy: architecture, FastAPI backends, databases/ORM, modern dynamic frontends, realtime features, ML in production, testing strategy, and deployment.
+
+Install: `/plugin install full-stack-dev-skills@treasury-analyst-skills`
+
+### `full-stack-dev-skills:backend-api-development`
+
+**Invoke:** `/full-stack-dev-skills:backend-api-development` — or just describe the task.
+
+**What it does:** Builds lean FastAPI backends — routing and dependency injection, Pydantic models as the single validation/serialization layer, auth (session cookies vs JWT, chosen by client type), consistent error handling, pagination, and the auto-generated OpenAPI schema as the API contract. Use when creating or extending a REST API, adding authentication, fixing validation or error-handling inconsistencies, or designing endpoints.
+
+**Triggers:** `FastAPI`, `build an API`, `REST endpoint`, `pydantic validation`, `API auth`, `JWT vs session`, `API error handling`, `pagination endpoint`, `OpenAPI schema`, `dependency injection fastapi`, `CRUD API`
+
+### `full-stack-dev-skills:database-and-orm`
+
+**Invoke:** `/full-stack-dev-skills:database-and-orm` — or just describe the task.
+
+**What it does:** Designs and operates the application data layer the lean way — schema design with real constraints, SQLAlchemy/SQLModel models, Alembic migrations as the only schema-change path, query patterns that avoid N+1 and load only what's needed, transactions at the service boundary, and the SQLite-first-Postgres-ready growth path. Use when designing tables, writing or reviewing ORM queries, setting up or fixing migrations, debugging slow or N+1-ridden endpoints, or moving dev SQLite to production Postgres.
+
+**Triggers:** `database schema`, `SQLAlchemy`, `SQLModel`, `alembic migration`, `N+1 query`, `ORM slow`, `design tables`, `foreign key`, `sqlite to postgres`, `transaction handling`, `database indexes app`
+
+### `full-stack-dev-skills:deploy-and-operate`
+
+**Invoke:** `/full-stack-dev-skills:deploy-and-operate` — or just describe the task.
+
+**What it does:** Ships and runs full-stack apps the lean way — small multi-stage Docker images, a CI pipeline shaped lint → test → build → migrate → deploy, twelve-factor environment and secrets discipline, health endpoints, structured logging with request IDs, and the minimal observability that answers "is it up and what broke" — plus rollback as a first-class path. Use when containerizing an app, setting up CI/CD, wiring environments and secrets, adding health checks or logging, or designing the deploy/rollback flow.
+
+**Triggers:** `dockerfile`, `deploy the app`, `CI/CD pipeline`, `github actions deploy`, `environment variables prod`, `secrets management app`, `health check endpoint`, `structured logging`, `rollback deploy`, `container image size`, `run migrations on deploy`, `observability basics`
+
+### `full-stack-dev-skills:frontend-modern-ui`
+
+**Invoke:** `/full-stack-dev-skills:frontend-modern-ui` — or just describe the task.
+
+**What it does:** Builds lean, dynamic frontends — React + Vite when the UI is a real application (components by feature, server state via TanStack Query vs local UI state, forms, accessibility basics), htmx + server templates when it's mostly forms and tables, and the judgment call between them. Use when building or restructuring a web UI, untangling React state, wiring data fetching, choosing React vs htmx, or reviewing frontend code for excess complexity.
+
+**Triggers:** `react component`, `frontend state management`, `tanstack query`, `useEffect fetch`, `htmx`, `vite setup`, `form handling react`, `UI architecture`, `frontend too complex`, `SPA vs server rendered`, `component design`
+
+### `full-stack-dev-skills:full-stack-app-architecture`
+
+**Invoke:** `/full-stack-dev-skills:full-stack-app-architecture` — or just describe the task.
+
+**What it does:** Chooses and structures a full-stack application the lean way — picking the stack (default: FastAPI + React/Vite or htmx, SQLite-first), monolith-first project layout, module boundaries that follow features not layers, twelve-factor config/env handling, and the criteria for when (rarely, late) to split services. Use when starting an app, restructuring a project, choosing between monolith and services, or deciding where new code should live.
+
+**Triggers:** `app architecture`, `project structure`, `monolith vs microservices`, `choose the stack`, `folder layout`, `where should this code live`, `new web app setup`, `scaffold project`, `module boundaries`, `config management app`
+
+### `full-stack-dev-skills:lean-code-principles`
+
+**Invoke:** `/full-stack-dev-skills:lean-code-principles` — or just describe the task.
+
+**What it does:** Applies the lean-code discipline that anchors this plugin — minimizing lines of code by leaning on frameworks and the standard library, YAGNI, small public surface area, deleting code as a feature, and judging when an abstraction pays for itself versus when it's speculative cost. Use when writing or reviewing application code, deciding whether to add a dependency/abstraction/layer, simplifying an overgrown module, or setting coding standards for a project.
+
+**Triggers:** `lean code`, `minimize lines of code`, `YAGNI`, `over-engineering`, `simplify this code`, `too much boilerplate`, `do we need this abstraction`, `code review simplicity`, `delete code`, `small diff`, `keep it simple`
+
+### `full-stack-dev-skills:ml-in-production`
+
+**Invoke:** `/full-stack-dev-skills:ml-in-production` — or just describe the task.
+
+**What it does:** Puts machine-learning models into applications the lean way — packaging a trained model as a versioned artifact, serving it behind a FastAPI endpoint with Pydantic-validated inputs, choosing batch vs realtime inference by the product's actual latency need, keeping the feature pipeline identical between training and serving, and monitoring predictions and drift so the model earns continued trust. Use when deploying a model into an app, building an inference endpoint, choosing a serving pattern, debugging training/serving skew, or setting up prediction logging and drift checks.
+
+**Triggers:** `deploy ML model`, `model serving`, `inference endpoint`, `predict API`, `batch scoring`, `model versioning`, `training serving skew`, `model monitoring`, `drift detection production`, `ml pipeline app`, `score in real time`
+
+### `full-stack-dev-skills:realtime-and-dynamic-features`
+
+**Invoke:** `/full-stack-dev-skills:realtime-and-dynamic-features` — or just describe the task.
+
+**What it does:** Adds the highly dynamic layer to full-stack apps the lean way — choosing polling vs Server-Sent Events vs WebSockets by actual need, streaming responses (including LLM token streams), live-updating dashboards, optimistic UI, and background jobs with progress reporting, using FastAPI primitives and minimal client code. Use when a page must update without reload, a response should stream, long work must run in the background with status, or when choosing the realtime transport.
+
+**Triggers:** `websocket`, `server-sent events`, `SSE`, `live updates`, `streaming response`, `real-time dashboard`, `background job progress`, `optimistic UI`, `long running task API`, `push updates`, `live refresh`, `stream LLM tokens`
+
+### `full-stack-dev-skills:testing-strategy`
+
+**Invoke:** `/full-stack-dev-skills:testing-strategy` — or just describe the task.
+
+**What it does:** Designs minimal effective test suites for full-stack apps — testing behavior at the API boundary over mocking internals, pytest fixtures for real (test) databases, a handful of Playwright end-to-end tests for critical user flows only, regression tests for every fixed bug, and explicit judgment about what NOT to test — so the suite catches real breakage without taxing every refactor. Use when setting up testing for an app, deciding what to test at which level, reviewing a slow or brittle suite, or adding tests around a bug.
+
+**Triggers:** `testing strategy`, `what to test`, `pytest setup`, `test the API`, `mock or not`, `brittle tests`, `slow test suite`, `playwright e2e`, `test coverage target`, `regression test`, `test pyramid`, `integration vs unit`
 
 ## `coding-agent-skills`
 
