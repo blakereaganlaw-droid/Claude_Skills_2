@@ -19,6 +19,12 @@ Never store secrets, credentials, account numbers, or client data here.
   branch — other agents' PRs merge into it, not only into main. (evidence: PRs #4–#12
   targeted it; confidence: high)
 
+- FACT: The user's reconciliation projects: `OG_Recon` = the deterministic forward matching
+  engine (open BSL → open ST, Oracle CM "DASH", passes P0–P10, independent audit C1–C10);
+  `Unreconcile2` = the separate backward un-reconciliation engine; `BSL_MATCHING_ENGINE` =
+  the bank-data-free recreation of OG_Recon (built 2026-07-18). (evidence: repo READMEs +
+  build session; confidence: high)
+
 ## User Preferences & Style
 - PREFERENCE: Skills follow the "do + teach" house standard — perform the task step by step AND
   explain the reasoning. (user-selected at project scoping; confirmed throughout)
@@ -35,6 +41,11 @@ Never store secrets, credentials, account numbers, or client data here.
   under `metadata`, fixed section order, depth pushed to references/, evals file) and preserve
   the source's intent; never commit the draft verbatim. (evidence: elite-python-engineer,
   2026-07-18; confidence: medium — one instance)
+- PREFERENCE: Data-sensitivity posture for engine variants: bank-originated files (BAI2/MT940/
+  camt/SWIFT) prohibited as a hard guard, and no potentially sensitive data retained — purge
+  staged inputs post-run, scrub 9+-digit runs in logs/manifests (keep YYYYMMDD stamps), git
+  hygiene gate for data files. The BSL_UNR export and its derivatives are always allowed.
+  (user-stated for BSL_MATCHING_ENGINE, 2026-07-18)
 
 ## Project State & Decisions
 - FACT: Library state after PR #13: 100 skills across 16 plugins plus 7 plugin subagents;
@@ -71,6 +82,12 @@ Never store secrets, credentials, account numbers, or client data here.
 - LESSON: With ~100 installed skills, the skill-listing context budget trims least-used
   descriptions to name-only; direct `/plugin:skill` invocation still works, and newly installed
   plugins appear in the listing only at the next refresh. (observed 2026-07-18)
+- LESSON: The GitHub App integration cannot create repositories (403 "Resource not accessible
+  by integration") — the user creates the empty repo manually, then `add_repo` brings it into
+  session scope for pushing. (observed creating BSL_MATCHING_ENGINE, 2026-07-18)
+- RULE: Never pass reference-bearing Oracle/bank exports through pandas or an Excel resave —
+  float coercion turns `0006789599` into `6789599.0` and destroys join keys; the recon engines
+  ban pandas entirely for this reason. (source: OG_Recon README, engine-enforced)
 
 ## Successful Patterns / Working Methods
 - PATTERN: Parallel subagent authoring works well when each agent first reads the committed
@@ -93,3 +110,8 @@ Never store secrets, credentials, account numbers, or client data here.
   skill specs to house standard). Library delta pending merge: 101st skill
   (`full-stack-dev-skills:elite-python-engineer`), validate.sh clean, catalog regenerated.
   Merged/retired: none. Flagged: no contradictions.
+- 2026-07-18 — BSL_MATCHING_ENGINE build. Added: 1 fact (recon-repo family), 1 preference
+  (data-sensitivity posture for variants), 1 lesson (integration cannot create repos),
+  1 rule (no pandas on reference-bearing exports). Deliverable: OG_Recon recreated bank-data-
+  free with BankDataProhibited guard + data_guard purge/scrub/hygiene; 80/80 tests; source
+  repo verified untouched. Merged/retired: none. Flagged: no contradictions.
