@@ -21,7 +21,7 @@ Never commit real client, bank, or account data. Sanitize to structural examples
 artifacts in `*.private.md` or `references/*.local.*` (git-ignored).
 
 ## Build status (waves)
-All seven waves are complete: **77 skills across 13 plugins**, `validate.sh` clean.
+All seven waves are complete: **80 skills across 13 plugins**, `validate.sh` clean.
 - **Wave 0 — Foundation:** ✅ repo scaffold, authoring standard + template, `bank-reconciliation`
   exemplar, validator.
 - **Wave 1 — Day-job core:** ✅ `cash-management-skills` (6), `oracle-otbi-skills` (5),
@@ -36,9 +36,10 @@ All seven waves are complete: **77 skills across 13 plugins**, `validate.sh` cle
 - **Wave 5 — Advanced treasury & accounting ops:** ✅ `treasury-accounting-skills` (6): debt
   facilities & covenants, hedging & derivatives, investment policy compliance, accruals &
   prepaids, intercompany accounting, audit readiness & PBC.
-- **Wave 6 — Sponsored projects AR:** ✅ `sponsored-projects-ar-skills` (5): master router,
+- **Wave 6 — Sponsored projects AR:** ✅ `sponsored-projects-ar-skills` (8): master router,
   PPM-to-AR domain knowledge, unbilled/billed WIP reconciliation, KPIs & trend forecasts,
-  reporting & recommendations.
+  reporting & recommendations, plus federal compliance — Uniform Guidance core, federal
+  billing/cash management (LOC/PMS draws), and effort reporting basics.
 
 Each plugin is independently installable and useful. Next: tailoring skills to your real
 environment (Oracle OTBI reports, reconciliation process, chart of accounts, bank statement

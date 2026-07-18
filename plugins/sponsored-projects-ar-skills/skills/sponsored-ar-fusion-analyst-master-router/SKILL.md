@@ -34,6 +34,11 @@ description: >-
    - *"Summarize / build a report / what should we do?"* →
      `sponsored-projects-ar-skills:reporting-visualization-recommendations` (also the standard
      final step of any multi-part analysis).
+   - *Federal-sponsor questions get the compliance layer too:* Uniform Guidance frame,
+     thresholds, allowability →
+     `sponsored-projects-ar-skills:uniform-guidance-federal-core`; draws/advances/reimbursement
+     and federal aging → `sponsored-projects-ar-skills:federal-billing-cash-management`;
+     salary/effort charges → `sponsored-projects-ar-skills:federal-effort-reporting-basics`.
 2. **Confirm the award/bill-plan type up front — it changes every downstream answer.**
    **Cost-reimbursable** awards bill actual incurred expenses (unbilled AR is expense-driven);
    **fixed-price/milestone** awards bill pre-set amounts on events (unbilled AR is

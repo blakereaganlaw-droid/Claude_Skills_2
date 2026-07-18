@@ -28,7 +28,7 @@ Installed skills are namespaced, e.g. `cash-management-skills:bank-reconciliatio
 | `cash-management-skills` | Cash positioning, bank reconciliation, forecasting, liquidity, controls, netting |
 | `oracle-otbi-skills` | Building OTBI reports in Oracle Fusion Cloud, with deep Cash Management coverage |
 | `oracle-fusion-finance-skills` | Fusion Financials modules: GL/journals, FBDI loading, AP invoice-to-pay, AR/collections, Cash Management module, period close |
-| `sponsored-projects-ar-skills` | Sponsored/grants AR across Fusion Receivables + PPM: router, domain map, unbilled/WIP recon, KPIs & forecasts, reporting |
+| `sponsored-projects-ar-skills` | Sponsored/grants AR across Fusion Receivables + PPM: router, domain map, unbilled/WIP recon, KPIs & forecasts, reporting, federal compliance (Uniform Guidance, LOC draws, effort) |
 | `banking-skills` | Payment rails, account structures, statement formats, fees, connectivity, KYC/AML |
 | `accounting-skills` | Double-entry, journals, chart of accounts, close, reconciliations, statements |
 | `finance-skills` | Time value of money, working capital, ratios, short-term investing, FX, capital budgeting |

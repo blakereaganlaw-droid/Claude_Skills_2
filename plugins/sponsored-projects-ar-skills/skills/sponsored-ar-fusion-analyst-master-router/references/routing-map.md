@@ -12,6 +12,9 @@
 | Unbilled vs billed; WIP; billing status; draft invoices; stuck/exception invoices | `unbilled-billed-ar-wip-recon` | "how much is unbilled", "invoices in error", "billing backlog" |
 | Performance, KPIs, benchmarks, trends, forecasts | `sponsored-ar-kpi-trends-forecast` | "DSO by sponsor", "aging trend", "collections forecast" |
 | Summaries, dashboards, report designs, recommendations, next steps | `reporting-visualization-recommendations` | "build me a report", "executive summary", "what should we do" |
+| Federal rules: Uniform Guidance, thresholds, allowability, Single Audit | `uniform-guidance-federal-core` | "2 CFR 200", "is this allowable", "de minimis rate" |
+| Federal money movement: LOC/PMS draws, advances, reimbursement, federal aging | `federal-billing-cash-management` | "drawdown", "SF-270", "expenditure to draw lag" |
+| Salary/effort charging on federal awards | `federal-effort-reporting-basics` | "effort certification", "salary allocation", "§200.430" |
 Multi-part questions run the chain: domain-knowledge (profile) → recon and/or KPI (analyze) →
 reporting (deliver). The router owns sequencing and the final structure.
 
