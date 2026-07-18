@@ -30,6 +30,11 @@ Never store secrets, credentials, account numbers, or client data here.
   `references/your-environment.md`, with real data kept out of git. (user-selected)
 - PREFERENCE: The user wants the metacognition suite permanently engaged — memory, reflection,
   and crystallization running as standing behavior, not on request. (user-stated 2026-07-18)
+- PREFERENCE: The user sometimes supplies externally-drafted skill specs (e.g. a Grok-authored
+  persona skill) — adapt them to the house standard (name+description frontmatter with extras
+  under `metadata`, fixed section order, depth pushed to references/, evals file) and preserve
+  the source's intent; never commit the draft verbatim. (evidence: elite-python-engineer,
+  2026-07-18; confidence: medium — one instance)
 
 ## Project State & Decisions
 - FACT: Library state after PR #13: 100 skills across 16 plugins plus 7 plugin subagents;
@@ -84,3 +89,7 @@ Never store secrets, credentials, account numbers, or client data here.
   5 preferences, 4 project rules/facts, 2 open questions, 5 lessons/avoidance rules,
   3 patterns/methods. Merged: none (first pass). Retired: none. Flagged: no contradictions.
   Evidence: session history through PR #13 (force-push incident → merge `be2c8af`).
+- 2026-07-18 — elite-python-engineer session. Added: 1 preference (adapt externally-drafted
+  skill specs to house standard). Library delta pending merge: 101st skill
+  (`full-stack-dev-skills:elite-python-engineer`), validate.sh clean, catalog regenerated.
+  Merged/retired: none. Flagged: no contradictions.
