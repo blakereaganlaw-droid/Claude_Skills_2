@@ -21,7 +21,8 @@ Never commit real client, bank, or account data. Sanitize to structural examples
 artifacts in `*.private.md` or `references/*.local.*` (git-ignored).
 
 ## Build status (waves)
-All seven waves are complete: **85 skills across 13 plugins**, `validate.sh` clean.
+All eight waves are complete: **86 skills across 14 plugins** (plus 6 plugin subagents),
+`validate.sh` clean.
 - **Wave 0 — Foundation:** ✅ repo scaffold, authoring standard + template, `bank-reconciliation`
   exemplar, validator.
 - **Wave 1 — Day-job core:** ✅ `cash-management-skills` (6), `oracle-otbi-skills` (5),
@@ -43,6 +44,11 @@ All seven waves are complete: **85 skills across 13 plugins**, `validate.sh` cle
   federal compliance — Uniform Guidance core, federal billing/cash management (LOC/PMS
   draws), effort reporting basics, cost allowability screening, and compliance/audit risk
   assessment.
+
+- **Wave 8 — Board of Advisors:** ✅ `board-of-advisors-skills`: the `board-review`
+  orchestration skill plus six read-only subagents (performance, accuracy/correctness,
+  structure/architecture, clarity/maintainability, robustness/edge-cases, board-chair) in
+  the plugin's `agents/` folder.
 
 Each plugin is independently installable and useful. Next: tailoring skills to your real
 environment (Oracle OTBI reports, reconciliation process, chart of accounts, bank statement

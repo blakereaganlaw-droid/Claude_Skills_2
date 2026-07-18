@@ -38,6 +38,7 @@ Installed skills are namespaced, e.g. `cash-management-skills:bank-reconciliatio
 | `machine-learning-skills` | Problem framing, time-series forecasting, supervised modeling, evaluation, features, anomalies |
 | `continuous-improvement-skills` | VSM, root-cause analysis, DMAIC, standard work, A3, kaizen & co-design |
 | `coding-agent-skills` | Python for analysts, Claude Code config, agent design, prompt engineering, git, skill authoring |
+| `board-of-advisors-skills` | Multi-agent code review swarm: 5 read-only specialist subagents + board-chair synthesizer, orchestrated by `board-review` |
 
 **Full catalog:** [`docs/SKILLS.md`](docs/SKILLS.md) lists every skill, what it does, and the
 exact phrases that trigger it (regenerate with `python3 scripts/gen-catalog.py`).
@@ -48,8 +49,12 @@ Skills are built in waves (day-job first). See the build status and design notes
 ## How it's built
 
 - One repo that is both a **plugin marketplace** (`.claude-plugin/marketplace.json`) and the home
-  for thirteen **plugins** under `plugins/`, mirroring Anthropic's own
+  for fourteen **plugins** under `plugins/`, mirroring Anthropic's own
   [`anthropics/skills`](https://github.com/anthropics/skills) layout.
+- One plugin (`board-of-advisors-skills`) also ships **subagents** in its `agents/` folder —
+  after install they appear in `/agents` namespaced as `board-of-advisors-skills:<name>`
+  (e.g. `board-of-advisors-skills:board-chair`) and are orchestrated by the
+  `board-review` skill.
 - The authoring standard lives in the `coding-agent-skills:writing-agent-skills` skill; its
   template is `plugins/coding-agent-skills/skills/writing-agent-skills/assets/SKILL.template.md`.
 - `bash scripts/validate.sh` lints every skill and manifest.
