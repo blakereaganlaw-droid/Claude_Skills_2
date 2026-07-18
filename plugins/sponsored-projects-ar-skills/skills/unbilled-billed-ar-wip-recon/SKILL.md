@@ -21,7 +21,9 @@ description: >-
   variance.
 - Not for: aging and collections of *already-billed* AR → see
   `sponsored-projects-ar-skills:sponsored-ar-kpi-trends-forecast` (metrics) and
-  `oracle-fusion-finance-skills:fusion-ar-and-collections` (working it). Come here via the
+  `oracle-fusion-finance-skills:fusion-ar-and-collections` (working it). For the accounting
+  view — substantiating the unbilled GL balance and revenue-vs-billed variance → see
+  `sponsored-projects-ar-skills:revenue-billing-reconciliation`. Come here via the
   router (`sponsored-projects-ar-skills:sponsored-ar-fusion-analyst-master-router`).
 
 ## Do it

@@ -10,6 +10,7 @@
 |---|---|---|
 | What a term/field means; where data comes from; which subject area to use; "profile this extract" | `fusion-ar-ppm-domain-knowledge` | "what is unbilled AR", "which subject area", "map these columns" |
 | Unbilled vs billed; WIP; billing status; draft invoices; stuck/exception invoices | `unbilled-billed-ar-wip-recon` | "how much is unbilled", "invoices in error", "billing backlog" |
+| Revenue vs invoiced; over/under-billing; unbilled balance substantiation; GL tie-out | `revenue-billing-reconciliation` | "recognized vs billed", "over billed", "substantiate unbilled" |
 | Performance, KPIs, benchmarks, trends, forecasts | `sponsored-ar-kpi-trends-forecast` | "DSO by sponsor", "aging trend", "collections forecast" |
 | Summaries, dashboards, report designs, recommendations, next steps | `reporting-visualization-recommendations` | "build me a report", "executive summary", "what should we do" |
 | Risk sweep, exceptions, anomalies (any sponsor type) | `compliance-risk-anomaly` | "risk review", "anything unusual", "exception scan" |

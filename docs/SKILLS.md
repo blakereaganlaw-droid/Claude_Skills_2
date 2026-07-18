@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **83 skills across 13 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **84 skills across 13 plugins.**
 
 ## How to trigger a skill
 
@@ -24,7 +24,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
-- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (11) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
+- [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (12) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
 - [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (6) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, and period close.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
@@ -197,6 +197,14 @@ Install: `/plugin install sponsored-projects-ar-skills@treasury-analyst-skills`
 **What it does:** Turns sponsored-AR analysis into finished deliverables — the standard structured report (executive summary, data validation, detailed tables, visual descriptions, insights by financial/operational/compliance/strategic angle), suggested OTBI-style report patterns (AR aging by project, project invoices prior to acceptance), and actionable recommendations covering collection priorities, billing acceleration, and data quality, with multi-currency, intercompany, and partial-payment edge cases handled. Use as the final step of any sponsored-AR analysis, or when the user asks for summaries, dashboards, report designs, or next steps on sponsored/grants receivables.
 
 **Triggers:** `sponsored AR report`, `grants AR summary`, `AR dashboard for projects`, `executive summary receivables`, `OTBI report for sponsored projects`, `aging by sponsor report`, `what should we do about unbilled`, `present sponsored AR`, `next steps grants AR`
+
+### `sponsored-projects-ar-skills:revenue-billing-reconciliation`
+
+**Invoke:** `/sponsored-projects-ar-skills:revenue-billing-reconciliation` — or just describe the task.
+
+**What it does:** Reconciles PPM revenue recognition against AR billing for sponsored awards from the accounting side — the documented Generate Revenue → events → invoice flow, the variance identity (recognized revenue − billed = unbilled or over-billed), funding-limit checks against contract amounts, and the unbilled-AR account roll (DR Unbilled Receivable / CR Revenue at recognition; DR Receivable / CR Unbilled Receivable at invoicing) through to GL tie-out. Use for questions about revenue vs invoiced amounts, over/under-billing, unbilled balance substantiation, or tying sponsored revenue and receivables to the GL.
+
+**Triggers:** `revenue vs billing`, `over billed`, `under billed`, `revenue reconciliation`, `unbilled receivable account`, `GL tie-out sponsored`, `recognized vs invoiced`, `revenue events`, `billing in excess`, `substantiate unbilled balance`, `project revenue reconciliation`
 
 ### `sponsored-projects-ar-skills:sponsored-ar-fusion-analyst-master-router`
 
