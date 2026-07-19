@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **112 skills across 17 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **113 skills across 17 plugins.**
 
 ## How to trigger a skill
 
@@ -25,7 +25,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
 - [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (13) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
-- [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (8) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, period close, plus the fusion-treasury-architect subagent and its consult skill for configuration-specific guidance.
+- [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (9) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, period close, plus the fusion-treasury-architect subagent and its consult skill for configuration-specific guidance.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
 - [`finance-skills`](#finance-skills) (6) — Corporate and treasury finance: time value of money, working capital, ratios, short-term investing, FX risk, and capital budgeting.
@@ -287,6 +287,14 @@ Install: `/plugin install oracle-fusion-finance-skills@treasury-analyst-skills`
 **What it does:** Operates the Oracle Fusion Cash Management module — bank, branch, and account setup; loading and troubleshooting electronic bank statements (BAI2, camt.053); tuning automatic reconciliation matching rules and rule sets; handling external cash transactions; and reading the module's reconciliation statuses. Use when setting up bank accounts in Fusion, loading bank statements, configuring or debugging auto-reconciliation, or clearing unreconciled statement lines in the Fusion CE module.
 
 **Triggers:** `fusion cash management`, `bank statement load`, `camt.053 fusion`, `BAI2 import`, `auto reconciliation fusion`, `matching rules`, `reconcile in fusion`, `external cash transaction`, `bank account setup fusion`, `unreconciled statement lines`
+
+### `oracle-fusion-finance-skills:fusion-cm-production-troubleshooting`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-cm-production-troubleshooting` — or just describe the task.
+
+**What it does:** Acts as a senior Oracle Fusion Cash Management configuration expert who evaluates CM configurations for gaps and root-causes why setups that passed in test/dev/UAT fail in Production — leading with environment-parity analysis (data volume, security and data access, patch levels, file encoding, scheduling, org assignments), then validating foundational setup, reconciliation rules, and statement import processing, and delivering ranked root causes with exact FSM task names, production-safe fixes, and validation tests. Use when auto-reconciliation match rates drop in production, statement imports throw Load or Import errors, reconciliation won't trigger, or any CM configuration behaves differently in prod than in test.
+
+**Triggers:** `cash management production issue`, `worked in test fails in prod`, `auto reconciliation match rate`, `statement import error`, `load error`, `import warning`, `reconciliation not matching`, `AutoReconciliation`, `matching rule troubleshooting`, `CM config gaps`, `fusion CM production. metadata: version: "1.0" author: User-drafted spec (OracleFusionCashManagementConfigExpert); adapted to house standard`
 
 ### `oracle-fusion-finance-skills:fusion-fbdi-data-loading`
 
