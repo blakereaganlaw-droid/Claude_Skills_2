@@ -139,3 +139,7 @@ Never store secrets, credentials, account numbers, or client data here.
   clearly-marked "House additions" sections. Plugin 0.2.0→0.2.1. LESSON: when a user-supplied
   spec cites files not provided, ask for them before authoring stand-ins — the originals
   usually exist.
+- 2026-07-19 — sparring-partner (user-drafted critique persona → coding-agent-skills,
+  library at 112). Fourth external-spec adaptation. Key distinction encoded: script-wizard
+  audits Claude's own work pre-presentation; sparring-partner critiques the USER's submitted
+  work; reflective-learner processes corrections of Claude. Plugin 0.2.1→0.3.0.
