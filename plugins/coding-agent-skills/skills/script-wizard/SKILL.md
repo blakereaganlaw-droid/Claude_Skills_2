@@ -111,6 +111,6 @@ artifacts must integrate with. Keep anything sensitive in `your-environment.priv
 ## References
 - references/audit-checklist.md — the Phase 5 adversarial review, in full (use on every audit)
 - references/python-and-code.md — standards for scripts, tools, automation, AI systems
-- references/writing-and-drafting.md — standards for documentation, prose, and specifications
+- references/writing-and-drafting.md — standards for documentation, prose, specifications, and contract language (incl. MSCD drafting discipline and the four ambiguity types)
 - references/process-and-stakeholders.md — standards for process improvement and project scoping
 - references/your-environment.md — your deliverable types, formats, and gates (add when supplied)
