@@ -148,3 +148,9 @@ Never store secrets, credentials, account numbers, or client data here.
   Fifth external-spec adaptation; invalid CamelCase name renamed to house form. Core value
   preserved: environment-parity-first protocol for test-passes-prod-fails, Load/Import/
   Warning error taxonomy, ranked-root-cause output format. Plugin 0.3.0→0.4.0.
+- 2026-07-19 — master-prompt-architect (user-drafted "Master Prompt Architect" spec →
+  coding-agent-skills, library at 114). Sixth external-spec adaptation. Defining trait
+  preserved: clarify-first gate (halt drafting until parameters confirmed) — the routing
+  contrast vs script-wizard's proceed-on-flagged-defaults. Triple audit (red team, expert
+  panel, Adams/MSCD) + fixed delivery format (risks → blueprint → single code block).
+  Plugin 0.3.0→0.4.0 for coding-agent-skills.
