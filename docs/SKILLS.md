@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **114 skills across 17 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **115 skills across 17 plugins.**
 
 ## How to trigger a skill
 
@@ -25,7 +25,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 - [`cash-management-skills`](#cash-management-skills) (6) — Treasury cash operations: cash positioning, bank reconciliation, forecasting, liquidity, controls, and intercompany netting.
 - [`oracle-otbi-skills`](#oracle-otbi-skills) (5) — Build OTBI reports and analyses in Oracle Fusion Cloud, with deep Cash Management subject-area coverage.
 - [`sponsored-projects-ar-skills`](#sponsored-projects-ar-skills) (13) — Sponsored projects/awards/grants receivables analysis across Oracle Fusion Receivables + PPM: master router, PPM-to-AR domain knowledge, unbilled/billed AR reconciliation, KPIs and trend forecasts, reporting outputs, and federal compliance (Uniform Guidance, federal billing/cash management, effort reporting).
-- [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (9) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, period close, plus the fusion-treasury-architect subagent and its consult skill for configuration-specific guidance.
+- [`oracle-fusion-finance-skills`](#oracle-fusion-finance-skills) (10) — Functional Oracle Fusion Cloud Financials: GL and journals, FBDI data loading, AP invoice-to-pay, AR and collections, the Cash Management module, period close, plus the fusion-treasury-architect subagent and its consult skill for configuration-specific guidance.
 - [`banking-skills`](#banking-skills) (6) — Payment rails, bank account structures, statement formats, bank-fee analysis, connectivity, and KYC/AML basics.
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
 - [`finance-skills`](#finance-skills) (6) — Corporate and treasury finance: time value of money, working capital, ratios, short-term investing, FX risk, and capital budgeting.
@@ -279,6 +279,14 @@ Install: `/plugin install oracle-fusion-finance-skills@treasury-analyst-skills`
 **What it does:** Consults the fusion-treasury-architect subagent — an elite Oracle Cloud Fusion Financials and Treasury architect persona — for expert, configuration-specific answers: exact FSM task names and Redwood UI navigation, COA/value-set/CVR design, SLA mapping and journal line rules, bank statement parsing (BAI2/CAMT.053/MT940 with segment-level detail), reconciliation rule sets and tolerances, AutoInvoice/lockbox/PPR configuration, and structured error troubleshooting (root cause → diagnostics → resolution). Use for deep Fusion configuration design, integration architecture, or error diagnosis beyond the teaching skills.
 
 **Triggers:** `fusion configuration`, `FSM task`, `redwood navigation`, `configure SLA`, `CVR design`, `BAI2 parsing rule`, `reconciliation rule setup`, `AutoInvoice grouping rule`, `PPR setup`, `fusion error troubleshooting`, `lockbox configuration`, `fusion architect`
+
+### `oracle-fusion-finance-skills:fusion-auto-reconciliation-design`
+
+**Invoke:** `/oracle-fusion-finance-skills:fusion-auto-reconciliation-design` — or just describe the task.
+
+**What it does:** Acts as an Oracle Cloud Fusion Cash Management architect who designs and optimizes automated bank reconciliation systems for maximum automatic match rates — applying the subledger-supremacy philosophy (the bank statement mirrors what AR/AP already processed; transaction creation rules are a last resort reserved for bank-originated items like fees, interest, and sweeps), a strict matching hierarchy (exact one-to-one first, grouped many-sided next, judicious tolerances), and format-level parsing engineering (BAI2 16/88 records and type codes, CAMT.053, MT940) to fuel matching from references the bank actually sends. Use when designing or tuning matching, parsing, or transaction creation rules, raising auto-match rates, or reconciling bulk settlements.
+
+**Triggers:** `matching rule design`, `raise match rate`, `auto reconciliation design`, `transaction creation rule`, `TCR`, `parse rule`, `BAI2 88 record`, `bulk deposit reconciliation`, `credit card settlement recon`, `recon rule optimization`, `tolerance rule design. metadata: version: "1.0" author: User-drafted spec (Oracle Cloud Fusion Cash Management Architect); adapted to house standard`
 
 ### `oracle-fusion-finance-skills:fusion-cash-management-module`
 

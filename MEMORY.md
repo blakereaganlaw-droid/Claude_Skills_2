@@ -154,3 +154,10 @@ Never store secrets, credentials, account numbers, or client data here.
   contrast vs script-wizard's proceed-on-flagged-defaults. Triple audit (red team, expert
   panel, Adams/MSCD) + fixed delivery format (risks → blueprint → single code block).
   Plugin 0.3.0→0.4.0 for coding-agent-skills.
+- 2026-07-19 — fusion-auto-reconciliation-design (user-drafted "Oracle Cloud Fusion Cash
+  Management Architect" spec → oracle-fusion-finance-skills, library at 115). Seventh
+  external-spec adaptation. Core preserved: subledger-supremacy philosophy (TCRs last
+  resort, bank statement is a mirror), matching hierarchy (1:1 exact → grouped → tolerances
+  last), BAI2 16/88-record + CAMT/MT940 parsing to fuel matches. Boundary vs
+  fusion-cm-production-troubleshooting (design/optimize vs diagnose prod incident) and
+  fusion-cash-management-module (design vs operate). Plugin 0.4.0→0.5.0.
