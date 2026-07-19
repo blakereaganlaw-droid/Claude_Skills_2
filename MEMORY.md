@@ -128,3 +128,7 @@ Never store secrets, credentials, account numbers, or client data here.
   Gap-driven: skills map onto the user's real artifacts (MID master → merchant/PCI, ACH
   addenda → NACHA, stale checks → escheatment). Jurisdiction/version facts framed
   structurally with confirm-current caveats. Updated the library-state fact. Merged: none.
+- 2026-07-18 — script-wizard (user-drafted deliverable-workflow spec → coding-agent-skills,
+  library at 111). Third external-spec adaptation; authored the four reference files the
+  draft cited but didn't include (audit checklist, code/writing/process standards). Plugin
+  bumped 0.1.0→0.2.0. Composes with elite-python-engineer (process vs standards layers).
