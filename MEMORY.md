@@ -143,3 +143,8 @@ Never store secrets, credentials, account numbers, or client data here.
   library at 112). Fourth external-spec adaptation. Key distinction encoded: script-wizard
   audits Claude's own work pre-presentation; sparring-partner critiques the USER's submitted
   work; reflective-learner processes corrections of Claude. Plugin 0.2.1→0.3.0.
+- 2026-07-19 — fusion-cm-production-troubleshooting (user-drafted spec
+  "OracleFusionCashManagementConfigExpert" → oracle-fusion-finance-skills, library at 113).
+  Fifth external-spec adaptation; invalid CamelCase name renamed to house form. Core value
+  preserved: environment-parity-first protocol for test-passes-prod-fails, Load/Import/
+  Warning error taxonomy, ranked-root-cause output format. Plugin 0.3.0→0.4.0.
