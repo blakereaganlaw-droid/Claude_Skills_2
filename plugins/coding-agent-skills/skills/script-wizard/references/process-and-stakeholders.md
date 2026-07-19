@@ -1,50 +1,85 @@
-# Standards — process improvement, project scoping, multi-stakeholder work
+# Process, Projects, and Stakeholders
+
+Read this when the work involves improving a process, scoping a project, or serving several stakeholders with differing needs.
 
 ## Contents
-- Scoping a project
-- Decomposition into phases
-- Stakeholder mechanics
-- Process improvement specifics
-- Decision hygiene
 
-## Scoping a project
-- Write the objective as an outcome with a checkable success criterion and a date-shaped
-  horizon; a scope without a "we'll know it worked when…" is a wish.
-- Name what is explicitly OUT of scope — the cheapest moment to shrink a project is before
-  it starts.
-- Identify the constraint that binds first (people, data access, approvals, a system
-  cutover date) and design the plan around it, not around the work you'd enjoy most.
+- Process improvement (Lean Six Sigma / DMAIC)
+- Waste, variation, and root cause
+- Project scoping and management
+- Co-design with stakeholders
+- Decision rationale
 
-## Decomposition into phases
-- Phases end at decision points or verifiable states, not at effort boundaries — "Phase 1
-  complete = the parser passes on all three banks' files" beats "Phase 1 = two weeks."
-- Order by dependency and by risk: pull the riskiest unknown as early as possible so its
-  failure is cheap (this is the project-shaped version of Diagnose).
-- Every phase names an owner, its inputs, its deliverable, and what unblocks the next one.
-- Each phase independently useful where possible — a plan that only pays off at the end is
-  fragile to any interruption.
+## Process improvement (Lean Six Sigma / DMAIC)
 
-## Stakeholder mechanics
-- Map who runs it / who consumes it / who approves it / who can veto it — four different
-  people with four different questions; answer each in their own terms.
-- Distinguish the requester from the beneficiary; when they differ, unstated requirements
-  live with the beneficiary.
-- Surface disagreement between stakeholders as a named decision for them, not a silent
-  compromise by you.
+Use DMAIC as an operating discipline rather than a label. Name the stages only when naming them helps the user follow the reasoning.
 
-## Process improvement specifics
-- Observe the current state before designing the future one; the documented process and
-  the actual process are rarely the same thing (go where the work happens).
-- Fix root causes but stabilize symptoms first — containment, then countermeasure. Deep
-  method here: `continuous-improvement-skills:root-cause-analysis` and
-  `continuous-improvement-skills:value-stream-mapping`.
-- Every improvement lands on a standard (who does what, when, how verified) or it decays —
-  see `continuous-improvement-skills:standard-work`.
+**Define.** State the problem in terms of the defect and its consequence, not the desired solution. "Twelve percent of statement lines fail auto-reconciliation, costing roughly forty staff hours a month" is a problem statement. "We need better matching rules" is a proposed solution wearing a problem's clothes — and it forecloses the analysis before it starts.
 
-## Decision hygiene
-- For each real decision: name the options considered, the one recommended, the tradeoff
-  accepted, and what evidence would change the call (ADR-shaped, even informally).
-- Reversible decisions get made fast with a flagged default; irreversible ones get put to
-  the owner with a recommendation.
-- Record decisions where the next person will look — a decision that lives only in chat
-  will be relitigated.
+**Measure.** Establish the baseline before changing anything. Without a measured starting point, no one can tell afterward whether the change helped, and the improvement becomes a matter of opinion.
+
+**Analyze.** Find the root cause. Push past the first plausible explanation, since the first is usually a symptom. Check whether the cause you identified actually accounts for the size of the effect.
+
+**Improve.** Design the change against the root cause. Prefer changes that remove a defect opportunity over changes that add an inspection step, because inspection catches defects while prevention eliminates them.
+
+**Control.** Build in the mechanism that keeps the improvement from decaying — a checklist, a validation step, an exception report, a scheduled review. Improvements without controls revert, usually within two staffing changes.
+
+## Waste, variation, and root cause
+
+Look for the standard forms of waste: rework, waiting, unnecessary handoffs, over-processing, duplicate data entry, and defects passed downstream.
+
+Reduce variation, not just the average. A process that takes two days on average but sometimes takes three weeks is harder to live with than one that reliably takes four days, because the tail drives the staffing and the promises.
+
+Distinguish common-cause variation, which is inherent to the process, from special-cause variation, which comes from something identifiable. Reacting to common-cause noise as if it were signal makes processes worse — it adds churn without addressing anything.
+
+Use measurable criteria wherever measurement is available. Where it is not, say the assessment is qualitative rather than dressing an opinion in numbers.
+
+## Project scoping and management
+
+Treat any meaningful task as a scoped project. Manage:
+
+- **Scope** — what is in, and explicitly what is out
+- **Sequence and dependencies** — what must precede what, and what blocks on someone else
+- **Roles** — who does the work, who decides, who must be informed
+- **Risks** — what could derail it, with a mitigation for each
+- **Decision points** — where the work forks and someone must choose
+- **Quality gates** — the checkpoints where work gets verified before proceeding
+- **Change control** — how a mid-course change gets evaluated rather than absorbed silently
+
+Identify the critical path: the chain of dependent work that sets the earliest finish. Effort spent accelerating off-path work does not move the date.
+
+Prevent scope drift. When a request grows past what one pass can hold, restructure it into phases and say why. Phases with defined outputs beat one long effort with a vague finish, because each phase produces something verifiable.
+
+Sequence honestly. A plan that assumes nothing goes wrong is not a plan; it is a best case. Where a date depends on someone else, mark it as dependent rather than committing on their behalf.
+
+## Co-design with stakeholders
+
+Co-design treats the people affected by a solution as participants in building it, not as recipients. Iterative collaboration, transparent communication about constraints, and staged review produce solutions that survive contact with actual users.
+
+**Identify stakeholders early**, and separate three roles that often get conflated: the sponsor who authorizes the work, the users who operate the result, and the consumers who depend on its output. Their needs diverge, and a solution optimized for the sponsor alone tends to fail at the desk.
+
+**Surface user needs, not just sponsor preferences.** The sponsor describes the problem as it appears from above. The person doing the work knows the workarounds, the exceptions, and the reason the obvious fix already failed once.
+
+**Test structure before investing in detail.** Show an outline, a schema, a wireframe, or a worked example while changing it is still cheap. Feedback on a finished artifact arrives too late to change its shape, so people comment on wording instead of structure.
+
+**Ask for feedback at the right altitude.** Ask about structure when structure is the open question; asking "what do you think?" on a full draft invites line edits on decisions that should have been settled earlier.
+
+**Make constraints transparent.** When a request cannot be met, say what constrains it. Stakeholders accept limits they understand and resent limits that appear arbitrary.
+
+**Iterate rather than authoring once.** Two rounds of cheap drafts beat one expensive draft, because the first round reveals what the requirements actually were.
+
+## Decision rationale
+
+Record why a tradeoff went the way it did — the options, the choice, and the reason. Six months later the reasoning is invisible, and someone will reopen a settled decision or, worse, reverse it without knowing what it was protecting against.
+
+Keep it short. A decision log entry needs the decision, the alternatives considered, the reason, and the date.
+
+## House additions (this library)
+
+Deep-method companions when a phase needs more than this summary:
+
+- Root-cause discipline (5 Whys, fishbone, Pareto) → `continuous-improvement-skills:root-cause-analysis`
+- Current/future-state mapping → `continuous-improvement-skills:value-stream-mapping`
+- Full DMAIC project structure → `continuous-improvement-skills:dmaic-problem-solving`
+- Locking improvements into standards → `continuous-improvement-skills:standard-work`
+- Facilitated co-design sessions → `continuous-improvement-skills:kaizen-and-codesign`

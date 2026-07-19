@@ -132,3 +132,10 @@ Never store secrets, credentials, account numbers, or client data here.
   library at 111). Third external-spec adaptation; authored the four reference files the
   draft cited but didn't include (audit checklist, code/writing/process standards). Plugin
   bumped 0.1.0→0.2.0. Composes with elite-python-engineer (process vs standards layers).
+- 2026-07-19 — script-wizard originals arrived (user uploaded the real four reference files
+  + .skill archive after the build). Replaced my authored references with the user's
+  originals verbatim (richer: MSCD contract discipline, four ambiguity types, four-questions
+  audit + red-team + honesty rule, DMAIC/co-design detail) and kept house material as
+  clearly-marked "House additions" sections. Plugin 0.2.0→0.2.1. LESSON: when a user-supplied
+  spec cites files not provided, ask for them before authoring stand-ins — the originals
+  usually exist.
