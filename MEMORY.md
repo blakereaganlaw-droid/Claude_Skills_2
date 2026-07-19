@@ -64,6 +64,21 @@ Never store secrets, credentials, account numbers, or client data here.
 - FACT: PRs in this repo are squash-merged — branch commits are not ancestors of main after
   merge; equivalence must be checked by content diff, not ancestry. (evidence: PR #1/#2 merges;
   confidence: high)
+- FACT: `FusionCash Architect` is a standalone tool (built 2026-07-19 from the user's
+  `FusionCash_App_Design.pdf` + 5 real CM config `.xlsx` extracts): a Python engine
+  (ingest→analyze→simulate→report) that emits one self-contained offline HTML app with 4
+  modules — health-score dashboard, recon-ruleset waterfall, Advanced-Criteria SQL simulator,
+  and bank-string parse-rule sandbox. 35 tests pass; delivered locally (NOT committed — it
+  embeds real config). It lives outside the marketplace repo like the recon engines.
+  (confidence: high)
+- FACT: The real "_2" CM config counts differ from the PDF's baseline figures — TCRs 1001 (vs
+  1050), matching 57 distinct rules / 73 rows (vs 81), recon 4 rulesets / 56 sequence rows (vs
+  "9 sequences"), parse 34 rows (vs 42). The tool computes live counts and shows the PDF
+  figures only as a reference line. Notable real findings: 1000 of 1001 TCRs are DISTINCT
+  (genuine sprawl, not one template reused), 93% are ACH/subledger-suspect, many keyed to
+  individual deposit IDs (the AR-Lockbox anti-pattern); 28 precedence inversions; one Cash==Offset
+  GL anomaly. Health grade F — which is on-spec: the PDF frames the TCR footprint as the reason
+  the app exists. (confidence: high)
 
 ## Open Questions / Uncertainties
 - OPEN: Tailoring artifacts not yet supplied — sample OTBI report, reconciliation checklist,
@@ -103,6 +118,15 @@ Never store secrets, credentials, account numbers, or client data here.
 - METHOD: Current metacognition loop — capture durable items here per
   `hierarchical-memory-manager`; on corrections run the `reflective-learner` 4-step protocol;
   crystallize at milestones/session end and append to the log below. (adopted 2026-07-18)
+- METHOD: Verify a self-contained HTML deliverable before sending — render it in the
+  pre-installed Chromium (`/opt/pw-browsers/chromium-*`) via Playwright, screenshot each
+  tab/view, and assert zero console errors + that interactive widgets produce expected output.
+  Caught a hardcoded waterfall-note bug this way on FusionCash Architect. (2026-07-19)
+- PATTERN: Data-embedding reports are delivered locally via `SendUserFile` (not published, not
+  committed); `.gitignore` excludes `*.xlsx` and generated reports. Tool CODE (no real data,
+  tests use synthetic fixtures) is safe to share. Keep one source of truth for engine logic in
+  Python and mirror it in the browser JS so the offline app matches the tested reference.
+  (FusionCash Architect, 2026-07-19)
 
 ---
 
@@ -161,3 +185,12 @@ Never store secrets, credentials, account numbers, or client data here.
   last), BAI2 16/88-record + CAMT/MT940 parsing to fuel matches. Boundary vs
   fusion-cm-production-troubleshooting (design/optimize vs diagnose prod incident) and
   fusion-cash-management-module (design vs operate). Plugin 0.4.0→0.5.0.
+- 2026-07-19 — FusionCash Architect tool build (from user PDF + 5 real CM config extracts, PR #23
+  merged in parallel). Added: 2 facts (the tool + real-vs-PDF config counts/findings), 1 method
+  (headless-Chromium verification of self-contained HTML), 1 pattern (local delivery of
+  data-embedding reports + Python-JS single-source-of-truth). Deliverable: ingest/analyze/
+  simulate/report Python engine + offline 4-module HTML app; 35 tests pass; simulators verified
+  against the real baseline rules (exact PDF advanced-criteria example, leading-zero parse
+  ladder). Diverged from the PDF's React/FastAPI/PostgreSQL stack to a self-contained offline
+  file for verifiability + privacy. Delivered locally (HTML + source zip), not committed.
+  Merged/retired: none. Flagged: no contradictions.
