@@ -1,6 +1,6 @@
 # Treasury Analyst Skills — trigger & capability catalog
 
-Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **115 skills across 17 plugins.**
+Auto-generated from every skill's `SKILL.md` frontmatter by `scripts/gen-catalog.py`. **116 skills across 17 plugins.**
 
 ## How to trigger a skill
 
@@ -30,7 +30,7 @@ Install only the plugins you want; each is independent. Skills are namespaced `<
 - [`accounting-skills`](#accounting-skills) (6) — Double-entry accounting, journal entries, chart of accounts, month-end close, reconciliations, and financial statements.
 - [`finance-skills`](#finance-skills) (6) — Corporate and treasury finance: time value of money, working capital, ratios, short-term investing, FX risk, and capital budgeting.
 - [`treasury-accounting-skills`](#treasury-accounting-skills) (6) — Advanced treasury and accounting operations: debt facilities and covenant compliance, hedging and derivatives, investment policy compliance, accruals and prepaids, intercompany accounting, and audit readiness.
-- [`data-analytics-bi-skills`](#data-analytics-bi-skills) (7) — SQL, exploratory analysis, data cleaning, statistics, inference, dashboard design, and spreadsheet modeling for business intelligence.
+- [`data-analytics-bi-skills`](#data-analytics-bi-skills) (8) — SQL, exploratory analysis, data cleaning, statistics, inference, dashboard design, and spreadsheet modeling for business intelligence.
 - [`data-tools-skills`](#data-tools-skills) (6) — Practical data plumbing: Excel automation with Python, CSV/flat-file wrangling, DuckDB local analytics, PDF data extraction, REST API data pulls, and data-file hygiene.
 - [`machine-learning-skills`](#machine-learning-skills) (6) — Framing ML problems, time-series forecasting, supervised modeling, evaluation, feature engineering, and anomaly detection.
 - [`continuous-improvement-skills`](#continuous-improvement-skills) (6) — Lean, Toyota Production System, Six Sigma, and co-design: value-stream mapping, root-cause analysis, DMAIC, standard work, A3, and kaizen.
@@ -557,6 +557,14 @@ Install: `/plugin install treasury-accounting-skills@treasury-analyst-skills`
 SQL, exploratory analysis, data cleaning, statistics, inference, dashboard design, and spreadsheet modeling for business intelligence.
 
 Install: `/plugin install data-analytics-bi-skills@treasury-analyst-skills`
+
+### `data-analytics-bi-skills:assertion-evidence-deck`
+
+**Invoke:** `/data-analytics-bi-skills:assertion-evidence-deck` — or just describe the task.
+
+**What it does:** Builds assertion-evidence presentations (the Marshall/Alley method: one full-sentence claim per slide, proven by a visual, every number sourced) from verified analysis or configuration findings — for data-analysis results, Oracle Fusion Cash Management, reconciliation, audit findings, and University of Tennessee Controller or leadership updates. Turns verified output into slides; it does not run the analysis or Oracle diagnosis. Use when the user asks for a deck, slides, PowerPoint, briefing, readout, or leadership/Controller update on Oracle CM, DASH, unreconciled items, parse/matching/tolerance/transaction-creation rules, cash positioning, audit remediation, or an analysis result — even without saying "assertion-evidence" — or to audit an existing deck.
+
+**Triggers:** `build a deck`, `make slides`, `PowerPoint`, `briefing`, `leadership update`, `Controller update`, `readout`, `TED-style technical talk`, `sentence-headline slides`, `snorkel vs scuba`, `turn this report into slides`, `audit my deck`
 
 ### `data-analytics-bi-skills:dashboard-design`
 

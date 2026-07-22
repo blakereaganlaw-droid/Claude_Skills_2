@@ -49,10 +49,10 @@ Never store secrets, credentials, account numbers, or client data here.
   (user-stated for BSL_MATCHING_ENGINE, 2026-07-18)
 
 ## Project State & Decisions
-- FACT: Library state: 110 skills across 17 plugins plus 7 plugin subagents; `validate.sh`
-  clean. Newest plugin: `public-sector-treasury-skills` (8) — the public-sector/higher-ed
-  layer (GASB funds, public funds investing, escheatment, merchant/PCI, NACHA, bond
-  post-issuance, treasurer reporting, CTP prep). (verified 2026-07-18)
+- FACT: Library state: 116 skills across 17 plugins plus plugin subagents; `validate.sh`
+  clean. Public-sector layer: `public-sector-treasury-skills` (8) — GASB funds, public funds
+  investing, escheatment, merchant/PCI, NACHA, bond post-issuance, treasurer reporting, CTP prep.
+  (updated 2026-07-22)
 - RULE: Every skill conforms to `coding-agent-skills:writing-agent-skills` — name == folder,
   third-person description ending in `Triggers:`, fixed section order (When to use → Do it →
   Why/learn → Common mistakes → Tailor → References), body < 500 lines, evals in
@@ -108,6 +108,11 @@ Never store secrets, credentials, account numbers, or client data here.
 - RULE: Never pass reference-bearing Oracle/bank exports through pandas or an Excel resave —
   float coercion turns `0006789599` into `6789599.0` and destroys join keys; the recon engines
   ban pandas entirely for this reason. (source: OG_Recon README, engine-enforced)
+- LESSON: LibreOffice/soffice is broken in this cloud sandbox — `--convert-to pdf` fails with
+  "source file could not be loaded" on ANY .pptx, even a trivial one, sandbox on or off. So the
+  pptx skill's "render to images and look" step can't run here. Verify generated decks structurally
+  instead (python-pptx: reopen, count slides, dump shape positions/text vs the geometry tokens) and
+  say plainly the pixel render was unavailable. (observed 2026-07-22 building assertion-evidence-deck)
 
 ## Successful Patterns / Working Methods
 - PATTERN: Parallel subagent authoring works well when each agent first reads the committed
@@ -185,6 +190,17 @@ Never store secrets, credentials, account numbers, or client data here.
   last), BAI2 16/88-record + CAMT/MT940 parsing to fuel matches. Boundary vs
   fusion-cm-production-troubleshooting (design/optimize vs diagnose prod incident) and
   fusion-cash-management-module (design vs operate). Plugin 0.4.0→0.5.0.
+- 2026-07-22 — assertion-evidence-deck (user-drafted "Assertion-Evidence Deck — Complete Skill
+  Reference" → data-analytics-bi-skills, sibling to dashboard-design; library at 116). Eighth
+  external-spec adaptation: SKILL.md re-ordered into the house do+teach sections; Parts 2–5 became
+  the four reference files near-verbatim. The doc cited two Python scripts (build_deck.py, ae_lint.py)
+  as "alongside" but only the markdown was attached; per the script-wizard lesson I flagged this, but
+  since the user said "create and load" + "continue," I authored functional versions from the
+  documented interfaces (python-pptx builder with 8 slide kinds + verified geometry/UT palette;
+  linter for headline/bullet/wordcount/format/source/font) and invited a swap for the originals.
+  Both scripts tested: builder rejects over-long headlines, linter catches violations and passes the
+  example clean; deck verified structurally (pixel render unavailable — see LibreOffice lesson).
+  Plugin 0.1.0→0.2.0. Merged/retired: none. Flagged: no contradictions.
 - 2026-07-19 — FusionCash Architect tool build (from user PDF + 5 real CM config extracts, PR #23
   merged in parallel). Added: 2 facts (the tool + real-vs-PDF config counts/findings), 1 method
   (headless-Chromium verification of self-contained HTML), 1 pattern (local delivery of
